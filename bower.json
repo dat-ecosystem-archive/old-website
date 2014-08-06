@@ -1,0 +1,19 @@
+{
+  "name": "dat-data.com",
+  "version": "0.0.0",
+  "homepage": "https://github.com/maxogden/dat-data.com",
+  "authors": [
+    "Nick Colley <nickcolley7@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0"
+  }
+}
