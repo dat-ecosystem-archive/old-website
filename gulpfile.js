@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var less = require('gulp-less');
 var kss = require('gulp-kss');
 var rename = require('gulp-rename');
+var plumber = require('gulp-plumber');
 
 var path = {
   style: {
@@ -13,6 +14,7 @@ var path = {
 
 gulp.task('style', function(){
   gulp.src(path.style.src + '/less/*.less')
+      .pipe(plumber())
       .pipe(kss({
         overview: path.styleguide + '/styleguide.md',
         templateDirectory: path.styleguide + '/template'
@@ -21,6 +23,7 @@ gulp.task('style', function(){
 
   // Concat and compile all your styles for correct rendering of the styleguide.
   gulp.src(path.style.src + '/less/dat.less')
+      .pipe(plumber())
       .pipe(less())
       .pipe(rename('style.css'))
       .pipe(gulp.dest(path.styleguide + '/public/'));
