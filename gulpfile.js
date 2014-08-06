@@ -5,6 +5,8 @@ var less = require('gulp-less');
 var kss = require('gulp-kss');
 var rename = require('gulp-rename');
 var plumber = require('gulp-plumber');
+var browserSync = require('browser-sync');
+var reload = browserSync.reload;
 
 var path = {
   style: {
@@ -28,12 +30,21 @@ gulp.task('style', function(){
       .pipe(plumber())
       .pipe(less())
       .pipe(rename('style.css'))
-      .pipe(gulp.dest(path.styleguide + '/public/'));
+      .pipe(gulp.dest(path.styleguide + '/public/'))
+      .pipe(reload({stream:true}));
 });
 
-gulp.task('watch', function(){
+gulp.task('watch', ['browser-sync'], function(){
   gulp.watch([path.style.src + '/**/*.less', path.styleguide + '/template/**/*.less'], ['style']);
 });
 
+gulp.task('browser-sync', function() {
+  browserSync({
+      server: {
+          baseDir: "./"
+      }
+  });
+});
+
 gulp.task('build', ['style']);
-gulp.task('default', ['build', 'watch']);
+gulp.task('default', ['build']);
