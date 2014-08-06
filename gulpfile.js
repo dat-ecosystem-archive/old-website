@@ -1,3 +1,5 @@
+/* jshint node: true */
+
 var gulp = require('gulp');
 var less = require('gulp-less');
 var kss = require('gulp-kss');
