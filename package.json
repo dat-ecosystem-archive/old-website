@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "lessc --clean-css css/dat.less > css/dat.css"
   },
   "author": "",
-  "license": "BSD"
+  "license": "BSD",
+  "devDependencies": {
+    "less": "^1.7.4"
+  }
 }
