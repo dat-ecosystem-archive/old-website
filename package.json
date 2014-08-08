@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "lessc --clean-css css/dat.less > css/dat.css"
+    "build:css": "lessc --clean-css css/dat.less > css/dat.css"
   },
   "author": "",
   "license": "BSD",
