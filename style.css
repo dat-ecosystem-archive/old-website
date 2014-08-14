@@ -2,6 +2,7 @@ body { font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 0;}
 
 .button { display: inline-block; font-size: 20px; font-weight: 600; color: white; background-color: #35B44F; padding: 7px 14px; border-radius: 5px;}
 .button:hover { background-color: #A9CE7F; }
+
 .octocat { display: inline-block; position: relative; top: 1px; width: 16px; height: 16px; background-image: url('images/octocat.png'); margin-right: 10px;}
 
 .header { background: #fff; position: absolute; top: 0; left: 0; right: 0; border-bottom: 1px solid #dfe2e4;  background-image: url('images/header-abstract.png'); background-repeat: no-repeat; background-position: 120% -10px; }
