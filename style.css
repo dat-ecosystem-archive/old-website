@@ -1,5 +1,9 @@
 body { font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 0;}
 
+.button { display: inline-block; font-size: 20px; font-weight: 600; color: white; background-color: #35B44F; padding: 7px 14px; border-radius: 5px;}
+.button:hover { background-color: #A9CE7F; }
+.octocat { display: inline-block; position: relative; top: 1px; width: 16px; height: 16px; background-image: url('images/octocat.png'); margin-right: 10px;}
+
 .header { background: #fff; position: absolute; top: 0; left: 0; right: 0; border-bottom: 1px solid #dfe2e4;  background-image: url('images/header-abstract.png'); background-repeat: no-repeat; background-position: 120% -10px; }
 .header-logo { display: inline-block; font-weight: 600; font-size: 48px; background-image: url('images/dat-hex-small.png'); background-size: 40px; background-repeat: no-repeat; padding-left: 50px; background-position: 0px 8px; margin-left: 160px; margin-top: 8px; }
 .header-nav { height: 80px; position: absolute; top: 0; left: 0; right: 0; opacity: 0.9; background-color: #fdfdfd; font-weight: 700; color: #2A3749; font-size: 20px; border-bottom: 1px solid #f0f0f0; }
@@ -13,7 +17,6 @@ body { font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 0;}
 .header-horizontal-rule { width: 64px; height: 4px; background: #bfc3c8; margin: 5px 0; }
 .header-description { width: 525px; font-size: 20px; margin: 20px 0; color: #6A7380; }
 .header-continue { font-size: 20px; font-weight: 700; color: #35B44F; }
-.button { display: inline-block; }
 
 .content { margin-top: 430px; background-color: #f4f5f6; }
 .content-title { font-size: 32px; font-weight: 700; color: #2A3749; text-align: center; padding-top: 50px; padding-bottom: 5px; }
