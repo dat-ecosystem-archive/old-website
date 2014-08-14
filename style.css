@@ -1,0 +1,10 @@
+body { font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 0;}
+
+.header { background: #f0f0f0; }
+.header-logo { display: inline-block; font-weight: 600; font-size: 48px; background-image: url('images/dat-hex-small.png'); background-size: 40px; background-repeat: no-repeat; padding-left: 50px; background-position: 0px 8px; margin-left: 160px; margin-top: 8px; }
+.header-nav { height: 80px; opacity: 0.9; background-color: #fff; font-weight: 700; color: #2A3749; font-size: 20px; }
+.header-nav-links { margin-right: 160px; display: inline-block; float: right; }
+.header-nav-list { line-height: 80px; margin: 0; }
+.header-nav-list, .header-nav-list li { display: inline-block; }
+
+.button { display: inline-block; }
