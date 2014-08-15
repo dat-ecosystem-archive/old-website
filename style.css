@@ -42,7 +42,10 @@ body { font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 0;}
 
 .content-logos div { display: inline-block; }
 
-.footer { background-color: #2A3749; }
+.footer { background-color: #2A3749; padding: 50px 160px; }
+.footer-heading { font-size: 24px; color: white; }
+.footer-column { display: inline-block; margin-right: 100px; }
+.footer-horizontal-rule { width: 32px; height: 4px; background: #6a7380; margin: 10px 0; }
 
 @media screen and (max-width: 1115px) {
   .header, .header-nav { background-image: none; position: inherit; }
@@ -50,6 +53,7 @@ body { font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 0;}
   .header-description { width: auto; }
   .header-nav-list { padding-left: 5px; }
   .header-nav-list li { margin-right: 5px; }
-  .content-sub-container { margin: 0 10px 70px 10px; padding-top: 30px; }
+  
   .content { margin-top: 0; }
+  .content-sub-container { margin: 0 10px 70px 10px; padding-top: 30px; }
 }
