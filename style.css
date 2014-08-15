@@ -3,7 +3,12 @@ body { font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 0;}
 .button { display: inline-block; font-size: 20px; font-weight: 600; color: white; background-color: #35B44F; padding: 7px 14px; border-radius: 5px;}
 .button:hover { background-color: #A9CE7F; }
 
+.rsaquo { color: #35B44F; margin-right: 10px; font-family: "Times New Roman", Times, serif; font-size: 20px; }
+
 .octocat { display: inline-block; position: relative; top: 1px; width: 16px; height: 16px; background-image: url('images/octocat.png'); margin-right: 10px;}
+.octocat-green { display: inline-block; position: relative; top: 3px; width: 17px; height: 17px; background-image: url('images/octocat-green.png'); margin-right: 10px;}
+.twitter-green { display: inline-block; position: relative; top: 3px; width: 17px; height: 17px; background-image: url('images/twitter-green.png'); margin-right: 10px;}
+.bitcoin { display: inline-block; position: relative; top: 3px; width: 13px; height: 18px; background-image: url('images/bitcoin.png'); margin-right: 10px;}
 
 .header { background: #fff; position: absolute; top: 0; left: 0; right: 0; background-image: url('images/header-abstract.png'); background-repeat: no-repeat; background-position: 120% -10px; }
 .header-logo { display: inline-block; font-weight: 600; font-size: 48px; background-image: url('images/dat-hex-small.png'); background-size: 40px; background-repeat: no-repeat; padding-left: 50px; background-position: 0px 8px; margin-left: 160px; margin-top: 8px; }
@@ -17,7 +22,7 @@ body { font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 0;}
 .header-title { font-size: 40px; font-weight: 700; }
 .header-horizontal-rule { width: 64px; height: 4px; background: #bfc3c8; margin: 5px 0; }
 .header-description { width: 525px; font-size: 20px; margin: 20px 0; color: #6A7380; }
-.header-continue { font-size: 20px; font-weight: 700; color: #35B44F; }
+.header-continue { font-size: 20px; font-weight: 700; color: #35B44F; padding-right: 10px; }
 
 .content { margin-top: 430px; background-color: #f4f5f6; }
 .content-title { font-size: 32px; font-weight: 700; color: #2A3749; text-align: center; padding-top: 50px; padding-bottom: 5px; border-top: 1px solid #dfe2e4; }
@@ -42,10 +47,20 @@ body { font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 0;}
 
 .content-logos div { display: inline-block; }
 
-.footer { background-color: #2A3749; padding: 50px 160px; }
+.footer { background-color: #2A3749; overflow: auto; color: #959ba4; }
+.footer a { color: #fff; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+.footer-directory { overflow: auto; padding: 50px 160px 30px 160px; border-bottom: 1px solid #3f4b5b; }
+.footer-credits { padding: 50px 0; text-align: center; }
 .footer-heading { font-size: 24px; color: white; }
-.footer-column { display: inline-block; margin-right: 100px; }
-.footer-horizontal-rule { width: 32px; height: 4px; background: #6a7380; margin: 10px 0; }
+.footer-column { float: left; margin-right: 100px; }
+.footer-horizontal-rule { width: 32px; height: 4px; background: #6a7380; margin: 10px 0 30px 0; }
+.footer-nav-list { list-style-type: none; padding-left: 0; font-weight: 600; color: #fff; font-size: 16px; }
+.footer-nav-list li { margin-bottom: 3px; }
+.footer-emphasized { font-weight: 700; }
+.footer-subtitle { padding-top: 10px; }
+
+.code-container { background-color: #3F4B5B; padding: 5px 15px; border-radius: 4px; color: #fff; font-size: 16px; line-height: 24px; }
 
 @media screen and (max-width: 1115px) {
   .header, .header-nav { background-image: none; position: inherit; }
