@@ -25,6 +25,7 @@ body { font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 0;}
 .header-horizontal-rule { width: 64px; height: 4px; background: #bfc3c8; margin: 5px 0; }
 .header-description { width: 525px; font-size: 20px; margin: 20px 0; color: #6A7380; }
 .header-continue { font-size: 20px; font-weight: 700; color: #35B44F; padding-right: 10px; padding-bottom: 50px; }
+.header .header-continue a { color: #35B44F;}
 .header-spacer { height: 80px; }
 
 .content { background-color: #f4f5f6; overflow: auto; }
@@ -47,8 +48,8 @@ body { font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 0;}
 
 .content-text-container { padding: 50px 160px 50px 160px; overflow: auto; border-top: 1px solid #dfe2e4; background-color: #f4f5f6; }
 .content-text-h1 { font-size: 36px; font-weight: 700; color: #2A3749; }
-.content-text-intro { font-size: 20px; color: #6A7380; margin-bottom: 25px; }
-.content-text-paragraph { font-size: 16px; color: #2A3749; }
+.content-text-intro { font-size: 20px; color: #6A7380; margin-bottom: 25px; width: 60%; }
+.content-text-paragraph { font-size: 16px; color: #2A3749; margin-bottom: 10px; width: 60%; }
 .content-text-container a, .content-text-container a:visited { color: #35B44F; text-decoration: none; }
 .content-text-container a:hover { text-decoration: underline; }
 
@@ -92,4 +93,8 @@ body { font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 0;}
   
   .content { margin-top: 0; }
   .content-sub-container { margin: 0 10px 20px 10px; padding-top: 30px; }
+  .content-text-container { padding: 20px; }
+  .content-text-intro { width: 100%; }
+  .content-text-paragraph { width: 100%; }
+  
 }

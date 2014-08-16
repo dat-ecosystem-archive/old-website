@@ -20,57 +20,16 @@
       <a href="https://github.com/maxogden/dat" target="_blank"><div class="button"><span class="octocat"></span>View on GitHub</div></a>
     </div>
   </div>
-
   <div class="header-info">
-    <div class="header-title header-title-bigger">Build data pipelines</div>
-    <div class="header-horizontal-rule"></div>
-    <div class="header-description">Dat is an open source tool that lets you build data pipelines that can be shared and replicated by others. </div>
-    <div class="header-continue"><a href="#content">Find out more <span class="rsaquo">&rsaquo;</span></a></div>
+    <div class="header-title">About Dat</div>
   </div>
-
 </div>
 
-<div id="content" class="content">
-  <div class="content-title">Dat Alpha Now Available</div>
-  <div class="content-subtitle">Our first stable API, intended for developers and early adopters. <a href="https://github.com/maxogden/dat/blob/master/docs/dat-stable-alpha.md">Read more here</a>.</div>
-  <div class="content-horizontal-rule"></div>
-  <div class="content-sub-container">
-    <!-- <div class="content-card">
-      <img src="http://placekitten.com/480/270">
-      <div class="content-card-title">Dat alpha preview screencast</div>
-      <div class="content-card-subtitle">April 2014</div>
-    </div>
-    <div class="content-card">
-      <img src="http://placekitten.com/480/270">
-      <div class="content-card-title">10 minute intro presentation to dat</div>
-      <div class="content-card-subtitle">Late 2013</div>
-    </div> -->
-  </div>
-  <div class="content-title">Design</div>
-  <div class="content-horizontal-rule"></div>
-  <div class="content-sub-container content-feature-cards">
-    <div class="content-feature-card">
-      <img src="images/dat-hex-1.png">
-      <div class="content-card-title">Streaming</div>
-      <div class="content-card-subtitle">Everything in dat is built using streaming + non-blocking components so that you can process large datasets and get immediate, real-time results.</div>
-    </div>
-    <div class="content-feature-card">
-      <img src="images/dat-hex-2.png">
-      <div class="content-card-title">Made with Modules</div>
-      <div class="content-card-subtitle">Dat stores data locally, but you can easily configure it to store it's tabular data in the database of your choice (e.g. PostgreSQL) and it's files in external file stores (e.g. Dropbox or S3).</div>
-    </div>
-    <div class="content-feature-card">
-      <img src="images/dat-hex-3.png">
-      <div class="content-card-title">REST and CLI</div>
-      <div class="content-card-subtitle">You can stream data in and out of dat from the command line using any program that can write to stdin (e.g. R, Python, Ruby, etc) or you can use dat's built in HTTP REST API.</div>
-    </div>
-  </div>
-  <div class="content-title">Sponsors and supporters</div>
-  <div class="content-horizontal-rule"></div>
-  <div class="content-sub-container content-logos">
-    <a href="http://www.sloan.org/major-program-areas/digital-information-technology/data-and-computational-research/"><img src="images/sloan.png"></a>
-    <a href="http://www.knightfoundation.org/grants/201346305/"><img src="images/knight.png"></a>
-    <a href="http://usodi.org/"><img src="images/usodi.png"></a>
+<div class="content">
+  <div class="content-text-container">
+    <div class="content-text-intro">Dat is an grant funded, open source project housed in the <a href="http://usodi.org/">US Open Data Institute</a>. While dat is a general purpose tool, we have a focus on open science use cases.</div>
+    <div class="content-text-paragraph">The first code went into dat <a href="https://github.com/maxogden/dat/commit/e5eda57b53f60b05c0c3d97da90c10cd17dcbe19">on August 17th 2013</a>. The first six months were spent making a prototype (thanks to the <a href="http://www.knightfoundation.org/grants/201346305/">Knight foundation Prototype Fund</a>) and the last six months have been spent on taking dat beyond the prototype phase and into something more concrete, which is what we are shipping today!</div>
+    <div class="content-text-paragraph">In April 2014 we were able to expand the team working on dat from 1 person to 3 persons, thanks to <a href="http://usodi.org/2014/04/02/dat">support from the Sloan foundation</a>. Sloan's proposition was that they like the initial dat prototype but wanted to see scientific data use cases be treated as top priority. As a result we expanded the scope of the project from it's tabular data specific beginnings and have focused on adding features that will help us work with larger scientific datasets.</div>
   </div>
 </div>
 
@@ -117,6 +76,17 @@
     <span class="footer-emphasized">dat</span> &bull; 2014 &bull; design by <a href="https://github.com/flipside-org">flipside</a> &bull; page source on <a href="https://github.com/datproject/website">github</a>
   </div>
 </div>
+<script type="text/javascript" src="gravatar.js"></script>
+<script type="text/javascript">
+  var gravatar = require('gravatar')
+  var peeps = document.querySelectorAll('.content-card-small-avatar')
+  for (var i = 0; i < peeps.length; i++) {
+    var peep = peeps[i]
+    var username = peep.getAttribute('data-user')
+    if (!username) continue
+    peep.setAttribute('style', "background-image: url('https://github.com/" + username + ".png')")
+  }
+</script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
