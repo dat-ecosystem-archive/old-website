@@ -28,6 +28,8 @@ body { font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 0;}
 .header-spacer { height: 80px; }
 
 .content { background-color: #f4f5f6; overflow: auto; }
+.content a, .content-a :visited { color: #35B44F; font-weight: 600; text-decoration: none; }
+.content a:hover { text-decoration: underline; }
 .content-title { font-size: 32px; font-weight: 700; color: #2A3749; text-align: center; padding-top: 50px; padding-bottom: 5px; border-top: 1px solid #dfe2e4; }
 .content-subtitle { font-size: 20px; color: #6A7380; text-align: center; }
 .content-horizontal-rule { width: 64px; height: 4px; background: #bfc3c8; margin: 15px auto; }
@@ -83,10 +85,10 @@ body { font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 0;}
 
 @media screen and (max-width: 1115px) {
   .header, .header-nav { background-image: none; position: inherit; }
-  .header-info { padding: 70px 10px 10px 10px; }
+  .header-info { padding: 20px 10px 10px 10px; }
   .header-description { width: auto; }
-  .header-nav-list { padding-left: 5px; }
-  .header-nav-list li { margin-right: 5px; }
+  .header-nav-list, .header .button { display: none; }
+  .footer-directory { padding: 20px; }
   
   .content { margin-top: 0; }
   .content-sub-container { margin: 0 10px 20px 10px; padding-top: 30px; }
