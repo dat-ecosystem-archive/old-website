@@ -19,11 +19,12 @@ body { font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 0;}
 .header-nav-list { line-height: 80px; margin: 0; }
 .header-nav-list, .header-nav-list li { display: inline-block; }
 .header-nav-list li { margin-right: 30px; }
-.header-info { height: 280px; padding-left: 160px; padding-top: 150px; }
+.header-info { padding-left: 160px; padding-top: 110px; padding-bottom: 30px; }
 .header-title { font-size: 40px; font-weight: 700; }
+.header-title-bigger { padding-top: 40px; }
 .header-horizontal-rule { width: 64px; height: 4px; background: #bfc3c8; margin: 5px 0; }
 .header-description { width: 525px; font-size: 20px; margin: 20px 0; color: #6A7380; }
-.header-continue { font-size: 20px; font-weight: 700; color: #35B44F; padding-right: 10px; }
+.header-continue { font-size: 20px; font-weight: 700; color: #35B44F; padding-right: 10px; padding-bottom: 50px; }
 .header-spacer { height: 80px; }
 
 .content { background-color: #f4f5f6; overflow: auto; }
@@ -41,6 +42,14 @@ body { font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 0;}
 .content-feature-card { width: 335px; margin-right: 54px; display: inline-block; }
 .content-feature-card img { margin: 0 auto; display: block; }
 .content-feature-cards > :last-child { margin-right: 0; }
+
+.content-text-container { padding: 50px 160px 50px 160px; overflow: auto; border-top: 1px solid #dfe2e4; background-color: #f4f5f6; }
+.content-text-h1 { font-size: 36px; font-weight: 700; color: #2A3749; }
+.content-text-intro { font-size: 20px; color: #6A7380; margin-bottom: 25px; }
+.content-text-paragraph { font-size: 16px; color: #2A3749; }
+.content-text-container a, .content-text-container a:visited { color: #35B44F; text-decoration: none; }
+.content-text-container a:hover { text-decoration: underline; }
+
 
 .content-card-small { width: 255px; background: white; border-radius: 4px; position: relative; min-height: 400px; display: inline-block; vertical-align: top; margin-right: 30px; margin-bottom: 50px; }
 .content-card-small a, .content-card-small a:visited { color: #35B44F; text-decoration: none; }
