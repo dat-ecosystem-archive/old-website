@@ -20,57 +20,43 @@
       <a href="https://github.com/maxogden/dat" target="_blank"><div class="button"><span class="octocat"></span>View on GitHub</div></a>
     </div>
   </div>
-
-  <div class="header-info">
-    <div class="header-title">Build data pipelines</div>
-    <div class="header-horizontal-rule"></div>
-    <div class="header-description">Dat is an open source tool that lets you build data pipelines that can be shared and replicated by others.</div>
-    <div class="header-continue">Find out more <span class="rsaquo">&rsaquo;</span></div>
-  </div>
-
+  <div class="header-spacer"></div>
 </div>
 
 <div class="content">
-  <div class="content-title">Morbi egestas varius sem</div>
-  <div class="content-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+  <div class="content-title">Development Team</div>
   <div class="content-horizontal-rule"></div>
   <div class="content-sub-container">
-    <div class="content-card">
-      <img src="http://placekitten.com/480/270">
-      <div class="content-card-title">Dat alpha preview screencast</div>
-      <div class="content-card-subtitle">April 2014</div>
+    <div class="content-card-small">
+      <div class="content-card-small-avatar" data-user="maxogden"></div>
+      <div class="content-card-small-stripe"></div>
+      <div class="content-card-small-contents">
+        <div class="content-card-title">Max Ogden</div>
+        <div class="content-card-small-subtitle">
+          Programmer based in Oakland, CA. Previously Max worked on things such as <a href="http://codeforamerica.org/">Code for America</a>, <a href="http://jsforcats.com/">JavaScript for Cats</a>, <a href="http://tacoconf.com/">TacoConf</a> and <a href="http://voxeljs.com/">Voxel.js</a>.
+        </div>
+      </div>
     </div>
-    <div class="content-card">
-      <img src="http://placekitten.com/480/270">
-      <div class="content-card-title">10 minute intro presentation to dat</div>
-      <div class="content-card-subtitle">Late 2013</div>
+    <div class="content-card-small">
+      <div class="content-card-small-avatar" data-user="mafintosh"></div>
+      <div class="content-card-small-stripe"></div>
+      <div class="content-card-small-contents">
+        <div class="content-card-title">Mathias Buus</div>
+        <div class="content-card-small-subtitle">
+          Programmer based in Copenhagen, Denmark. Co-creator of <a href="http://node-modules.com">node-modules.com</a> and co-founder of <a href="http://ge.tt/">ge.tt</a>. open mouth, open source.
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="content-title">Lorem ipsum dolor sit amet</div>
-  <div class="content-horizontal-rule"></div>
-  <div class="content-sub-container content-feature-cards">
-    <div class="content-feature-card">
-      <img src="images/dat-hex-1.png">
-      <div class="content-card-title">This is a title</div>
-      <div class="content-card-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas varius sem. Cras eu hendrerit nunc, vel volutpat augue. Nulla tempus cursus.</div>
+    <div class="content-card-small">
+      <div class="content-card-small-avatar" data-user="bmpvieira"></div>
+      <div class="content-card-small-stripe"></div>
+      <div class="content-card-small-contents">
+        <div class="content-card-title">Bruno Vieira</div>
+        <div class="content-card-small-subtitle">
+          Bioinformatics PhD student at Queen Mary University of London and Node.JS Web Developer. Working on <a href="https://github.com/bionode/bionode">bionode.io</a> and <a href="https://github.com/yeban/afra">yeban/afra</a>.
+        </div>
+      </div>
     </div>
-    <div class="content-feature-card">
-      <img src="images/dat-hex-2.png">
-      <div class="content-card-title">This is another title</div>
-      <div class="content-card-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas varius sem. Cras eu hendrerit nunc, vel volutpat augue. Nulla tempus cursus.</div>
-    </div>
-    <div class="content-feature-card">
-      <img src="images/dat-hex-3.png">
-      <div class="content-card-title">Yet another title</div>
-      <div class="content-card-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas varius sem. Cras eu hendrerit nunc, vel volutpat augue. Nulla tempus cursus.</div>
-    </div>
-  </div>
-  <div class="content-title">Sponsors and supporters</div>
-  <div class="content-horizontal-rule"></div>
-  <div class="content-sub-container content-logos">
-    <a href="http://www.sloan.org/major-program-areas/digital-information-technology/data-and-computational-research/"><img src="images/sloan.png"></a>
-    <a href="http://www.knightfoundation.org/grants/201346305/"><img src="images/knight.png"></a>
-    <a href="http://usodi.org/"><img src="images/usodi.png"></a>
   </div>
 </div>
 
@@ -117,6 +103,17 @@
     <span class="footer-emphasized">dat</span> &bull; 2014 &bull; design by <a href="https://github.com/flipside-org">flipside</a> &bull; page source on <a href="https://github.com/datproject/website">github</a>
   </div>
 </div>
+<script type="text/javascript" src="gravatar.js"></script>
+<script type="text/javascript">
+  var gravatar = require('gravatar')
+  var peeps = document.querySelectorAll('.content-card-small-avatar')
+  for (var i = 0; i < peeps.length; i++) {
+    var peep = peeps[i]
+    var username = peep.getAttribute('data-user')
+    if (!username) continue
+    peep.setAttribute('style', "background-image: url('https://github.com/" + username + ".png')")
+  }
+</script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
