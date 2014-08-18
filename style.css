@@ -28,7 +28,7 @@ body { font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 0;}
 .content-subtitle { font-size: 20px; color: #6A7380; text-align: center; }
 .content-horizontal-rule { width: 64px; height: 4px; background: #bfc3c8; margin: 15px auto; }
 
-.content-sub-container { margin: 0 160px 20px 160px; padding-top: 30px; overflow: auto; text-align: center; }
+.content-sub-container { margin: 0 160px 70px 160px; padding-top: 30px; overflow: auto; text-align: center; }
 .content-card { position: relative; background: white; display: inline-block; vertical-align: top; margin-right: 30px; padding: 30px 30px 25px 30px; border-radius: 4px; margin-bottom: 50px; }
 .content-sub-container > :last-child { margin-right: 0; }
 .content-card-title { font-weight: 700; font-size: 24px; color: #2A3749; text-align: center; margin-top: 15px; }
@@ -85,13 +85,15 @@ body { font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 0;}
 
 @media screen and (max-width: 1115px) {
   .header, .header-nav { background-image: none; position: inherit; }
-  .header-info { padding: 20px 10px 10px 10px; }
+  .header-info { padding: 20px; }
+  .header-logo { margin-left: 20px; }
   .header-description { width: auto; }
   .header-nav-list, .header .button { display: none; }
   .footer-directory { padding: 20px; }
   
   .content { margin-top: 0; }
-  .content-sub-container { margin: 0 10px 20px 10px; padding-top: 30px; }
+  .content-feature-card { margin: 0 auto 20px auto; }
+  .content-sub-container { margin: 0 20px 20px 20px; padding-top: 30px; }
   .content-text-container { padding: 20px; }
   .content-text-intro { width: 100%; }
   .content-text-paragraph { width: 100%; }
