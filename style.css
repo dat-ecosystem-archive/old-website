@@ -57,7 +57,7 @@ body { font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 0;}
 
 .content-logos p { text-align: center; text-transform: uppercase; }
 .content-logos { margin: 0 335px; padding-bottom: 100px; }
-.content-logos > a { margin-right: 75px; }
+.content-logos > a { margin: 20px; display: inline-block; }
 .content-logos > :last-child { margin-right: 0; }
 
 .content-logos div { display: inline-block; }
