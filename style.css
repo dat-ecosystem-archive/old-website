@@ -3,10 +3,10 @@ body { font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 0;}
 .button { display: inline-block; font-size: 20px; font-weight: 600; color: white; background-color: #35B44F; padding: 7px 14px; border-radius: 5px;}
 .button:hover { background-color: #A9CE7F; }
 
-.header { background: #fff; background-image: url('images/header-abstract.png'); background-repeat: no-repeat; background-position: 120% -10px; }
+.header { background: #fff; background-image: url('img/header-abstract.png'); background-repeat: no-repeat; background-position: 120% -10px; }
 .header a, .header a:visited { color: #2A3749; text-decoration: none; }
 .header a:hover { text-decoration: underline; }
-.header-logo { display: inline-block; font-weight: 600; font-size: 48px; background-image: url('images/dat-hex-small.png'); background-size: 40px; background-repeat: no-repeat; padding-left: 50px; background-position: 0px 8px; margin-left: 160px; margin-top: 8px; }
+.header-logo { display: inline-block; font-weight: 600; font-size: 48px; background-image: url('img/dat-hex-small.png'); background-size: 40px; background-repeat: no-repeat; padding-left: 50px; background-position: 0px 8px; margin-left: 160px; margin-top: 8px; }
 .header-nav { height: 80px; position: absolute; top: 0; left: 0; right: 0; opacity: 0.9; background-color: #fdfdfd; font-weight: 700; color: #2A3749; font-size: 20px; border-bottom: 1px solid #f0f0f0; }
 .header-nav-links { margin-right: 160px; float: right; }
 .header-nav-list { line-height: 80px; margin: 0; }
@@ -78,10 +78,10 @@ body { font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 0;}
 .code-container { background-color: #3F4B5B; padding: 5px 15px; border-radius: 4px; color: #fff; font-size: 16px; line-height: 24px; }
 
 .rsaquo { color: #35B44F; margin-right: 10px; font-family: "Times New Roman", Times, serif; font-size: 20px; }
-.octocat { display: inline-block; position: relative; top: 1px; width: 16px; height: 16px; background-image: url('images/octocat.png'); margin-right: 10px;}
-.octocat-green { display: inline-block; position: relative; top: 3px; width: 17px; height: 17px; background-image: url('images/octocat-green.png'); margin-right: 10px;}
-.twitter-green { display: inline-block; position: relative; top: 3px; width: 17px; height: 17px; background-image: url('images/twitter-green.png'); margin-right: 10px;}
-.bitcoin { display: inline-block; position: relative; top: 3px; width: 13px; height: 18px; background-image: url('images/bitcoin.png'); margin-right: 10px;}
+.octocat { display: inline-block; position: relative; top: 1px; width: 16px; height: 16px; background-image: url('img/octocat.png'); margin-right: 10px;}
+.octocat-green { display: inline-block; position: relative; top: 3px; width: 17px; height: 17px; background-image: url('img/octocat-green.png'); margin-right: 10px;}
+.twitter-green { display: inline-block; position: relative; top: 3px; width: 17px; height: 17px; background-image: url('img/twitter-green.png'); margin-right: 10px;}
+.bitcoin { display: inline-block; position: relative; top: 3px; width: 13px; height: 18px; background-image: url('img/bitcoin.png'); margin-right: 10px;}
 
 @media screen and (max-width: 1115px) {
   .header, .header-nav { background-image: none; position: inherit; }
