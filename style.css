@@ -90,12 +90,12 @@ body { font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 0;}
   .header-description { width: auto; }
   .header-nav-list, .header .button { display: none; }
   .footer-directory { padding: 20px; }
-  
+
   .content { margin-top: 0; }
-  .content-feature-card { margin: 0 auto 20px auto; }
+  .content-feature-card { margin: 0 auto 40px auto; max-width: 100%;}
   .content-sub-container { margin: 0 20px 20px 20px; padding-top: 30px; }
   .content-text-container { padding: 20px; }
   .content-text-intro { width: 100%; }
   .content-text-paragraph { width: 100%; }
-  
+
 }
