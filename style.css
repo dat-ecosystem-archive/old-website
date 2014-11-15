@@ -39,10 +39,10 @@ body { font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 0;}
 .content-feature-card img { margin: 0 auto; display: block; }
 .content-feature-cards > :last-child { margin-right: 0; }
 
-.content-text-container { padding: 50px 160px 50px 160px; overflow: auto; border-top: 1px solid #dfe2e4; background-color: #f4f5f6; }
-.content-text-h1 { font-size: 36px; font-weight: 700; color: #2A3749; }
-.content-text-intro { font-size: 20px; color: #6A7380; margin-bottom: 25px; width: 60%; }
-.content-text-paragraph { font-size: 16px; color: #2A3749; margin-bottom: 10px; width: 60%; }
+.content-text-container { padding: 0px 160px 50px 160px; overflow: auto; border-top: 1px solid #dfe2e4; background-color: #f4f5f6; }
+.content-text-h1, .content-text-container h1 { font-size: 36px; margin-top: 44px; font-weight: 700; color: #2A3749; }
+.content-text-intro { font-size: 20px; color: #6A7380; margin-top: 44px; margin-bottom: 22px; width: 60%; }
+.content-text-paragraph { font-size: 16px; color: #2A3749; margin-bottom: 22px; width: 60%; }
 .content-text-container a, .content-text-container a:visited { color: #35B44F; text-decoration: none; }
 .content-text-container a:hover { text-decoration: underline; }
 

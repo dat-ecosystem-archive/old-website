@@ -35,6 +35,63 @@
       <li><a href="https://github.com/maxogden/dat/blob/master/docs/js-api.md">JavaScript API</a></li>
       <li><a href="https://github.com/maxogden/dat/blob/master/docs/cli-usage.md">Command line API</a></li>
     </ul>
+       <h1>FAQ</h1>
+    <div class="content-text-intro">
+      What would I use it for? Is it a replacement for mongodb or sql or csv files?
+    </div>
+    <div class="content-text-paragraph">
+    Dat is not a replacement for mongodb/sql/csv. Dat is an interface for
+these different storage formats and database types so that the
+consumer doesn't have to care about in which particular protocol the data is stored.
+    </div>
+
+    <div class="content-text-intro">
+    If it is not a replacement for things like mongodb/sql/csv flies, how would I use it along side of existing workflows where I am using mongo/sql/csv?
+    </div>
+    <div class="content-text-paragraph">
+    Right now we are working on two different ways to sync or connect your
+existing workflows.
+    </div>
+    <div class="content-text-paragraph">
+    1. <a href="
+    https://github.com/datproject/datscript">Datscript</a>: this is a simple module that lets you set up data
+    pipelines. This is exceptionally great for datasets that live in a very hard to
+    reach place, like excel files on FTP servers, where a custom set of
+    update scripts must be run to get the data in the proper ndjson
+    format, streamable to dat.
+    </div>
+    <div class="content-text-paragraph">
+      2. Real-time sync: We are building a sync function
+      that will pull data from a connected datastore to your configured dat.
+      The interface is still in the prototype stages.
+    </div>
+
+    <div class="content-text-intro">
+     Is dat designed for production data pipelines or more for sharing data in interactive/exploratory workflows?
+   </div>
+    <div class="content-text-paragraph">
+    Right now, our target users are researchers, analysts, and data
+    enthusiasts who need a way to share data.  I can imagine some
+    lovely production data pipeline scenarios, though, when the time
+    comes. <a href="
+    https://github.com/maxogden/dat/labels/use%20case">You can see some of our use cases here.</a>
+    </div>
+
+    <div class="content-text-intro">
+    If I have multiple different tables that I want to store, would I create a separate dat repo for each? Can a single dat repo store multiple tables?
+   </div>
+    <div class="content-text-paragraph">
+      Each dat repo is only one table. <a href="https://github.com/maxogden/dat/issues/195">Features we are working on will be put on the beta roadmap.</a> You should request a feature!
+    </div>
+
+    <div class="content-text-intro">
+      How would someone use data in dat. Just doing "dat cat"? Are there Python libraries that tie into pandas or another Python library?
+    </div>
+
+    <div class="content-text-paragraph">
+       <a href="https://github.com/pkafei/Dat-Python">We're building that right now.</a> Dat has a REST as well as a native
+      interface, and we're planning on supporting both really soon.
+    </div>
   </div>
 </div>
 
@@ -74,8 +131,8 @@
       <div class="footer-subtitle">Support dat by donating Bitcoins to our address above.</div>
       <div class="footer-subtitle">You can also <a href="https://coinbase.com/checkouts/4c07b345e596636fbd6b269abbf1689f" target="_blank">donate with Coinbase</a>.</div>
     </div>
-    
-    
+
+
   </div>
   <div class="footer-credits">
     <span class="footer-emphasized">dat</span> &bull; 2014 &bull; design by <a href="https://github.com/flipside-org">flipside</a> &bull; page source on <a href="https://github.com/datproject/website">github</a>
