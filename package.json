@@ -1,14 +1,46 @@
 {
-  "name": "dat-website",
-  "version": "0.0.0",
-  "description": "",
+  "name": "dat-data.com",
+  "version": "1.0.0",
+  "description": "dat website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run watch & npm run watch-css & npm run server",
+    "server": "nodemon --exec http-server -e js,css,html -i data/ -i static/",
+    "test": "node test/run.js | tap-spec",
+    "watch": "watchify -t brfs index.js -o bundle.js",
+    "watch-css": "autoless static/styles"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/karissa/dathub.git"
+  },
+  "keywords": [
+    "data",
+    "datasets",
+    "publish",
+    "registry",
+    "dathub",
+    "dat",
+    "web"
+  ],
+  "author": "karissa",
   "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/karissa/dathub/issues"
+  },
+  "homepage": "http://dat-data.com",
   "dependencies": {
-    "normalize.css": "^3.0.1"
+    "nodemon": "^1.2.1",
+    "page": "^1.4.1",
+    "jquery": "^2.1.1"
+  },
+  "devDependencies": {
+    "autoless": "^0.1.5",
+    "brfs": "^1.4.0",
+    "browserify": "^7.0.0",
+    "dom": "0.0.3",
+    "http-server": "^0.8.0",
+    "mustache": "^2.0.0",
+    "watchify": "^2.1.1"
   }
 }
