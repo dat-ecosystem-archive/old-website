@@ -10,7 +10,17 @@ module.exports = {
     next()
   },
   team: function (ctx, next) {
-    ctx.template = require('./templates/team.html').toString()
+    ctx.partial = fs.readFileSync('./templates/team.html').toString()
+    ctx.onrender = function () {
+      var gravatar = require('gravatar')
+      var peeps = document.querySelectorAll('.content-card-small-avatar')
+      for (var i = 0; i < peeps.length; i++) {
+        var peep = peeps[i]
+        var username = peep.getAttribute('data-user')
+        if (!username) continue
+        peep.setAttribute('style', "background-image: url('https://github.com/" + username + ".png')")
+      }
+    }
     next()
   }
-};
+}

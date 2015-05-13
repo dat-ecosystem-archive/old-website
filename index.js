@@ -12,12 +12,10 @@ function index (ctx, next) {
 }
 
 function render(ctx, next) {
-  if (!ctx.partial) ctx.partial = fs.readFileSync('./templates/404.html')
   var target = dom('#content')
   var compiled = mustache(ctx.partial, ctx.data)
   target.html(compiled)
   ctx.onrender()
-  next()
 }
 
 page('*', index)
