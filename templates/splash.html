@@ -4,81 +4,139 @@
       <div class="col-md-6">
         <h1 class="jumbotron-title">Versioned data, collaborated</h1>
         <div class="jumbotron-horizontal-rule"></div>
-        <div class="jumbotron-description">Dat is an open source project for building automated, reproducible data pipelines that sync.</div>
-        <a href="#content">What can Dat do?</a>
+        <div class="jumbotron-description">Dat is a version-controlled, distributed data tool designed to improve collaboration between data people and data systems.</div>
+        <div class="col-md-12">
+          <a href="https://github.com/maxogden/dat" target="_blank">
+            <div class="button">Tutorial</div>
+          </a>
+          <a href="https://github.com/maxogden/dat" target="_blank">
+            <div class="button">Docs</div>
+          </a>
+          <a href="#videos" target="_blank">
+            <div class="button">Whitepaper</div>
+          </a>
+          <a href="#videos" target="_blank">
+            <div class="button">Github</div>
+          </a>
+        </div>
       </div>
-      <!--
-      <div class="col-md-6 jumbotron-video">
-        <iframe width="420" height="315" src="https://www.youtube.com/embed/tP_6N7mMKok" frameborder="0" allowfullscreen></iframe>
-      </div>
-      -->
     </div>
   </div>
 </div>
 
-<div class="content-title">Import</div>
+<div class="container">
+<div class="content-title">Version by row or by file</div>
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro row">
-    <p>Add tabular data into dat from any backend or file format. anything that can be converted to newline-delimited json or csv can be put into a dat.</p>
-    <pre>$ dat init
-$ dat add rows values_per_city.csv --separator='\t'
-$ sql2csv -c "SELECT * from us_cities" | dat add rows</pre>
+<div class="col-md-4">
+    <p>Add data into dat from newline-delimited json, csv, or binary format. You can version the data by <strong>row</strong> or <strong>by file</strong>. <a href="">Learn more >></a></p>
+</div>
+<div class="col-md-8">
+    <pre><code class="bash">$ dat parse values_per_city.csv
+Added 302,143 keys (32.03 Mb, 4.4 Mb/s).
+Checked out to version bad31c.
+
+$ dat write model_data.tar.gz
+Added model_data.tar.gz (153.03 Mb, 15.3 Mb/s).
+Checked out to version cef322.
+</code></pre>
+</div>
+</div>
+
+<div class="content-title">SSH and HTTP endpoints</div>
+<div class="content-horizontal-rule"></div>
+<div class="content-sub-container content-code-intro">
+<div class="col-md-4">
+<p>Expose your dat through the filesystem with <strong>SSH or HTTP</strong>. This means access control comes free and easy. <a href="">Learn more >></a></p>
+</div>
+<div class="col-md-8">
+<pre><code class="bash">$ dat clone ssh://uni.edu/maxogden/cities
+</code></pre>
+</div>
 </div>
 
 
-
-<div class="content-title">Version</div>
+<div class="content-title">Organize by dataset</div>
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro">
-  <p>As your data changes, dat tracks what changed (and who changed it). version the data by row or simply version the entire file.</p>
-
-<pre>$ dat add files  us_cities_viz.png data.pickle model_data.tar.gz
-Added to dat at c2342d.
-
-$ dat add files  us_cities_viz.png
-This will override us_cities_viz.png at c2342d (y/n): y
-*maxogden updated us_cities_viz.png to be253f on Sat Jan 17, 9:33pm*
-
-$ sql2csv -c "SELECT * from us_cities"  | dat add rows
-This will update 3,434,245 rows. OK? (y/n): y
-maxogden updated 3,434,245 rows on Sat Jan 17, 9:43pm</pre>
+<div class="col-md-4">
+<p>Add dat.json files to your git repository to keep track of versioned data with versioned code. Datasets are stored in a named, hierarchical folder structure. <a href="">Learn more >></a></p>
 </div>
+<div class="col-md-8">
+<pre><code class="bash">$ ls -a
+dat.json
+.git/
+analysis.py
 
-<div class="content-title">Publish</div>
-<div class="content-horizontal-rule"></div>
-<div class="content-sub-container content-code-intro">
-
-<p>Get a streaming REST api for free -- data can go in and out of dat as easily as a curl command, or use the experimental python and R libraries. Do the analysis, but this time with the right data. pull the data to your local machine at a particular point in history.</p>
-
-<pre>$ dat-server listen
-Listening on http://localhost:6461
-
-$ curl http://localhost:6461/api/rows
-{ “population”: 609456,  “key”: “Portland, OR, USA”, “version”: c324df1}
-{ “population”: 406253,  “key”: “Oakland, CA, USA”, “version”: ab1bd2}
-{ “population”: 885400,  “key”: “Austin, TX, USA”, “version”: f31db4}
-..etc
-
-$ dat clone http://citiesdata.us.gov/c2342d
-Elapsed      : 0 s
-Pulled       : 101.78 kB (101.78 kB/s)
- - changes : 447
- - blobs   : 0
-
+$ dat pull
+Pulled 823 changes (93.88 Mb, 3.4 Mb/s).
 Clone from remote has completed.
-Checked out c2342d
+Checked out to c2342de3f
 
-$ cd citiesdata.us.gov
-$ dat datasets
-alternative_models
-cities
-economy_factors
+$ ls -a
+dat.json
+.git/
+alternative_models/
+population/
+economy_factors/</code></pre>
+</div>
+</div>
 
-$ dat cities files
-data.pickle
-model_data.tar.gz
-us_cities_viz.png
+<div class="content-title">Stream anything anywhere</div>
+<div class="content-horizontal-rule"></div>
+<div class="content-sub-container content-code-intro">
+<div class="col-md-4">
+<p>
+Data is streamed into the Dat database, one row or file at a time. That means that your computer does not have to hold the entire dataset in memory, and you can stop a pull or clone at any time. <a href="">Learn more >></a></p>
+</div>
+<div class="col-md-8">
+<pre><code class="bash">$ sql2csv "SELECT * from us_cities" | dat parse
+Added 302,143 keys (32.03 Mb, 4.4 Mb/s).
+Data added successfully.</code></pre>
+</div>
+</div>
+
+<div class="content-title">Pipeline</div>
+<div class="content-horizontal-rule"></div>
+<div class="content-sub-container content-code-intro">
+<div class="col-md-4">
+<p></p>
+</div>
+<div class="col-md-8">
+<pre>
+<code class="bash">
+</code>
 </pre>
+</div>
+</div>
+
+<div class="content-title">Pipeline</div>
+<div class="content-horizontal-rule"></div>
+<div class="content-sub-container content-code-intro">
+<div class="col-md-4">
+<p></p>
+</div>
+<div class="col-md-8">
+<pre>
+<code class="bash">
+</code>
+</pre>
+</div>
+</div>
+
+<div class="row" id="videos">
+  <div class="col-md-3 col-sm-4">
+    <iframe src="https://www.youtube.com/embed/3nG1p7sDygM" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="col-md-3 col-sm-4">
+    <iframe src="https://www.youtube.com/embed/psmtJUyZHE0" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="col-md-3 col-sm-4">
+    <iframe src="https://www.youtube.com/embed/iM3Pr7tfHF0" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="col-md-3 col-sm-4">
+    <iframe csrc="https://www.youtube.com/embed/tP_6N7mMKok" frameborder="0" allowfullscreen></iframe>
+  </div>
 </div>
 
 
@@ -88,4 +146,5 @@ us_cities_viz.png
   <a href="http://www.sloan.org/major-program-areas/digital-information-technology/data-and-computational-research/"><img src="/static/img/sloan.png"></a>
   <a href="http://www.knightfoundation.org/grants/201346305/"><img src="/static/img/knight.png"></a>
   <a href="http://usodi.org/"><img src="/static/img/usodi.png"></a>
+</div>
 </div>

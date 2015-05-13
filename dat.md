@@ -7,7 +7,7 @@ http://github.com/maxogden/dat
 
 
 ## Abstract
-Dat is a version-controlled, distributed database. Dat is designed to provide data scientists with a common data exchange mechanism for emerging services and practices in the scientific community to collaborate and share research data, both internally and externally. Here, we outline the core infrastructure for Dat, which has been informed by key use cases in the scientific community. We hope this serves as a living document to help developers and data scientists in all stages of interaction with Dat -- from extending features to understanding use case trade offs.
+Dat is a version-controlled, distributed database. Dat is designed to provide data scientists with a common data exchange mechanism to collaborate and share research data, both internally and externally. Here, we outline the core infrastructure for Dat, which has been informed by key use cases in the scientific community. We hope this serves as a living document to help developers and data scientists in all stages of interaction with Dat -- from extending features to understanding use case trade offs.
 
 ## Introduction
 We hope Dat will simplify enormously the process of duplicating and verifying novel research and associated discoveries. We've been working with scientists to arrive at key use cases that go unsolved across multiple scientific domains with varied technological expertise.

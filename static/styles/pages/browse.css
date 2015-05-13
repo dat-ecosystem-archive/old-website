@@ -1,0 +1,7 @@
+.metadat .title {
+  width: 75%;
+}
+.metadat .title,
+.metadat .info {
+  display: inline-block;
+}

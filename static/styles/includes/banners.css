@@ -1,0 +1,24 @@
+/* Colors */
+/* Containers */
+.banner {
+  color: #fdfdfd;
+  position: fixed;
+  top: -30px;
+  -webkit-transition: all .5s;
+  /* For Safari 3.1 to 6.0 */
+  transition: all .5s;
+  width: 100%;
+  height: 30px;
+  z-index: 999999;
+}
+.banner.success {
+  top: 0px;
+  background-color: #35b44f;
+}
+.banner.error {
+  top: 0px;
+  background-color: #c0392b;
+}
+.banner-text {
+  text-align: center;
+}
