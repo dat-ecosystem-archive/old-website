@@ -24,21 +24,22 @@
   </div>
 </div>
 
+
 <div class="container">
-<div class="content-title">Version by row or by file</div>
+<div class="content-title">Version by key or by file</div>
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro row">
 <div class="col-md-4">
-    <p>Add data into dat from newline-delimited json, csv, or binary format. You can version the data by <strong>row</strong> or <strong>by file</strong>. <a href="">Learn more >></a></p>
+    <p>Add data into dat from newline-delimited json, csv, or binary format. You can version the data by <strong>key</strong> or by <strong>file</strong>. Keys are auto-generated if no key column name is supplied. <br><a href="">Learn more >></a></p>
 </div>
 <div class="col-md-8">
-    <pre><code class="bash">$ dat parse values_per_city.csv
+    <pre><code class="bash">$ dat import values_per_city.csv --key=id
 Added 302,143 keys (32.03 Mb, 4.4 Mb/s).
-Checked out to version bad31c.
+Current version is now bad31c32432c.
 
 $ dat write model_data.tar.gz
 Added model_data.tar.gz (153.03 Mb, 15.3 Mb/s).
-Checked out to version cef322.
+Checked out to version cef3221asd1.
 </code></pre>
 </div>
 </div>
@@ -47,83 +48,48 @@ Checked out to version cef322.
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro">
 <div class="col-md-4">
-<p>Expose your dat through the filesystem with <strong>SSH or HTTP</strong>. This means access control comes free and easy. <a href="">Learn more >></a></p>
+<p>Dat is transport agnostic, but there are clients for popular transports like <strong>http or ssh</strong>. You can also pipe it or add it to an existing server easily. <a href="">Learn more >></a></p>
 </div>
 <div class="col-md-8">
-<pre><code class="bash">$ dat clone ssh://uni.edu/maxogden/cities
+<pre><code class="bash">$ dat clone ssh://uni.edu/maxogden/flights
+Pulled 302,233 changes (93.88 Mb, 3.4 Mb/s).
+Clone from remote has completed.
+Current version is now c2342de3f
 </code></pre>
 </div>
 </div>
 
 
-<div class="content-title">Organize by dataset</div>
+<div class="content-title">Organized by dataset</div>
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro">
 <div class="col-md-4">
-<p>Add dat.json files to your git repository to keep track of versioned data with versioned code. Datasets are stored in a named, hierarchical folder structure. <a href="">Learn more >></a></p>
+<p>Datasets are stored in a hierarchical folder structure to better organize different schemas. Use dat.json files to ship the dat metadata with your git repository. <a href="">Learn more >></a></p>
 </div>
 <div class="col-md-8">
-<pre><code class="bash">$ ls -a
-dat.json
-.git/
-analysis.py
-
-$ dat pull
+<pre><code class="bash">$ dat pull
 Pulled 823 changes (93.88 Mb, 3.4 Mb/s).
-Clone from remote has completed.
-Checked out to c2342de3f
+Current version is now c2342de3f
 
 $ ls -a
 dat.json
-.git/
 alternative_models/
 population/
 economy_factors/</code></pre>
 </div>
 </div>
 
-<div class="content-title">Stream anything anywhere</div>
+<div class="centered">
+<div class="content-title">Sponsors and supporters</div>
 <div class="content-horizontal-rule"></div>
-<div class="content-sub-container content-code-intro">
-<div class="col-md-4">
-<p>
-Data is streamed into the Dat database, one row or file at a time. That means that your computer does not have to hold the entire dataset in memory, and you can stop a pull or clone at any time. <a href="">Learn more >></a></p>
-</div>
-<div class="col-md-8">
-<pre><code class="bash">$ sql2csv "SELECT * from us_cities" | dat parse
-Added 302,143 keys (32.03 Mb, 4.4 Mb/s).
-Data added successfully.</code></pre>
+<div class="content-sub-container content-logos">
+  <a href="http://www.sloan.org/major-program-areas/digital-information-technology/data-and-computational-research/"><img src="/static/img/sloan.png"></a>
+  <a href="http://www.knightfoundation.org/grants/201346305/"><img src="/static/img/knight.png"></a>
+  <a href="http://usodi.org/"><img src="/static/img/usodi.png"></a>
 </div>
 </div>
 
-<div class="content-title">Pipeline</div>
-<div class="content-horizontal-rule"></div>
-<div class="content-sub-container content-code-intro">
-<div class="col-md-4">
-<p></p>
-</div>
-<div class="col-md-8">
-<pre>
-<code class="bash">
-</code>
-</pre>
-</div>
-</div>
-
-<div class="content-title">Pipeline</div>
-<div class="content-horizontal-rule"></div>
-<div class="content-sub-container content-code-intro">
-<div class="col-md-4">
-<p></p>
-</div>
-<div class="col-md-8">
-<pre>
-<code class="bash">
-</code>
-</pre>
-</div>
-</div>
-
+<!--
 <div class="row" id="videos">
   <div class="col-md-3 col-sm-4">
     <iframe src="https://www.youtube.com/embed/3nG1p7sDygM" frameborder="0" allowfullscreen></iframe>
@@ -138,13 +104,4 @@ Data added successfully.</code></pre>
     <iframe csrc="https://www.youtube.com/embed/tP_6N7mMKok" frameborder="0" allowfullscreen></iframe>
   </div>
 </div>
-
-
-<div class="content-title">Sponsors and supporters</div>
-<div class="content-horizontal-rule"></div>
-<div class="content-sub-container content-logos">
-  <a href="http://www.sloan.org/major-program-areas/digital-information-technology/data-and-computational-research/"><img src="/static/img/sloan.png"></a>
-  <a href="http://www.knightfoundation.org/grants/201346305/"><img src="/static/img/knight.png"></a>
-  <a href="http://usodi.org/"><img src="/static/img/usodi.png"></a>
-</div>
-</div>
+-->
