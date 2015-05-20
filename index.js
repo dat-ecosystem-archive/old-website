@@ -1,27 +1,29 @@
-var page = require('page')
-var dom = require('dom')
-var routes = require('./routes.js')
+var templater = require('a-simple-templater')
 var fs = require('fs')
-var mustache = require('mustache').render
 
-function index (ctx, next) {
-  // default for all pages
-  ctx.onrender = function () {}
-  ctx.data = {}
-  next()
-}
+var routes = [
+  {
+    url: '/',
+    template: fs.readFileSync('./templates/splash.html').toString()
+  },
+  {
+    url: '/about',
+    template: fs.readFileSync('./templates/about.html').toString()
+  },
+  {
+    url: '/team',
+    template: fs.readFileSync('./templates/team.html').toString(),
+    onrender: function (params) {
+      var gravatar = require('gravatar')
+      var peeps = document.querySelectorAll('.content-card-small-avatar')
+      for (var i = 0; i < peeps.length; i++) {
+        var peep = peeps[i]
+        var username = peep.getAttribute('data-user')
+        if (!username) continue
+        peep.setAttribute('style', "background-image: url('https://github.com/" + username + ".png')")
+      }
+    }
+  }
+]
 
-function render(ctx, next) {
-  var target = dom('#content')
-  var compiled = mustache(ctx.partial, ctx.data)
-  target.html(compiled)
-  ctx.onrender()
-}
-
-page('*', index)
-page('/', routes.splash)
-page('/about', routes.about)
-page('/team', routes.team)
-
-page('*', render)
-page()
+templater('#content', routes)
