@@ -1,10 +1,18 @@
 var templater = require('a-simple-templater')
 var fs = require('fs')
+var $ = jQuery = require('jQuery')
+var tabs = require('./static/js/tab.js')
 
 var routes = [
   {
     url: '/',
-    template: fs.readFileSync('./templates/splash.html').toString()
+    template: fs.readFileSync('./templates/splash.html').toString(),
+    onrender: function (params) {
+      $('.tabs a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+      })
+    }
   },
   {
     url: '/about',

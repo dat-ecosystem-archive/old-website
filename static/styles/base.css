@@ -51,7 +51,7 @@ pre {
 }
 .button {
   display: inline-block;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: white;
   background-color: #35b44f;
@@ -139,7 +139,6 @@ pre {
   background: #bfc3c8;
 }
 .content-sub-container {
-  margin: 0 0px 70px 0px;
   padding-top: 30px;
   overflow: auto;
   text-align: center;
@@ -281,6 +280,14 @@ pre {
 }
 .content-logos div {
   display: inline-block;
+}
+/** tabs **/
+.nav-tabs li {
+  font-family: monospace;
+  border-bottom: 1px solid #fff;
+}
+.spacer {
+  padding: 20px;
 }
 .hd-xl,
 h1 {
@@ -545,9 +552,18 @@ input.edit-info {
   display: inline-block;
   float: right;
 }
+.mobile-only {
+  display: none;
+}
 @media screen and (max-width: 650px) {
   .hidden-mobile {
     display: none;
+  }
+  .header-nav-list li {
+    margin-right: 15px;
+  }
+  .mobile-only {
+    display: block;
   }
 }
 @media screen and (max-width: 1115px) {
@@ -582,7 +598,6 @@ input.edit-info {
     margin: 0 auto 20px auto;
   }
   .content-sub-container {
-    margin: 0 20px 20px 20px;
     padding-top: 15px;
   }
   .content-text-container {
@@ -646,20 +661,16 @@ input.edit-info {
 }
 .footer-directory {
   overflow: auto;
-  padding: 50px 0px 30px 0px;
+  padding: 50px 0px;
   border-bottom: 1px solid #3f4b5b;
 }
 .footer-credits {
-  padding: 50px 0;
+  padding: 20px;
   text-align: center;
 }
 .footer-heading {
   font-size: 24px;
   color: white;
-}
-.footer-column {
-  float: left;
-  margin-right: 100px;
 }
 .footer-horizontal-rule {
   width: 32px;

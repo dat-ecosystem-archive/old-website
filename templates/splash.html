@@ -5,20 +5,6 @@
         <h1 class="jumbotron-title">Versioned data, collaborated</h1>
         <div class="jumbotron-horizontal-rule"></div>
         <div class="jumbotron-description">Dat is a version-controlled, distributed data tool designed to improve collaboration between data people and data systems.</div>
-        <div class="col-md-12">
-          <a href="https://github.com/maxogden/dat" target="_blank">
-            <div class="button">Tutorial</div>
-          </a>
-          <a href="https://github.com/maxogden/dat" target="_blank">
-            <div class="button">Docs</div>
-          </a>
-          <a href="#videos" target="_blank">
-            <div class="button">Whitepaper</div>
-          </a>
-          <a href="#videos" target="_blank">
-            <div class="button">Github</div>
-          </a>
-        </div>
       </div>
     </div>
   </div>
@@ -26,56 +12,137 @@
 
 
 <div class="container">
+
+<div class="row centered">
+<div class="content-title">Dat Beta now available for early adopters</div>
+<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+<pre><code class="bash">$ npm install -g dat</code></pre>
+</div>
+</div>
+
 <div class="content-title">Version by key or by file</div>
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro row">
 <div class="col-md-4">
-    <p>Add data into dat from newline-delimited json, csv, or binary format. You can version the data by <strong>key</strong> or by <strong>file</strong>. Keys are auto-generated if no key column name is supplied. <br><a href="">Learn more >></a></p>
+  <p>Add data into dat from newline-delimited json, csv, or binary format. You can version the data by <strong>row</strong> or by <strong>file</strong>. Keys are auto-generated if no key column name is supplied. <br><a href="">Learn more >></a></p>
 </div>
 <div class="col-md-8">
-    <pre><code class="bash">$ dat import values_per_city.csv --key=id
+  <ul class="nav nav-tabs tabs">
+    <li class="active"><a href="#bash-1">bash</a></li>
+    <li><a href="#R-1">R</a></li>
+    <li><a href="#python-1">Python</a></li>
+  </ul>
+  <div class="tab-content">
+    <div id="bash-1" class="tab-pane active">
+<pre><code class="bash">$ dat init
+$ dat import values_per_city.csv --key=cityId
 Added 302,143 keys (32.03 Mb, 4.4 Mb/s).
 Current version is now bad31c32432c.
 
-$ dat write model_data.tar.gz
-Added model_data.tar.gz (153.03 Mb, 15.3 Mb/s).
-Checked out to version cef3221asd1.
+$ dat import values_per_city_modified.csv --key=cityId
+Updated 33 keys (32.03 Mb, 4.4 Mb/s).
+Checked out to version cef3221asd1.</code></pre>
+    </div>
+    <div id="R-1" class="tab-pane">
+<pre><code class="r">library(dat)
+repo = dat(tempdir())
+
+repo$insert(cars[1:20,])
+v1 <- repo$heads()
+
+repo$insert(cars[21:25,])
+v2 <- repo$heads()
+
+v1_data <- repo$get(v1)
 </code></pre>
+    </div>
+    <div id="python-1" class="tab-pane">
+<pre><code class="python">> from datpy import dat
+> repo = Dat('./data', dataset="cities_data")
+
+# import data from a file on disk
+> v1 = repo.add_file("cities.csv", key="cityId")
+> v1
+'bad31c32432c'
+
+# get data into a pandas dataframe at given version
+> df = repo.get_dataframe(checkout=v1)
+> df.columns
+['cityId', 'name', 'population']
+</code></pre>
+    </div>
+  </div>
 </div>
 </div>
 
 <div class="content-title">SSH and HTTP endpoints</div>
 <div class="content-horizontal-rule"></div>
-<div class="content-sub-container content-code-intro">
+<div class="content-sub-container content-code-intro row">
 <div class="col-md-4">
 <p>Dat is transport agnostic, but there are clients for popular transports like <strong>http or ssh</strong>. You can also pipe it or add it to an existing server easily. <a href="">Learn more >></a></p>
 </div>
 <div class="col-md-8">
+  <ul class="nav nav-tabs tabs">
+    <li class="active"><a href="#bash-2">bash</a></li>
+    <li><a href="#R-2">R</a></li>
+    <li><a href="#python-2">Python</a></li>
+  </ul>
+  <div class="tab-content">
+    <div id="bash-2" class="tab-pane active">
 <pre><code class="bash">$ dat clone ssh://uni.edu/maxogden/flights
 Pulled 302,233 changes (93.88 Mb, 3.4 Mb/s).
 Clone from remote has completed.
 Current version is now c2342de3f
 </code></pre>
+    </div>
+    <div id="R-2" class="tab-pane">
+<pre><code class="R">
+</code></pre>
+    </div>
+    <div id="python-2" class="tab-pane">
+<pre><code class="python">> dat = Dat.clone("ssh://uni.edu/maxogden/flights", path="/path/to/flights")
+dat.version
+
+
+</code></pre>
+    </div>
+    </div>
 </div>
 </div>
 
 
 <div class="content-title">Go back in time</div>
 <div class="content-horizontal-rule"></div>
-<div class="content-sub-container content-code-intro">
+<div class="content-sub-container content-code-intro row">
 <div class="col-md-4">
 <p>Each change to a dat  <a href="">Learn more >></a></p>
 </div>
 <div class="col-md-8">
+  <ul class="nav nav-tabs tabs">
+    <li class="active"><a href="#bash-3">bash</a></li>
+    <li><a href="#R-3">R</a></li>
+    <li><a href="#python-3">Python</a></li>
+  </ul>
+  <div class="tab-content">
+    <div id="bash-3" class="tab-pane active">
 <pre><code class="bash">$ dat checkout c2342de3f
 $ </code></pre>
+    </div>
+    <div id="R-3" class="tab-pane">
+<pre><code class="R">thi R
+</code></pre>
+    </div>
+    <div id="python-3" class="tab-pane">
+<pre><code class="python">this pytohn
+</code></pre>
+    </div>
 </div>
 </div>
-
+</div>
 
 <div class="content-title">Organized by dataset</div>
 <div class="content-horizontal-rule"></div>
-<div class="content-sub-container content-code-intro">
+<div class="content-sub-container content-code-intro row">
 <div class="col-md-4">
 <p>Datasets are stored in a hierarchical folder structure to better organize different schemas. Use dat.json files to ship the dat metadata with your git repository. <a href="">Learn more >></a></p>
 </div>

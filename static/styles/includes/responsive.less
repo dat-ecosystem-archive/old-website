@@ -1,6 +1,16 @@
+.mobile-only {
+  display: none;
+}
+
 @media screen and (max-width: 650px) {
   .hidden-mobile {
     display: none;
+  }
+  .header-nav-list li {
+    margin-right: 15px;
+  }
+  .mobile-only {
+    display: block;
   }
 }
 
@@ -35,7 +45,6 @@
     margin: 0 auto 20px auto;
   }
   .content-sub-container {
-    margin: 0 20px 20px 20px;
     padding-top: 15px;
   }
   .content-text-container {
