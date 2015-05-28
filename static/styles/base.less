@@ -56,6 +56,9 @@ pre {
   background-color: @button-bg;
   padding: 7px 14px;
   border-radius: 5px;
+  &.button-light {
+    background-color: white;
+  }
 }
 .button:hover {
   background-color: @buttong-bg-hover;
@@ -295,6 +298,53 @@ pre {
   padding: 20px;
 }
 
+.footer {
+  background-color: @dark-background;
+  overflow: auto;
+  color: @dark-text;
+}
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+.footer-directory {
+  overflow: auto;
+  padding: 50px 0px;
+  border-bottom: 1px solid #3f4b5b;
+}
+.footer-credits {
+  padding: 20px;
+  text-align: center;
+}
+.footer-heading {
+  font-size: 24px;
+  color: white;
+}
+.footer-horizontal-rule {
+  width: 32px;
+  height: 4px;
+  background: #6a7380;
+  margin: 10px 0 30px 0;
+}
+.footer-nav-list {
+  list-style-type: none;
+  padding-left: 0;
+  font-weight: 600;
+  color: #fff;
+  font-size: 16px;
+}
+.footer-nav-list li {
+  margin-bottom: 3px;
+}
+.footer-emphasized {
+  font-weight: 700;
+}
+.footer-subtitle {
+  padding-top: 10px;
+}
 @import "includes/headers";
 @import "includes/app";
 @import "includes/forms";
