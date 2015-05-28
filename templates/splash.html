@@ -59,7 +59,7 @@
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro row">
 <div class="col-md-5">
-  <p>Add data into dat from newline-delimited json, csv, or binary format. You can version the data by <strong>row</strong> or by <strong>file</strong>. Keys are auto-generated if no key column name is supplied. <br><a href="">Learn more >></a></p>
+  <p>Add data into dat from newline-delimited json or csv. <strong>import</strong> is designed for key/value row-like, or tabular data. You can update the data later by specifying a <strong>unique key</strong> for each row.</p>
 </div>
 <div class="col-md-7">
   <ul class="nav nav-tabs tabs">
@@ -74,9 +74,11 @@ $ dat import values_per_city.csv --key=cityId
 Added 302,143 keys (32.03 Mb, 4.4 Mb/s).
 Current version is now bad31c32432c.
 
-$ dat import values_per_city_modified.csv --key=cityId
+...edit the values...
+
+$ dat import values_per_city_2012.csv --key=cityId
 Updated 33 keys (32.03 Mb, 4.4 Mb/s).
-Checked out to version cef3221asd1.</code></pre>
+Current version is now cef3221asd1.</code></pre>
     </div>
     <div id="R-1" class="tab-pane">
 <pre><code class="r">repo = dat(tempdir())
@@ -109,11 +111,29 @@ v1_data <- repo$get(v1)
 </div>
 </div>
 
+<div class="content-title">Write blobs, or binary data</div>
+<div class="content-horizontal-rule"></div>
+<div class="content-sub-container content-code-intro row">
+<div class="col-md-5">
+<p>
+<strong>Write</strong> binary data into dat. This differs from import in that it doesn't parse the file, it just stores it as a binary attachment. Write is meant for large files, blobs, or attachments that you can't parse into rows.</p>
+</div>
+<div class="col-md-7">
+    <div id="bash-2">
+<pre><code class="bash">$ dat write /some/path/to/photo.jpg --name=cities_scatter.jpg
+Storing cities_scatter.jpg (8.3 Mb, 38 Mb/s).
+Stored cities_scatter.jpg successfully.
+Current version is now b04adb64fdf2203
+</code></pre>
+    </div>
+</div>
+</div>
+
 <div class="content-title">Go back in time</div>
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro row">
 <div class="col-md-5">
-<p>Each change to a dat  <a href="">Learn more >></a></p>
+<p>Each change to a dat </p>
 </div>
 <div class="col-md-7">
   <ul class="nav nav-tabs tabs">
@@ -142,6 +162,8 @@ v2_data <- repo$get()
 </div>
 </div>
 </div>
+
+
 <div class="content-title">SSH and HTTP endpoints</div>
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro row">
@@ -161,11 +183,11 @@ Current version is now c2342de3f
 
 
 
-<div class="content-title">Organized by dataset</div>
+<div class="content-title">Multiple Schemas</div>
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro row">
 <div class="col-md-5">
-<p>Datasets are stored in a hierarchical folder structure to better organize different schemas. Use dat.json files to ship the dat metadata with your git repository. <a href="">Learn more >></a></p>
+<p>Datasets are stored in a hierarchical folder structure to better organize different schemas. <a href="">Learn more >></a></p>
 </div>
 <div class="col-md-7">
 <pre><code class="bash">$ dat pull
