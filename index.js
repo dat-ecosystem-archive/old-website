@@ -12,6 +12,8 @@ var routes = [
         e.preventDefault()
         $(this).tab('show')
       })
+
+      hljs.initHighlightingOnLoad()
     }
   },
   {

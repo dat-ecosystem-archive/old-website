@@ -615,6 +615,9 @@ input.edit-info {
   .mobile-only {
     display: block;
   }
+  pre {
+    font-size: 14px;
+  }
 }
 @media screen and (max-width: 1115px) {
   .header-info,
@@ -702,9 +705,6 @@ input.edit-info {
 }
 .package-logo {
   float: right;
-}
-.package-logo .button {
-  padding: 15px;
 }
 .package-logo .octocat {
   margin-left: 10px;

@@ -14,26 +14,15 @@
 <div class="container">
 
 <div class="row centered">
-<div class="content-title">Dat Beta now available for early adopters</div>
-<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-  <pre><code class="bash">$ npm install -g dat</code></pre>
-</div>
-</div>
-
-<div class="content-title">Client libraries on the move</div>
-<div class="content-horizontal-rule"></div>
-<div class="content-sub-container content-code-intro row">
-<div class="col-md-4">
-  <p>Building client libraries as we speak. Please contribute!</p>
-</div>
-<div class="col-md-4 col-md-offset-1">
+<div class="content-title">beta now available for early adopters</div>
+<div class="col-md-6 col-sm-6 col-sm-offset-3">
 <div class="package-display">
   <a class="package-logo" href="http://github.com/maxogden/dat" target="_blank">
     <div class="button">
       <span class="octocat"></span>
     </div>
   </a>
-  <pre><code class="js">require('dat')</code></pre>
+  <pre>npm install -g dat</pre>
 </div>
 <div class="package-display">
   <a class="package-logo" href="http://github.com/karissa/datpy" target="_blank">
@@ -41,7 +30,7 @@
       <span class="octocat"></span>
     </div>
   </a>
-  <pre><code class="python">import datpy </code></pre>
+  <pre>pip install datpy</pre>
 </div>
 
 <div class="package-display">
@@ -50,18 +39,19 @@
       <span class="octocat"></span>
     </div>
   </a>
-  <pre><code class="r">library(dat)</code></pre>
+  <pre>install_github('ropensci/rDat')</pre>
 </div>
 </div>
 </div>
 
-<div class="content-title">Version by key or by file</div>
+<div class="row centered">
+<div class="content-title">Version by key</div>
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro row">
-<div class="col-md-5">
+<div class="col-md-8 col-md-offset-2">
   <p>Add data into dat from newline-delimited json or csv. <strong>import</strong> is designed for key/value row-like, or tabular data. You can update the data later by specifying a <strong>unique key</strong> for each row.</p>
 </div>
-<div class="col-md-7">
+<div class="col-md-8 col-md-offset-2">
   <ul class="nav nav-tabs tabs">
     <li class="active"><a href="#bash-1">cmdline</a></li>
     <li><a href="#R-1">R</a></li>
@@ -74,68 +64,81 @@ $ dat import values_per_city.csv --key=cityId
 Added 302,143 keys (32.03 Mb, 4.4 Mb/s).
 Current version is now bad31c32432c.
 
-...edit the values...
-
-$ dat import values_per_city_2012.csv --key=cityId
+$ dat import values_per_city_new.csv --key=cityId
 Updated 33 keys (32.03 Mb, 4.4 Mb/s).
 Current version is now cef3221asd1.</code></pre>
     </div>
     <div id="R-1" class="tab-pane">
-<pre><code class="r">repo = dat(tempdir())
+<pre><code class="r">repo <- dat('./data')
 
-v1 <- repo$insert(cars[1:20,])
-v1
-[1] "c9f07a74be82680f67e3bb83ec5235e522609aebf19f22dadd494f605b65a4a6"
+# import data from a dataframe
+cities <- read.csv(file='cities.csv')
+v1 <- repo$insert(cities[1:20,])
 
-v2 <- repo$insert(cars[21:25,])
-
+# get data into a dataframe at given version
 v1_data <- repo$get(v1)
 </code></pre>
     </div>
     <div id="python-1" class="tab-pane">
-<pre><code class="python">> from datpy import dat
-> repo = Dat('./data')
+<pre><code class="python">repo = datpy.Dat('./data')
 
-# import data from a file on disk
-> v1 = repo.add_file("cities.csv", key="cityId")
-> v1
-'bad31c32432c'
+# import data from pandas
+df = pd.DataFrame.read_csv("cities.csv")
+v2 = repo.import_dataframe(df, key="cityId")
 
 # get data into a pandas dataframe at given version
-> df = repo.get_dataframe(checkout=v1)
-> df.columns
-['cityId', 'name', 'population']
+df = repo.get_dataframe(checkout=v1)
 </code></pre>
     </div>
   </div>
 </div>
 </div>
+</div>
 
+<div class="row centered">
 <div class="content-title">Write blobs, or binary data</div>
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro row">
-<div class="col-md-5">
+<div class="col-md-8 col-md-offset-2">
 <p>
 <strong>Write</strong> binary data into dat. This differs from import in that it doesn't parse the file, it just stores it as a binary attachment. Write is meant for large files, blobs, or attachments that you can't parse into rows.</p>
 </div>
-<div class="col-md-7">
-    <div id="bash-2">
+<div class="col-md-8 col-md-offset-2">
+  <ul class="nav nav-tabs tabs">
+    <li class="active"><a href="#bash-2">cmdline</a></li>
+    <li><a href="#R-2">R</a></li>
+    <li><a href="#python-2">python</a></li>
+  </ul>
+  <div class="tab-content">
+    <div id="bash-2" class="tab-pane active">
 <pre><code class="bash">$ dat write /some/path/to/photo.jpg --name=cities_scatter.jpg
 Storing cities_scatter.jpg (8.3 Mb, 38 Mb/s).
 Stored cities_scatter.jpg successfully.
 Current version is now b04adb64fdf2203
 </code></pre>
     </div>
+    <div id="R-2" class="tab-pane">
+<pre><code class="r">repo$write('city_predictions', model)
+'b04adb64fdf2203'
+</code></pre>
+    </div>
+    <div id="python-2" class="tab-pane">
+<pre><code class="python">repo.write('city_predictions', model)
+'b04adb64fdf2203'
+</code></pre>
+    </div>
+</div>
 </div>
 </div>
 
-<div class="content-title">Go back in time</div>
+<div class="row centered">
+<div class="content-title">Go back in time, modify, fork</div>
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro row">
-<div class="col-md-5">
+<div class="col-md-8 col-md-offset-2">
 <p>Each change to a dat </p>
 </div>
-<div class="col-md-7">
+<div class="col-md-8 col-md-offset-2">
   <ul class="nav nav-tabs tabs">
     <li class="active"><a href="#bash-3">cmdline</a></li>
     <li><a href="#R-3">R</a></li>
@@ -143,34 +146,47 @@ Current version is now b04adb64fdf2203
   </ul>
   <div class="tab-content">
     <div id="bash-3" class="tab-pane active">
-<pre><code class="bash">$ dat checkout c2342de3f </code></pre>
+<pre><code class="bash">$ dat checkout c2342de3f
+$ dat add
+</code></pre>
     </div>
     <div id="R-3" class="tab-pane">
-<pre><code class="r">repo$checkout(v1)
-v3 <- repo$insert(cars[40:42,])
+<pre><code class="r">
+data <- repo$get(checkout=v1)
 
-# go back to v2
-repo$checkout(v2)
-v2_data <- repo$get()
+# modify data
+library(dplyr)
+repo$name <- mutate_each(data$name, funs(toupper))
+
+# create a fork
+fork_version <- repo$insert(cities[1:50,], key='cityId')
+
 </code></pre>
     </div>
     <div id="python-3" class="tab-pane">
-<pre><code class="python">repo.checkout(v1)
+<pre><code class="python">df = repo.as_dataframe(checkout=v1)
+
+# clean or modify data
+df['name'] = df['name'].str.upper()
+
+# create a fork
+fork_version = repo.import_dataframe(df, key='cityId', message="Capitalized city names")
 
 </code></pre>
     </div>
 </div>
 </div>
 </div>
+</div>
 
-
+<div class="row centered">
 <div class="content-title">SSH and HTTP endpoints</div>
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro row">
-<div class="col-md-5">
+<div class="col-md-8 col-md-offset-2">
 <p>Dat is transport agnostic, but there are clients for popular transports like <strong>http or ssh</strong>. You can also pipe it or add it to an existing server easily. <a href="">Learn more >></a></p>
 </div>
-<div class="col-md-7">
+<div class="col-md-8 col-md-offset-2">
     <div id="bash-2">
 <pre><code class="bash">$ dat clone ssh://uni.edu/maxogden/flights
 Pulled 302,233 changes (93.88 Mb, 3.4 Mb/s).
@@ -180,16 +196,16 @@ Current version is now c2342de3f
     </div>
 </div>
 </div>
+</div>
 
-
-
+<div class="row centered">
 <div class="content-title">Multiple Schemas</div>
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro row">
-<div class="col-md-5">
+<div class="col-md-8 col-md-offset-2">
 <p>Datasets are stored in a hierarchical folder structure to better organize different schemas. <a href="">Learn more >></a></p>
 </div>
-<div class="col-md-7">
+<div class="col-md-8 col-md-offset-2">
 <pre><code class="bash">$ dat pull
 Pulled 823 changes (93.88 Mb, 3.4 Mb/s).
 Current version is now c2342de3f
@@ -201,8 +217,9 @@ population/
 economy_factors/</code></pre>
 </div>
 </div>
+</div>
 
-<div class="centered">
+<div class="row centered">
 <div class="content-title">Sponsors and supporters</div>
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-logos">
