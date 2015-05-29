@@ -118,13 +118,15 @@ Current version is now b04adb64fdf2203
 </code></pre>
     </div>
     <div id="R-2" class="tab-pane">
-<pre><code class="r">repo$write('city_predictions', model)
-'b04adb64fdf2203'
+<pre><code class="r">to be implemented
 </code></pre>
     </div>
     <div id="python-2" class="tab-pane">
-<pre><code class="python">repo.write('city_predictions', model)
-'b04adb64fdf2203'
+<pre><code class="python"># write binary data, i.e., to a file
+v1 = repo.write(model, name='city_predictions')
+
+# read data at that version like unix 'cat'
+city_predictions = repo.cat('city_predictions', checkout=v1)
 </code></pre>
     </div>
 </div>
@@ -146,33 +148,33 @@ Current version is now b04adb64fdf2203
   </ul>
   <div class="tab-content">
     <div id="bash-3" class="tab-pane active">
-<pre><code class="bash">$ dat checkout c2342de3f
-$ dat add
+<pre><code class="bash">$ dat checkout c2342de3fadf212
+... modify data.
+
+$ dat import modified_data.csv -m "Capitalized city names"
+Updated 33 keys (32.03 Mb, 4.4 Mb/s).
+Current version is now cef3221asd1
 </code></pre>
     </div>
     <div id="R-3" class="tab-pane">
-<pre><code class="r">
+<pre><code class="r"># go back in time
 data <- repo$get(checkout=v1)
 
-# modify data
-library(dplyr)
-repo$name <- mutate_each(data$name, funs(toupper))
+# modify
+repo$name <- toupper(data$name)
 
 # create a fork
-fork_version <- repo$insert(cities[1:50,], key='cityId')
-
-</code></pre>
+fork_version <- repo$insert(cities[1:50,], key='cityId', message='Capitalized city names')</code></pre>
     </div>
     <div id="python-3" class="tab-pane">
-<pre><code class="python">df = repo.as_dataframe(checkout=v1)
+<pre><code class="python"># go back in time
+df = repo.as_dataframe(checkout=v1)
 
-# clean or modify data
+# modify
 df['name'] = df['name'].str.upper()
 
 # create a fork
-fork_version = repo.import_dataframe(df, key='cityId', message="Capitalized city names")
-
-</code></pre>
+fork_version = repo.import_dataframe(df, key='cityId', message='Capitalized city names')</code></pre>
     </div>
 </div>
 </div>
