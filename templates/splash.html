@@ -14,7 +14,7 @@
 <div class="container">
 
 <div class="row centered">
-<div class="content-title">beta now available for early adopters</div>
+<div class="content-title">beta now available for testing</div>
 <div class="col-md-6 col-sm-6 col-sm-offset-3">
 <div class="package-display">
   <a class="package-logo" href="http://github.com/maxogden/dat" target="_blank">
@@ -111,21 +111,25 @@ df = repo.get_dataframe(checkout=v1)
   </ul>
   <div class="tab-content">
     <div id="bash-2" class="tab-pane active">
-<pre><code class="bash">$ dat write /some/path/to/photo.jpg --name=cities_scatter.jpg
+<pre><code class="bash">$ dat write /some/path/to/model.tar.gz --name="city_predictions"
 Storing cities_scatter.jpg (8.3 Mb, 38 Mb/s).
 Stored cities_scatter.jpg successfully.
 Current version is now b04adb64fdf2203
 </code></pre>
     </div>
     <div id="R-2" class="tab-pane">
-<pre><code class="r">to be implemented
+<pre><code class="r"># write binary data
+v1 = repo.insert_binary(model_data, "city_predictions")
+
+# read data at that version
+city_predictions = repo.read_binary("city_predictions", v1)
 </code></pre>
     </div>
     <div id="python-2" class="tab-pane">
-<pre><code class="python"># write binary data, i.e., to a file
+<pre><code class="python"># write binary data as a cPickle
 v1 = repo.write(model, name='city_predictions')
 
-# read data at that version like unix 'cat'
+# read data at that version
 city_predictions = repo.cat('city_predictions', checkout=v1)
 </code></pre>
     </div>
