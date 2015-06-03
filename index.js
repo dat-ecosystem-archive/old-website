@@ -12,13 +12,16 @@ var routes = [
         e.preventDefault()
         $(this).tab('show')
       })
-
       hljs.initHighlightingOnLoad()
     }
   },
   {
     url: '/about',
     template: fs.readFileSync('./templates/about.html').toString()
+  },
+  {
+    url: '/docs',
+    template: fs.readFileSync('./templates/docs.html').toString()
   },
   {
     url: '/team',

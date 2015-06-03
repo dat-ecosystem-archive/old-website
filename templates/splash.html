@@ -4,7 +4,8 @@
       <div class="col-md-6">
         <h1 class="jumbotron-title">Versioned data, collaborated</h1>
         <div class="jumbotron-horizontal-rule"></div>
-        <div class="jumbotron-description">Dat is a version-controlled, distributed data tool designed to improve collaboration between data people and data systems.</div>
+        <div class="jumbotron-description">Dat is a version-controlled, distributed data tool designed to improve collaboration between data people and data systems.
+        </div>
       </div>
     </div>
   </div>
@@ -137,12 +138,28 @@ city_predictions = repo.cat('city_predictions', checkout=v1)
 </div>
 </div>
 
+
 <div class="row centered">
-<div class="content-title">Go back in time, modify, fork</div>
+<div class="content-title">Multiple Schemas</div>
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro row">
 <div class="col-md-8 col-md-offset-2">
-<p>Each change to a dat </p>
+<p>A dataset is analogous to a sql table or a nosql collection; however, we chose not to use the language of 'table' or 'collection' because dat datasets do not support robust querying at this time. To support separate schemas, we encourage users to create many datasets.</p>
+</div>
+<div class="col-md-8 col-md-offset-2">
+<pre><code class="bash">
+
+</code></pre>
+</div>
+</div>
+</div>
+
+<div class="row centered">
+<div class="content-title">Go back in time, modify, and fork</div>
+<div class="content-horizontal-rule"></div>
+<div class="content-sub-container content-code-intro row">
+<div class="col-md-8 col-md-offset-2">
+<p>After checking out a dataset to a previous point in the past, a user can still add more data. However, adding to a version that is not the latest creates a new fork in the dataset. Forks can also happen when two dats import or write different data to the same dat version.</p>
 </div>
 <div class="col-md-8 col-md-offset-2">
   <ul class="nav nav-tabs tabs">
@@ -152,13 +169,18 @@ city_predictions = repo.cat('city_predictions', checkout=v1)
   </ul>
   <div class="tab-content">
     <div id="bash-3" class="tab-pane active">
-<pre><code class="bash">$ dat checkout c2342de3fadf212
-... modify data.
+<pre><code class="bash"># go back in time
+$ dat checkout ab2342de3fadf212
 
+# modify
 $ dat import modified_data.csv -m "Capitalized city names"
 Updated 33 keys (32.03 Mb, 4.4 Mb/s).
-Current version is now cef3221asd1
-</code></pre>
+Current version is now cef3221asd1g234e. There are now 2 forks.
+
+# see the forked version
+$ dat forks
+cef3221a0d1g234e - Capitalized city names
+ab2342de3fadf212 - Added city metadata</code></pre>
     </div>
     <div id="R-3" class="tab-pane">
 <pre><code class="r"># go back in time
@@ -185,12 +207,41 @@ fork_version = repo.import_dataframe(df, key='cityId', message='Capitalized city
 </div>
 </div>
 
+
+<div class="row centered">
+<div class="content-title">One thousand forks when all you need is a knife isn't irony</div>
+<div class="content-horizontal-rule"></div>
+<div class="content-sub-container content-code-intro row">
+<div class="col-md-8 col-md-offset-2">
+<p>
+Although conflicts are merged immediately by software development tools like git, dat embraces conflicts -- called forks -- as key to experimentation during the scientific process. When a user pulls new data from a peer, forks will also be replicated so that each user has a complete picture of the graph. Forks can still be merged into a single, new commit to create a new version hash.
+</p>
+</div>
+<div class="col-md-8 col-md-offset-2">
+    <div id="bash-2">
+<pre><code class="bash">$ dat pull ssh://192.168.0.5:~/data
+Pulled 823 changes (93.88 Mb, 3.4 Mb/s).
+Pull completed successfully, you now have 2 forks.
+Current version is now b04adb64fdf2203
+
+$ dat forks
+b04adb64fdf22030 - Added population density column
+cef3221a0d1g234e - Capitalized city names
+ab2342de3fadf212 - Added city metadata
+
+$ dat merge cef3221a0d1g234e
+</code></pre>
+    </div>
+</div>
+</div>
+</div>
+
 <div class="row centered">
 <div class="content-title">SSH and HTTP endpoints</div>
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro row">
 <div class="col-md-8 col-md-offset-2">
-<p>Dat is transport agnostic, but there are clients for popular transports like <strong>http or ssh</strong>. You can also pipe it or add it to an existing server easily. <a href="">Learn more >></a></p>
+<p>Dat is transport agnostic, but there are clients for popular transports like <strong>http or ssh</strong>. You can also pipe it or add it to an existing server.</p>
 </div>
 <div class="col-md-8 col-md-offset-2">
     <div id="bash-2">
@@ -205,27 +256,6 @@ Current version is now c2342de3f
 </div>
 
 <div class="row centered">
-<div class="content-title">Multiple Schemas</div>
-<div class="content-horizontal-rule"></div>
-<div class="content-sub-container content-code-intro row">
-<div class="col-md-8 col-md-offset-2">
-<p>Datasets are stored in a hierarchical folder structure to better organize different schemas. <a href="">Learn more >></a></p>
-</div>
-<div class="col-md-8 col-md-offset-2">
-<pre><code class="bash">$ dat pull
-Pulled 823 changes (93.88 Mb, 3.4 Mb/s).
-Current version is now c2342de3f
-
-$ ls -a
-dat.json
-alternative_models/
-population/
-economy_factors/</code></pre>
-</div>
-</div>
-</div>
-
-<div class="row centered">
 <div class="content-title">Sponsors and supporters</div>
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-logos">
@@ -234,20 +264,3 @@ economy_factors/</code></pre>
   <a href="http://usodi.org/"><img src="/static/img/usodi.png"></a>
 </div>
 </div>
-
-<!--
-<div class="row" id="videos">
-  <div class="col-md-3 col-sm-4">
-    <iframe src="https://www.youtube.com/embed/3nG1p7sDygM" frameborder="0" allowfullscreen></iframe>
-  </div>
-  <div class="col-md-3 col-sm-4">
-    <iframe src="https://www.youtube.com/embed/psmtJUyZHE0" frameborder="0" allowfullscreen></iframe>
-  </div>
-  <div class="col-md-3 col-sm-4">
-    <iframe src="https://www.youtube.com/embed/iM3Pr7tfHF0" frameborder="0" allowfullscreen></iframe>
-  </div>
-  <div class="col-md-3 col-sm-4">
-    <iframe csrc="https://www.youtube.com/embed/tP_6N7mMKok" frameborder="0" allowfullscreen></iframe>
-  </div>
-</div>
--->

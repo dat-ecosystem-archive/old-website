@@ -293,6 +293,7 @@ pre {
   padding: 20px;
 }
 .footer {
+  margin-top: 80px;
   background-color: #2a3749;
   overflow: auto;
   color: #959ba4;
