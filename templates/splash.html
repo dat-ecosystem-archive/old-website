@@ -4,13 +4,12 @@
       <div class="col-md-6">
         <h1 class="jumbotron-title">Versioned data, collaborated</h1>
         <div class="jumbotron-horizontal-rule"></div>
-        <div class="jumbotron-description">Dat is a version-controlled, distributed data tool designed to improve collaboration between data people and data systems.
+        <div class="jumbotron-description">Dat is a version-controlled, distributed data tool designed to improve collaboration between data people and data systems. <div class="header-continue"><a href="https://github.com/maxogden/dat/blob/master/docs/whitepaper.md">Read the whitepaper  <span class="rsaquo">&rsaquo;</span></a></div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 
 <div class="container">
 
@@ -147,9 +146,11 @@ city_predictions = repo.cat('city_predictions', checkout=v1)
 <p>A dataset is analogous to a sql table or a nosql collection; however, we chose not to use the language of 'table' or 'collection' because dat datasets do not support robust querying at this time. To support separate schemas, we encourage users to create many datasets.</p>
 </div>
 <div class="col-md-8 col-md-offset-2">
-<pre><code class="bash">
-
-</code></pre>
+<pre><code class="bash">$ dat datasets
+cities
+flights
+model_data
+census</code></pre>
 </div>
 </div>
 </div>
