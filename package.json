@@ -1,18 +1,17 @@
 {
-  "name": "dat-data.com",
+  "name": "dat-website",
   "version": "1.0.0",
-  "description": "dat website",
+  "description": "dat-data.com source",
   "main": "index.js",
   "scripts": {
     "start": "npm run watch & npm run watch-css & npm run server",
     "server": "nodemon --exec http-server -e js,css,html -i data/ -i static/",
     "test": "node test/run.js | tap-spec",
     "watch": "watchify -t brfs index.js -o bundle.js",
-    "watch-css": "autoless static/styles"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/karissa/dathub.git"
+    "watch-css": "autoless static/styles",
+    "bundle": "browserify -t brfs index.js -o bundle.js",
+    "css": "autoless static/styles --no-watch",
+    "deploy": "gh-pages-deploy"
   },
   "keywords": [
     "data",
@@ -23,16 +22,25 @@
     "dat",
     "web"
   ],
-  "author": "karissa",
+  "gh-pages-deploy": {
+    "cname": "dat-data.com",
+    "prep": [
+      "bundle",
+      "css"
+    ],
+    "noprompt": false
+  },
+  "author": "dat project",
   "license": "BSD",
   "bugs": {
-    "url": "https://github.com/karissa/dathub/issues"
+    "url": "https://github.com/datproject/website/issues"
   },
   "homepage": "http://dat-data.com",
   "dependencies": {
+    "gh-pages-deploy": "^0.3.0",
+    "jquery": "^2.1.1",
     "nodemon": "^1.2.1",
-    "page": "^1.4.1",
-    "jquery": "^2.1.1"
+    "page": "^1.4.1"
   },
   "devDependencies": {
     "a-simple-templater": "^1.0.1",
@@ -44,5 +52,9 @@
     "http-server": "^0.8.0",
     "mustache": "^2.0.0",
     "watchify": "^2.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/datproject/website.git"
   }
 }
