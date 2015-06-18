@@ -60,11 +60,11 @@
   <div class="tab-content">
     <div id="bash-1" class="tab-pane active">
 <pre><code class="bash">$ dat init
-$ dat import values_per_city.csv --key=cityId
+$ dat import values_per_city.csv --key=cityId -d cities
 Added 302,143 keys (32.03 Mb, 4.4 Mb/s).
 Current version is now bad31c32432c.
 
-$ dat import values_per_city_new.csv --key=cityId
+$ dat import values_per_city_new.csv --key=cityId -d cities
 Updated 33 keys (32.03 Mb, 4.4 Mb/s).
 Current version is now cef3221asd1.</code></pre>
     </div>
@@ -80,7 +80,7 @@ v1_data <- repo$get(v1)
 </code></pre>
     </div>
     <div id="python-1" class="tab-pane">
-<pre><code class="python">repo = datpy.Dat('./data')
+<pre><code class="python">repo = datpy.Dat("cities")
 
 # import data from pandas
 df = pd.DataFrame.read_csv("cities.csv")
@@ -111,7 +111,7 @@ df = repo.get_dataframe(checkout=v1)
   </ul>
   <div class="tab-content">
     <div id="bash-2" class="tab-pane active">
-<pre><code class="bash">$ dat write /some/path/to/model.tar.gz --name="city_predictions"
+<pre><code class="bash">$ dat write /some/path/to/model.tar.gz -d cities_models
 Storing cities_scatter.jpg (8.3 Mb, 38 Mb/s).
 Stored cities_scatter.jpg successfully.
 Current version is now b04adb64fdf2203
@@ -127,10 +127,10 @@ city_predictions = repo.read_binary("city_predictions", v1)
     </div>
     <div id="python-2" class="tab-pane">
 <pre><code class="python"># write binary data as a cPickle
-v1 = repo.write(model, name='city_predictions')
+v1 = repo.write(model, name="city_predictions")
 
 # read data at that version
-city_predictions = repo.cat('city_predictions', checkout=v1)
+city_predictions = repo.cat("city_predictions", checkout=v1)
 </code></pre>
     </div>
 </div>
@@ -174,7 +174,7 @@ census</code></pre>
 $ dat checkout ab2342de3fadf212
 
 # modify
-$ dat import modified_data.csv -m "Capitalized city names"
+$ dat import modified_data.csv -m "Capitalized city names" -d cities
 Updated 33 keys (32.03 Mb, 4.4 Mb/s).
 Current version is now cef3221asd1g234e. There are now 2 forks.
 
