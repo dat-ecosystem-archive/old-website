@@ -69,7 +69,7 @@ Updated 33 keys (32.03 Mb, 4.4 Mb/s).
 Current version is now cef3221asd1.</code></pre>
     </div>
     <div id="R-1" class="tab-pane">
-<pre><code class="r">repo <- dat('./data')
+<pre><code class="r">repo <- dat("cars", path=getwd())
 
 # import data from a dataframe
 cities <- read.csv(file='cities.csv')
