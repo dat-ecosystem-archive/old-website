@@ -4,7 +4,7 @@
       <div class="col-md-6">
         <h1 class="jumbotron-title">Versioned data, collaborated</h1>
         <div class="jumbotron-horizontal-rule"></div>
-        <div class="jumbotron-description">Dat is a version-controlled, distributed data tool designed to improve collaboration between data people and data systems. <div class="header-continue"><a href="https://github.com/maxogden/dat/blob/master/docs/whitepaper.md">Read the whitepaper  <span class="rsaquo">&rsaquo;</span></a></div>
+        <div class="jumbotron-description">Dat is a version-controlled, decentralized data tool for collaboration between data people and data systems. <div class="header-continue"><a href="https://github.com/maxogden/dat/blob/master/docs/whitepaper.md">Read the whitepaper  <span class="rsaquo">&rsaquo;</span></a></div>
         </div>
       </div>
     </div>
@@ -14,20 +14,15 @@
 <div class="container">
 
 <div class="row centered">
-<div class="content-title  ">beta now available for testing</div>
-<div class="col-md-6 col-sm-6 col-sm-offset-3">
-    <a href="https://github.com/maxogden/dat" target="_blank">
-      <div class="button"><span class="octocat"></span><span class='hidden-mobile'>View on</span> GitHub</div>
-    </a>
-</div>
+<div class="content-title">beta now available for testing</div>
 </div>
 
 <div class="row centered">
-<div class="content-title">Version by key</div>
+<div class="content-title">Tabular versioning</div>
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro row">
 <div class="col-md-8 col-md-offset-2">
-  <p>Add data into dat from newline-delimited json or csv. <strong>import</strong> is designed for key/value row-like, or tabular data. You can update the data later by specifying a <strong>unique key</strong> for each row.</p>
+  <p>Add data from newline-delimited json or csv. <strong>import</strong> is for tabular data. Update rows data later with each row's <strong>unique key</strong>.</p>
 </div>
 <div class="col-md-8 col-md-offset-2">
   <ul class="nav nav-tabs tabs">
@@ -74,12 +69,12 @@ df = repo.get_dataframe(checkout=v1)
 </div>
 
 <div class="row centered">
-<div class="content-title">Write blobs, or binary data</div>
+<div class="content-title">Write binary data</div>
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro row">
 <div class="col-md-8 col-md-offset-2">
 <p>
-<strong>Write</strong> binary data into dat. This differs from import in that it doesn't parse the file, it just stores it as a binary attachment. Write is meant for large files, blobs, or attachments that you can't parse into rows.</p>
+<strong>Write</strong> binary data. Write stores and versions the entire file at once, like git (but faster).</p>
 </div>
 <div class="col-md-8 col-md-offset-2">
   <ul class="nav nav-tabs tabs">
@@ -121,7 +116,7 @@ city_predictions = repo.cat("city_predictions", checkout=v1)
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro row">
 <div class="col-md-8 col-md-offset-2">
-<p>A dataset is analogous to a sql table or a nosql collection; however, we chose not to use the language of 'table' or 'collection' because dat datasets do not support robust querying at this time. To support separate schemas, we encourage users to create many datasets.</p>
+<p>A dataset is like a SQL table or NoSQL collection. For separate tabular schemas, create more datasets.</p>
 </div>
 <div class="col-md-8 col-md-offset-2">
 <pre><code class="bash">$ dat datasets
@@ -138,7 +133,7 @@ census</code></pre>
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro row">
 <div class="col-md-8 col-md-offset-2">
-<p>After checking out a dataset to a previous point in the past, a user can still add more data. However, adding to a version that is not the latest creates a new fork in the dataset. Forks can also happen when two dats import or write different data to the same dat version.</p>
+<p>Go to a previous version of the dataset with <pre>checkout</pre>. Updating an older version creates a new fork in the dataset.</p>
 </div>
 <div class="col-md-8 col-md-offset-2">
   <ul class="nav nav-tabs tabs">
@@ -193,7 +188,7 @@ fork_version = repo.import_dataframe(df, key='cityId', message='Capitalized city
 <div class="content-sub-container content-code-intro row">
 <div class="col-md-8 col-md-offset-2">
 <p>
-Although conflicts are merged immediately by software development tools like git, dat embraces conflicts -- called forks -- as key to experimentation during the scientific process. When a user pulls new data from a peer, forks will also be replicated so that each user has a complete picture of the graph. Forks can still be merged into a single, new commit to create a new version hash.
+Although conflicts are merged immediately by software development tools like git, dat embraces them. All collaborators will get a complete picture of the history of graph. Forks can be merged into a new version.
 </p>
 </div>
 <div class="col-md-8 col-md-offset-2">
@@ -220,7 +215,7 @@ $ dat merge cef3221a0d1g234e
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro row">
 <div class="col-md-8 col-md-offset-2">
-<p>Dat is transport agnostic, but there are clients for popular transports like <strong>http or ssh</strong>. You can also pipe it or add it to an existing server.</p>
+<p>Dat is transport agnostic, so share your data through <strong>ssh or http</strong>. We recommend SSH keys for access control.</p>
 </div>
 <div class="col-md-8 col-md-offset-2">
     <div id="bash-2">
@@ -228,6 +223,8 @@ $ dat merge cef3221a0d1g234e
 Pulled 302,233 changes (93.88 Mb, 3.4 Mb/s).
 Clone from remote has completed.
 Current version is now c2342de3f
+$ dat serve
+Listening on 6442...
 </code></pre>
     </div>
 </div>
