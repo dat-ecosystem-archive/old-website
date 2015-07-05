@@ -49,14 +49,14 @@ v1_data <- repo$get(v1)
 </code></pre>
     </div>
     <div id="python-1" class="tab-pane">
-<pre><code class="python">repo = datpy.Dat("cities")
+<pre><code class="python">dataset = Dataset(dat, "cities")
 
 # import data from pandas
 df = pd.DataFrame.read_csv("cities.csv")
-v2 = repo.import_dataframe(df, key="cityId")
+v2 = dataset.import_dataframe(df, key="cityId")
 
 # get data into a pandas dataframe at given version
-df = repo.get_dataframe(checkout=v1)
+df = dataset.export_dataframe(checkout=v1)
 </code></pre>
     </div>
   </div>
@@ -88,18 +88,18 @@ Current version is now b04adb64fdf2203
     </div>
     <div id="R-2" class="tab-pane">
 <pre><code class="r"># write binary data
-v1 = repo.insert_binary(model_data, "city_predictions")
+v1 = dataset.insert_binary(model_data, "city_predictions")
 
 # read data at that version
-city_predictions = repo.read_binary("city_predictions", v1)
+city_predictions = dataset.read_binary("city_predictions", v1)
 </code></pre>
     </div>
     <div id="python-2" class="tab-pane">
 <pre><code class="python"># write binary data as a cPickle
-v1 = repo.write(model, name="city_predictions")
+v1 = dataset.write(model, name="city_predictions")
 
 # read data at that version
-city_predictions = repo.cat("city_predictions", checkout=v1)
+city_predictions = dataset.read("city_predictions", checkout=v1)
 </code></pre>
     </div>
 </div>
@@ -165,13 +165,13 @@ fork_version <- repo$insert(cities[1:50,], key='cityId', message='Capitalized ci
     </div>
     <div id="python-3" class="tab-pane">
 <pre><code class="python"># go back in time
-df = repo.as_dataframe(checkout=v1)
+df = dataset.export_dataframe(checkout=v1)
 
 # modify
 df['name'] = df['name'].str.upper()
 
 # create a fork
-fork_version = repo.import_dataframe(df, key='cityId', message='Capitalized city names')</code></pre>
+fork_version = dataset.import_dataframe(df, key='cityId', message='Capitalized city names')</code></pre>
     </div>
 </div>
 </div>
