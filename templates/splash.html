@@ -65,12 +65,12 @@ df = dataset.export_dataframe(checkout=v1)
 </div>
 
 <div class="row centered">
-<div class="content-title">Write binary data</div>
+<div class="content-title">Store files</div>
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro row">
 <div class="col-md-8 col-md-offset-2">
 <p>
-<strong>Write</strong> binary data. Write stores and versions the entire file at once, like git (but faster).</p>
+<strong>Write</strong> binary data (e.g., files). Dat stores and versions the entire file at once.</p>
 </div>
 <div class="col-md-8 col-md-offset-2">
   <ul class="nav nav-tabs tabs">
@@ -80,7 +80,7 @@ df = dataset.export_dataframe(checkout=v1)
   </ul>
   <div class="tab-content">
     <div id="bash-2" class="tab-pane active">
-<pre><code class="bash">$ dat write /some/path/to/model.tar.gz -d cities_models
+<pre><code class="bash">$ dat write /some/path/to/model.tar.gz
 Storing cities_scatter.jpg (8.3 Mb, 38 Mb/s).
 Stored cities_scatter.jpg successfully.
 Current version is now b04adb64fdf2203
@@ -88,7 +88,7 @@ Current version is now b04adb64fdf2203
     </div>
     <div id="R-2" class="tab-pane">
 <pre><code class="r"># write binary data
-v1 = dataset.insert_binary(model_data, "city_predictions")
+v1 = repo.insert_binary(model_data, "city_predictions")
 
 # read data at that version
 city_predictions = dataset.read_binary("city_predictions", v1)
@@ -96,10 +96,10 @@ city_predictions = dataset.read_binary("city_predictions", v1)
     </div>
     <div id="python-2" class="tab-pane">
 <pre><code class="python"># write binary data as a cPickle
-v1 = dataset.write(model, name="city_predictions")
+v1 = repo.write(model, name="city_predictions")
 
 # read data at that version
-city_predictions = dataset.read("city_predictions", checkout=v1)
+city_predictions = repo.read("city_predictions", checkout=v1)
 </code></pre>
     </div>
 </div>
