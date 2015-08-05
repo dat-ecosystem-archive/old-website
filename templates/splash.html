@@ -4,23 +4,26 @@
       <div class="col-md-6">
         <h1 class="jumbotron-title">Versioned data, collaborated</h1>
         <div class="jumbotron-horizontal-rule"></div>
-        <div class="jumbotron-description">Dat is a version-controlled, decentralized data tool for collaboration between data people and data systems. <div class="header-continue"><a href="https://github.com/maxogden/dat/blob/master/docs/whitepaper.md">Read the whitepaper  <span class="rsaquo">&rsaquo;</span></a></div>
+        <div class="jumbotron-description">Dat is a version-controlled, decentralized data tool for collaboration between data people and data systems.
+        <div class="header-continue">
+          <a href="http://try-dat.com" target="_blank">
+            <div class="button">Try dat in your browser &rsaquo; </div>
+          </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 <div class="container">
-
-<div class="row centered">
-<div class="content-title">Tabular versioning</div>
+<div class="row">
+<div class="content-title">Versioned data storage: .csv is sooo 1995</div>
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro row">
-<div class="col-md-8 col-md-offset-2">
-  <p>Add data from newline-delimited json or csv. <strong>import</strong> is for tabular data. Update rows data later with each row's <strong>unique key</strong>.</p>
+<div class="col-md-4">
+  <p>Import data as json or csv, parsing the data into rows. Each row is versioned with a unique key. Update row data by providing that same key.</p>
 </div>
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-8">
   <ul class="nav nav-tabs tabs">
     <li class="active"><a href="#bash-1">cmdline</a></li>
     <li><a href="#R-1">R</a></li>
@@ -28,13 +31,12 @@
   </ul>
   <div class="tab-content">
     <div id="bash-1" class="tab-pane active">
-<pre><code class="bash">$ dat init
-$ dat import values_per_city.csv --key=cityId -d cities
-Added 302,143 keys (32.03 Mb, 4.4 Mb/s).
+<pre><code class="bash">$ dat import values_per_city.csv --key=cityId -d cities
+Added 302,143 rows (32.03 Mb, 4.4 Mb/s).
 Current version is now bad31c32432c.
 
 $ dat import values_per_city_new.csv --key=cityId -d cities
-Updated 33 keys (32.03 Mb, 4.4 Mb/s).
+Updated 33 rows (32.03 Mb, 4.4 Mb/s).
 Current version is now cef3221asd1.</code></pre>
     </div>
     <div id="R-1" class="tab-pane">
@@ -64,15 +66,14 @@ df = dataset.export_dataframe(checkout=v1)
 </div>
 </div>
 
-<div class="row centered">
-<div class="content-title">Store files</div>
+<div class="row">
+<div class="content-title">To parse or not to parse? Either way, it's okay.</div>
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro row">
-<div class="col-md-8 col-md-offset-2">
-<p>
-<strong>Write</strong> binary data (e.g., files). Dat stores and versions the entire file at once.</p>
+<div class="col-md-4">
+<p>Dat can <strong>write binary data</strong> (e.g., files). Dat stores and versions the entire file as one value.</p>
 </div>
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-8">
   <ul class="nav nav-tabs tabs">
     <li class="active"><a href="#bash-2">cmdline</a></li>
     <li><a href="#R-2">R</a></li>
@@ -107,15 +108,35 @@ city_predictions = repo.read("city_predictions", checkout=v1)
 </div>
 </div>
 
-
-<div class="row centered">
-<div class="content-title">Multiple Schemas</div>
+<div class="row">
+<div class="content-title">Collaborate with your data over SSH and HTTP endpoints</div>
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro row">
-<div class="col-md-8 col-md-offset-2">
-<p>A dataset is like a SQL table or NoSQL collection. For separate tabular schemas, create more datasets.</p>
+<div class="col-md-4">
+<p>Dat is transport agnostic, so share your data through <strong>ssh or http</strong>. Use SSH keys for access control.</p>
 </div>
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-8">
+    <div id="bash-2">
+<pre><code class="bash">$ dat clone ssh://uni.edu/maxogden/flights
+Pulled 302,233 changes (93.88 Mb, 3.4 Mb/s).
+Clone from remote has completed.
+Current version is now c2342de3f
+$ dat serve
+Listening on 6442...
+</code></pre>
+    </div>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="content-title">Multiple datasets means multiple schemas</div>
+<div class="content-horizontal-rule"></div>
+<div class="content-sub-container content-code-intro row">
+<div class="col-md-4">
+<p>A dataset is like a SQL table or NoSQL collection. Create separate datasets to organize your data repository.</p>
+</div>
+<div class="col-md-8">
 <pre><code class="bash">$ dat datasets
 cities
 flights
@@ -125,14 +146,14 @@ census</code></pre>
 </div>
 </div>
 
-<div class="row centered">
-<div class="content-title">Go back in time, modify, and fork</div>
+<div class="row">
+<div class="content-title">Go back in time, modify, fork</div>
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro row">
-<div class="col-md-8 col-md-offset-2">
-<p>Go to a previous version of the dataset with <strong>checkout</strong>. Updating an older version creates a new fork in the dataset.</p>
+<div class="col-md-4">
+<p>Go to a previous version of the dataset with <strong>checkout</strong> in O(1) time. Updating an older version creates a new 'fork' in the dataset.</p>
 </div>
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-8">
   <ul class="nav nav-tabs tabs">
     <li class="active"><a href="#bash-3">cmdline</a></li>
     <li><a href="#R-3">R</a></li>
@@ -179,16 +200,16 @@ fork_version = dataset.import_dataframe(df, key='cityId', message='Capitalized c
 </div>
 
 
-<div class="row centered">
+<div class="row">
 <div class="content-title">One thousand forks when all you need is a knife isn't irony</div>
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-code-intro row">
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-4">
 <p>
 Although conflicts are merged immediately by software development tools like git, dat embraces them. All collaborators will get a complete picture of the history of graph. Forks can be merged into a new version.
 </p>
 </div>
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-8">
     <div id="bash-2">
 <pre><code class="bash">$ dat pull ssh://192.168.0.5:~/data
 Pulled 823 changes (93.88 Mb, 3.4 Mb/s).
@@ -206,41 +227,31 @@ $ dat merge cef3221a0d1g234e
 </div>
 </div>
 </div>
-
-<div class="row centered">
-<div class="content-title">SSH and HTTP endpoints</div>
-<div class="content-horizontal-rule"></div>
-<div class="content-sub-container content-code-intro row">
-<div class="col-md-8 col-md-offset-2">
-<p>Dat is transport agnostic, so share your data through <strong>ssh or http</strong>. We recommend SSH keys for access control.</p>
 </div>
-<div class="col-md-8 col-md-offset-2">
-    <div id="bash-2">
-<pre><code class="bash">$ dat clone ssh://uni.edu/maxogden/flights
-Pulled 302,233 changes (93.88 Mb, 3.4 Mb/s).
-Clone from remote has completed.
-Current version is now c2342de3f
-$ dat serve
-Listening on 6442...
-</code></pre>
-    </div>
-</div>
-</div>
-</div>
+<div class="jumbotron-info">
+<div class="container">
 <div class="row centered">
 <div class="col-md-6 col-sm-6 col-sm-offset-3">
-<div class="content-title">beta now available for testing</div>
+<div class="content-title">Beta now available for testing</div>
+<div class="content-horizontal-rule"></div>
+<div class="content-sub-container">
     <a href="https://github.com/maxogden/dat" target="_blank">
       <div class="button"><span class="octocat"></span>View on GitHub</div>
     </a>
+    <a href="http://try-dat.com" target="_blank">
+      <div class="button">Try dat in your browser &rsaquo; </div>
+    </a>
+  </div>
 </div>
 </div>
 <div class="row centered">
 <div class="content-title">Sponsors and supporters</div>
 <div class="content-horizontal-rule"></div>
 <div class="content-sub-container content-logos">
+  <a href="http://usodi.org/"><img src="/static/img/usod.png"></a>
   <a href="http://www.sloan.org/major-program-areas/digital-information-technology/data-and-computational-research/"><img src="/static/img/sloan.png"></a>
   <a href="http://www.knightfoundation.org/grants/201346305/"><img src="/static/img/knight.png"></a>
-  <a href="http://usodi.org/"><img src="/static/img/usodi.png"></a>
+</div>
+</div>
 </div>
 </div>
