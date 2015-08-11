@@ -9,9 +9,6 @@ body {
 h1, h2, h3, h4, h5 {
   color: #333;
 }
-h4 {
-  font-size: 2rem;
-}
 
 .mono {
   font-family: monospace;
@@ -30,14 +27,17 @@ a {
   }
 }
 
-p {
+ul, p {
   font-size: 18px;
-  padding: 10px;
+}
+
+p {
+  padding: 5px 0px;
 }
 
 pre {
   padding: .5em;
-  font-size: 16px;
+  font-size: 14px;
   background-color: #232323;
   color: #e6e1dc;
 }
@@ -66,6 +66,11 @@ pre {
 }
 .button:hover {
   background-color: @buttong-bg-hover;
+}
+
+ul {
+  list-style: initial;
+  padding-left: 20px;
 }
 
 /** SPLASH **/
@@ -164,6 +169,7 @@ pre {
     top: 3px;
   }
 }
+
 #content {
   margin-top: 0px;
   min-height: 500px;

@@ -1,6 +1,10 @@
-var templater = require('a-simple-templater')
 var fs = require('fs')
+var xhr = require('xhr')
+var marked = require('marked')
+
+var templater = require('a-simple-templater')
 var $ = jQuery = require('jQuery')
+
 var tabs = require('./static/js/tab.js')
 
 var routes = [
@@ -21,7 +25,14 @@ var routes = [
   },
   {
     url: '/docs',
-    template: fs.readFileSync('./templates/docs.html').toString()
+    template: fs.readFileSync('./templates/docs.html').toString(),
+    data: function (params, cb) {
+      var url = 'https://raw.githubusercontent.com/maxogden/dat/master/readme.md'
+      xhr(url, function (err, res, data) {
+        var readme = marked(data)
+        return cb({readme: readme})
+      })
+    }
   },
   {
     url: '/team',
