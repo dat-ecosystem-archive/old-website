@@ -2,7 +2,7 @@ var fs = require('fs')
 var xhr = require('xhr')
 var marked = require('marked')
 
-var templater = require('a-simple-templater')
+var templater = require('page-router')
 var $ = jQuery = require('jQuery')
 
 var tabs = require('./static/js/tab.js')

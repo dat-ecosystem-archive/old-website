@@ -45,7 +45,7 @@
     "xhr": "^2.0.3"
   },
   "devDependencies": {
-    "a-simple-templater": "^1.0.1",
+    "page-router": "^1.0.1",
     "autoless": "^0.1.5",
     "brfs": "^1.4.0",
     "browserify": "^7.0.0",
