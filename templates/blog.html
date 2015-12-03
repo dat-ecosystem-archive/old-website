@@ -1,0 +1,18 @@
+<div class="container centered">
+<div class="content-title">blog</div>
+<div class="content-horizontal-rule"></div>
+</div>
+
+<div class="content-text-container">
+  <div class="list">
+    {{#posts}}
+    <a class="load-document" href="/blog/{{name}}">
+      <div class="document active" id="test">
+        <div class="published">{{published}}</div>
+        <div class="title">{{title}}</div>
+        <div class="teaser">{{teaser}}</div>
+      </div>
+    </a>
+    {{/posts}}
+  </div>
+</div>

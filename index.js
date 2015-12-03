@@ -1,10 +1,11 @@
 var fs = require('fs')
 var xhr = require('xhr')
 var marked = require('marked')
-
+var Handlebars = require('handlebars')
 var templater = require('page-router')
-var $ = jQuery = require('jQuery')
 
+var $ = jQuery = require('jQuery')
+var posts = require('./posts.js')
 var tabs = require('./static/js/tab.js')
 
 var routes = [
@@ -17,6 +18,23 @@ var routes = [
         $(this).tab('show')
       })
       hljs.initHighlightingOnLoad()
+    }
+  },
+  {
+    url: '/blog',
+    template: fs.readFileSync('./templates/blog.html').toString(),
+    data: function (params, cb) {
+      console.log(posts)
+      cb({posts: posts})
+    }
+  },
+  {
+    url: '/blog/:filename',
+    template: fs.readFileSync('./templates/post.html').toString(),
+    data: function (params, cb) {
+      xhr('/posts/' + params.filename, function (err, res, data) {
+        cb({post: marked(data)})
+      })
     }
   },
   {
@@ -50,4 +68,7 @@ var routes = [
   }
 ]
 
-templater('#content', routes)
+templater('#content', routes, function (source, data) {
+  var template = Handlebars.compile(source)
+  return template(data)
+})

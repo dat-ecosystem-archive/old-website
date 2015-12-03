@@ -38,10 +38,12 @@
   "homepage": "http://dat-data.com",
   "dependencies": {
     "gh-pages-deploy": "^0.3.0",
+    "handlebars": "^4.0.5",
     "jquery": "^2.1.1",
     "marked": "^0.3.5",
     "nodemon": "^1.2.1",
     "page": "^1.4.1",
+    "rss": "^1.2.1",
     "xhr": "^2.0.3"
   },
   "devDependencies": {
