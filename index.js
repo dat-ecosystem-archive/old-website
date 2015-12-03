@@ -24,16 +24,20 @@ var routes = [
     url: '/blog',
     template: fs.readFileSync('./templates/blog.html').toString(),
     data: function (params, cb) {
-      console.log(posts)
       cb({posts: posts})
-    }
-  },
-  {
-    url: '/blog/:filename',
-    template: fs.readFileSync('./templates/post.html').toString(),
-    data: function (params, cb) {
-      xhr('/posts/' + params.filename, function (err, res, data) {
-        cb({post: marked(data)})
+    },
+    onrender: function () {
+      $('.load-document').each(function (i, item) {
+        $(item).click(function (event) {
+          var name = $(this).attr('href')
+          xhr('/posts/' + name + '.md', function (err, res, data) {
+            $('#post').html(marked(data))
+          })
+          $('.active').removeClass('active')
+          $('#' + name).addClass('active')
+          event.preventDefault()
+          event.stopPropagation()
+        })
       })
     }
   },
