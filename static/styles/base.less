@@ -428,6 +428,44 @@ ul {
   padding-top: 10px;
 }
 
+.blog-layout {
+  display: flex;
+}
+
+a.load-document {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  color: @dark-blue;
+  transition: .25s;
+}
+
+.sidebar-list {
+  color: @dark-blue;
+  max-width: 30%;
+  background-color: @white-background;
+  border-right: 1px solid @white-border;
+
+  .document {
+    padding: 20px;
+    border-bottom: 1px solid @white-border;
+    .published { color: #aaa; }
+    h2 { margin: 0px; color: @green }
+    &.active {
+      background-color: @dark-blue;
+      color: @off-white;
+    }
+    &:hover:not(.active) {
+      background-color: @light-background;
+    }
+  }
+}
+
+#post {
+  padding: 10px 20px;
+}
+
 @import "includes/headers";
 @import "includes/app";
 @import "includes/forms";
