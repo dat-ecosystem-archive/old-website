@@ -35,9 +35,11 @@ var routes = [
           })
           $('.active').removeClass('active')
           $('#' + name).addClass('active')
+          window.scrollTo(0,0);
           event.preventDefault()
           event.stopPropagation()
         })
+        if (i === 0) item.click()
       })
     }
   },

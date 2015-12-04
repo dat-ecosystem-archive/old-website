@@ -1,16 +1,16 @@
 <div class="blog-layout">
-  <div class="sidebar-list">
-    {{#posts}}
-    <a class="load-document" href="{{name}}">
-      <div class="document" id="{{name}}">
-        <div class="published">{{date}}</div>
-        <h2 class="title">{{title}}</h2>
-        <div class="author">{{author}}</div>
-        <p class="teaser">{{teaser}}</p>
-      </div>
-    </a>
-    {{/posts}}
+  <div id="post" class="container">
   </div>
-    <div id="post">
+    <div class="sidebar-list">
+      {{#posts}}
+      <a class="load-document" href="{{name}}">
+        <div class="document" id="{{name}}">
+          <div class="published">{{date}}</div>
+          <div class="author">{{author}}</div>
+          <h2 class="title">{{title}}</h2>
+          <p class="teaser">{{teaser}}</p>
+        </div>
+      </a>
+      {{/posts}}
     </div>
 </div>
