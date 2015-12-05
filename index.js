@@ -26,21 +26,21 @@ var routes = [
     data: function (params, cb) {
       cb({posts: posts})
     },
-    onrender: function () {
-      $('.load-document').each(function (i, item) {
-        $(item).click(function (event) {
-          var name = $(this).attr('href')
-          xhr('/posts/' + name + '.md', function (err, res, data) {
-            $('#post').html(marked(data))
-          })
-          $('.active').removeClass('active')
-          $('#' + name).addClass('active')
-          window.scrollTo(0,0);
-          event.preventDefault()
-          event.stopPropagation()
-        })
-        if (i === 0) item.click()
+    onrender: function (data) {
+      $('a.load-document')[0].click()
+    }
+  },
+  {
+    url: '/blog/:name',
+    template: fs.readFileSync('./templates/blog.html').toString(),
+    data: function (params, cb) {
+      cb({posts: posts})
+    },
+    onrender: function (data) {
+      xhr('/posts/' + data.name + '.md', function (err, res, data) {
+        $('#post').html(marked(data))
       })
+      $('#' + data.name).addClass('active')
     }
   },
   {
