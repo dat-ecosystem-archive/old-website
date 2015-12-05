@@ -1,11 +1,10 @@
 module.exports = [
-  // {
-  //   date: '2015-12-05',
-  //   title: 'Designing Dat 1.0',
-  //   author: 'Karissa McKelvey',
-  //   teaser: 'Defining the design decisions around Dats new 1.0',
-  //   name: '2015-12-05-1.0-design'
-  // },
+  {
+    title: 'Designing Dat 1.0',
+    author: 'Karissa McKelvey',
+    teaser: 'Defining the design decisions around Dats new 1.0',
+    name: '2015-12-05-1-design'
+  },
   {
     date: '2015-07-29',
     title: 'Dat goes beta!',
