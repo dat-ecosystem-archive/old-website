@@ -28,6 +28,7 @@ var routes = [
     },
     onrender: function (data) {
       $('a.load-document')[0].click()
+      switchNav('/blog')
     }
   },
   {
@@ -41,11 +42,13 @@ var routes = [
         $('#post').html(marked(data))
       })
       $('#' + data.name).addClass('active')
+      siwtchNav('/blog')
     }
   },
   {
     url: '/about',
-    template: fs.readFileSync('./templates/about.html').toString()
+    template: fs.readFileSync('./templates/about.html').toString(),
+    onrender: function (data) { switchNav('/about') }
   },
   {
     url: '/docs',
@@ -56,7 +59,8 @@ var routes = [
         var readme = marked(data)
         return cb({readme: readme})
       })
-    }
+    },
+    onrender: function (data) { switchNav('/docs') }
   },
   {
     url: '/team',
@@ -70,6 +74,7 @@ var routes = [
         if (!username) continue
         peep.setAttribute('style', "background-image: url('https://github.com/" + username + ".png')")
       }
+      switchNav('/team')
     }
   }
 ]
@@ -78,3 +83,8 @@ templater('#content', routes, function (source, data) {
   var template = Handlebars.compile(source)
   return template(data)
 })
+
+function switchNav (location) {
+  $('a.active').removeClass('active')
+  $('a[href="' + location + '"]').addClass('active')
+}
