@@ -42,7 +42,7 @@ var routes = [
         $('#post').html(marked(data))
       })
       $('#' + data.name).addClass('active')
-      siwtchNav('/blog')
+      switchNav('/blog')
     }
   },
   {
