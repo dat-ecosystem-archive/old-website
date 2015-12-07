@@ -6,6 +6,12 @@ module.exports = [
     name: '2015-12-05-1-design'
   },
   {
+    title: 'The likely collapse of a major proprietary hosting service',
+    author: 'Karissa McKelvey',
+    teaser: 'The beginning of the end -- and what it means for science.',
+    name: '2015-12-01-proprietary'
+  },
+  {
     date: '2015-07-29',
     title: 'Dat goes beta!',
     author: 'Karissa McKelvey',
