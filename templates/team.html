@@ -138,3 +138,15 @@
 </div>
 
 </div>
+
+<script src="static/gravatar.js" type="text/javascript"></script>
+<script type="text/javascript">
+  var gravatar = require('gravatar')
+  var peeps = document.querySelectorAll('.content-card-small-avatar')
+  for (var i = 0; i < peeps.length; i++) {
+    var peep = peeps[i]
+    var username = peep.getAttribute('data-user')
+    if (!username) continue
+    peep.setAttribute('style', "background-image: url('https://github.com/" + username + ".png')")
+  }
+</script>
