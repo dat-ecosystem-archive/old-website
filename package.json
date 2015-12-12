@@ -9,9 +9,9 @@
     "test": "node test/run.js | tap-spec",
     "watch": "watchify -t brfs index.js -o bundle.js",
     "watch-css": "autoless static/styles",
-    "bundle": "browserify -t brfs index.js -o bundle.js",
     "css": "autoless static/styles --no-watch",
-    "deploy": "gh-pages-deploy"
+    "deploy": "gh-pages-deploy",
+    "render": "node render.js"
   },
   "keywords": [
     "data",
@@ -23,9 +23,10 @@
     "web"
   ],
   "gh-pages-deploy": {
+    "staticpath": "rendered",
     "cname": "dat-data.com",
     "prep": [
-      "bundle",
+      "render",
       "css"
     ],
     "noprompt": false
@@ -37,12 +38,15 @@
   },
   "homepage": "http://dat-data.com",
   "dependencies": {
+    "cheerio": "^0.19.0",
+    "cptar": "^1.0.0",
     "gh-pages-deploy": "^0.3.0",
     "handlebars": "^4.0.5",
     "jquery": "^2.1.1",
     "marked": "^0.3.5",
     "nodemon": "^1.2.1",
     "page": "^1.4.1",
+    "rimraf": "^2.4.4",
     "rss": "^1.2.1",
     "xhr": "^2.0.3"
   },
