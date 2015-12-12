@@ -26,8 +26,8 @@
     "staticpath": "rendered",
     "cname": "dat-data.com",
     "prep": [
-      "css"
-      "render",
+      "css",
+      "render"
     ],
     "noprompt": false
   },
