@@ -1,5 +1,5 @@
 # Announcing PublicBits: Breaking down open data silos
-by [Karissa McKelvey](http://karissa.github.io)
+by [Karissa McKelvey](http://karissa.github.io), [Max Ogden](http://maxogden.com)
 
 We're happy to announce new funding from the Knight Foundation for [PublicBits.org](http://publicbits.org). Our goal is to collect all of the world’s open data and make it accessible through a free, decentralized, redundant, and open network.
 
