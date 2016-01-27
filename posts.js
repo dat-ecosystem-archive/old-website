@@ -1,9 +1,9 @@
 module.exports = [
   {
-    title: 'Designing Dat 1.0',
+    title: 'Announcing Publicbits.org'
     author: 'Karissa McKelvey',
-    teaser: 'Defining the design decisions around the new Dat 1.0',
-    name: '2015-12-05-1-design'
+    teaser: 'Breaking down open data silos with a new Knight Foundation grant.',
+    name: '2016-02-01-publicbits-announcement'
   },
   {
     title: 'The likely collapse of a major proprietary hosting service',
