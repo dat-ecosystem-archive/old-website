@@ -24,14 +24,15 @@ We plan to build a search engine for open data called PublicBits.org. PublicBits
 Each time PublicBits.org finds a data source and generates a Dat repository, it creates a cryptographic hash, like a fingerprint, that uniquely identifies the data. For example, the data fingerprint for the CFPB's open complaint database might be '6c53f0cf72a1c5d884b4c161dd066af33f1b2c65f1baaf58cc6d61d7faac4364' on January 28th. Lets say, perhaps on Feb 1st, there are 300 new complaints published by the CFPB. The crawler will go to the url and generate the fingerprint, finding something different -- say, 'b1f0e4e604246709bb9db06a50b5abade9bf3a556f5796e2a22365a200b33059'. The history for the dataset, then, might look like this:
 
 CFPB complaint dataset
-----------------------
+
+| Date | Fingerprint (hash)
+--------------------
 | 1/28/16 | 6c53f0cf72a1c5d884b4c161dd066af33f1b2c65f1baaf58cc6d61d7faac4364
 | 1/29/16 | 6c53f0cf72a1c5d884b4c161dd066af33f1b2c65f1baaf58cc6d61d7faac4364
 | 1/30/16 | 6c53f0cf72a1c5d884b4c161dd066af33f1b2c65f1baaf58cc6d61d7faac4364
 | 1/31/16 | 6c53f0cf72a1c5d884b4c161dd066af33f1b2c65f1baaf58cc6d61d7faac4364
 | 2/01/16 |
 b1f0e4e604246709bb9db06a50b5abade9bf3a556f5796e2a22365a200b33059
-----------------------
 
 If the fingerprint is different, then we download that data, store it, and add it to the list. This allows people to reference data back in time, by simply supplying the fingerprint id. It also means that we can reduce the amount of data we store by never storing duplicate data ([this works like rsync by using rabin fingerprinting](http://github.com/maxogden/rabin)).
 
@@ -43,7 +44,7 @@ We will build open source data harvesters for popular data portals. We will also
 
 The most common data distribution strategy in use today is built on 20 year-old technology, relying on manual downloads through single points of failure such as as FTP and HTTP, resulting in messages like ‘Sorry, the server is down for maintenance.’ Our approach, inspired by BitTorrent but adapted to work for open data, is to build a smarter network that increases availability of data by connecting people who want to download open data to those who already have it. After users download data, they will be able to offer their unused bandwidth to mirror (or upload) their previously downloaded datasets as a public service. Therefore, if the original source (e.g., http://data.gov) goes offline, the data will still be downloadable.
 
-This Knight funding would support open source development for the PublicBits Catalog online search service, the PublicBits Desktop Application, and connectors to the large variety of data portals and other sources. Sources could range from popular data portals like Data.gov, World Bank, Socrata, CKAN instances to more niche sources like FiveThirtyEight, or the US Census Bureau. 
+This Knight funding would support open source development for the PublicBits Catalog online search service, the PublicBits Desktop Application, and connectors to the large variety of data portals and other sources. Sources could range from popular data portals like Data.gov, World Bank, Socrata, CKAN instances to more niche sources like FiveThirtyEight, or the US Census Bureau.
 
 ## The Challenge
 
