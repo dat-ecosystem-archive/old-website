@@ -25,7 +25,7 @@ Each time PublicBits.org finds a data source and generates a Dat repository, it 
 
 CFPB complaint dataset
 
-| Date | Fingerprint 
+| Date | Fingerprint
 | ---- | --- |
 | 1/28/16 | 6c53f0cf72a1c5d884b4c161dd066af33f1b2c65f1baaf58cc6d61d7faac4364 |
 | 1/29/16 | 6c53f0cf72a1c5d884b4c161dd066af33f1b2c65f1baaf58cc6d61d7faac4364 |
@@ -35,7 +35,7 @@ CFPB complaint dataset
 
 If the fingerprint is different, then we download that data, store it, and add it to the list. This allows people to reference data back in time, by simply supplying the fingerprint id. It also means that we can reduce the amount of data we store by never storing duplicate data ([this works like rsync by using rabin fingerprinting](http://github.com/maxogden/rabin)).
 
-So when Sue has her idea, she can go to PublicBits.org, search for 'water', and filter by metadata associated with the Data Package. She could decide to download hundreds of different datasets at once. When she downloads the datasets, they will be tracked by a local desktop application that will organize and catalogue them associated with her user account. When PublicBits.org scrapes the data and finds that it is new, the Dat will be updated, and Sue will be notified that the data has updated. This makes it easy for Sue to keep her analyses up-to-date and accurate.
+So when Sue has her idea, she can go to PublicBits.org, search for 'water', and filter by metadata associated with the Data Package. She could decide to download hundreds of different datasets at once. When she downloads the datasets, a desktop application will organize and catalogue them, so she can guarantee what version of data, what date it was accessed, and so on. When PublicBits.org finds a new fingerprint, Sue will be notified and the data can be updated with a click of a button. This makes it easy for Sue to keep her analyses up-to-date, accurate, and replicable.
 
 We will build open source data harvesters for popular data portals. We will also encourage users to submit their own harvesters, or publish their data portal to PublicBits through plugins and extensions. These harvesters will be focused on collecting and normalizing datasets into `Dat` data packages. We want to focus on the process of *standardization,* and plan on using an existing open standard such as OKF's Data Packages to describe the dataset metadata.
 
