@@ -25,14 +25,13 @@ Each time PublicBits.org finds a data source and generates a Dat repository, it 
 
 CFPB complaint dataset
 
-| Date | Fingerprint (hash)
---------------------
-| 1/28/16 | 6c53f0cf72a1c5d884b4c161dd066af33f1b2c65f1baaf58cc6d61d7faac4364
-| 1/29/16 | 6c53f0cf72a1c5d884b4c161dd066af33f1b2c65f1baaf58cc6d61d7faac4364
-| 1/30/16 | 6c53f0cf72a1c5d884b4c161dd066af33f1b2c65f1baaf58cc6d61d7faac4364
-| 1/31/16 | 6c53f0cf72a1c5d884b4c161dd066af33f1b2c65f1baaf58cc6d61d7faac4364
-| 2/01/16 |
-b1f0e4e604246709bb9db06a50b5abade9bf3a556f5796e2a22365a200b33059
+| Date | Fingerprint 
+| ---- | --- |
+| 1/28/16 | 6c53f0cf72a1c5d884b4c161dd066af33f1b2c65f1baaf58cc6d61d7faac4364 |
+| 1/29/16 | 6c53f0cf72a1c5d884b4c161dd066af33f1b2c65f1baaf58cc6d61d7faac4364 |
+| 1/30/16 | 6c53f0cf72a1c5d884b4c161dd066af33f1b2c65f1baaf58cc6d61d7faac4364 |
+| 1/31/16 | 6c53f0cf72a1c5d884b4c161dd066af33f1b2c65f1baaf58cc6d61d7faac4364 |
+| 2/01/16 | b1f0e4e604246709bb9db06a50b5abade9bf3a556f5796e2a22365a200b33059 |
 
 If the fingerprint is different, then we download that data, store it, and add it to the list. This allows people to reference data back in time, by simply supplying the fingerprint id. It also means that we can reduce the amount of data we store by never storing duplicate data ([this works like rsync by using rabin fingerprinting](http://github.com/maxogden/rabin)).
 
