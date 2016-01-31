@@ -1,9 +1,13 @@
 # Announcing PublicBits: Breaking down open data silos
 by [Karissa McKelvey](http://karissa.github.io), [Max Ogden](http://maxogden.com)
 
-We're happy to announce a new $420,000 grant from the Knight Foundation for [PublicBits.org](http://publicbits.org). Our goal is to collect all of the world’s open data sources. We want to compile a dataset of datasets, and make them accessible through a free, decentralized, redundant, and open network, inspired by BitTorrent. The Knight funding will allow us to hire three and a half new team members for this new project, and we couldn't be more excited!
+We're happy to announce a new $420,000 grant from the Knight Foundation for [PublicBits.org](http://publicbits.org). Our goal is to collect all of the world’s open data sources. We want to compile a dataset of datasets, and make them accessible through a free, decentralized, redundant, and open network, inspired by BitTorrent. PublicBits.org will use Dat, our flagship project, as the main filesharing protocol to craft a new collaborative framework that breaks down the siloed nature of data portals. Our project takes inspiration from GitHub, a popular platform that allows users to collaborate on code. We plan to bring the collaborative, historical, and reusable nature of open source to the open data movement.
 
-## Sue is a data analyst
+Max Ogden started developing the Dat project with support from a [Knight Prototype Grant](http://knightfoundation.org/blogs/knightblog/2015/3/26/prototype-fund-winner-max-ogden-building-data-sharing-ecosystem/) in mid-2013. For the past two years, Dat has evolved with input from civic tech, journalism, and data science partners. Through these relationships, we have identified a significant pain point that spans the open data landscape centered around the discovery and distribution of data. 
+
+The most common data distribution strategy in use today is built on 20 year-old technology, relying on manual downloads through single points of failure such as as FTP and HTTP, resulting in messages like ‘Sorry, the server is down for maintenance.’ Our approach, inspired by BitTorrent but adapted to work for open data, is to build a smarter network that increases availability of data by connecting people who want to download open data to those who already have it. After users download data, they will be able to offer their unused bandwidth to mirror (or upload) their previously downloaded datasets as a public service. Therefore, if the original source (e.g., http://data.gov) goes offline, the data will still be downloadable. We are pursuing partnerships with cloud storage companies, academic institutions, and internet freedom organizations to ensure there will be "super-sharer" hosts available with lots of reliable storage and bandwidth. 
+
+# A data analyst walks into PublicBits.org....
 
 Imagine you know a person named Sue, who is a data analyst. Her primary job is to convert *open data* into *actionable information*.
 
@@ -39,12 +43,8 @@ So when Sue has her idea, she can go to PublicBits.org, search for 'water', and 
 
 We will build open source data harvesters for popular data portals. We will also encourage users to submit their own harvesters, or publish their data portal to PublicBits through plugins and extensions. These harvesters will be focused on collecting and normalizing datasets into `Dat` data packages. We want to focus on the process of *standardization,* and plan on using an existing open standard such as OKF's Data Packages to describe the dataset metadata.
 
-## A New Design for Data Distribution
+## The Future
 
-The most common data distribution strategy in use today is built on 20 year-old technology, relying on manual downloads through single points of failure such as as FTP and HTTP, resulting in messages like ‘Sorry, the server is down for maintenance.’ Our approach, inspired by BitTorrent but adapted to work for open data, is to build a smarter network that increases availability of data by connecting people who want to download open data to those who already have it. After users download data, they will be able to offer their unused bandwidth to mirror (or upload) their previously downloaded datasets as a public service. Therefore, if the original source (e.g., http://data.gov) goes offline, the data will still be downloadable.
+Our new Knight funding will support open source development for the PublicBits Catalog online search service, the PublicBits Desktop Application, and connectors to the large variety of data portals and other sources. Sources could range from popular data portals like Data.gov, World Bank, Socrata, CKAN instances to more niche sources like FiveThirtyEight, or the US Census Bureau.
 
-This Knight funding would support open source development for the PublicBits Catalog online search service, the PublicBits Desktop Application, and connectors to the large variety of data portals and other sources. Sources could range from popular data portals like Data.gov, World Bank, Socrata, CKAN instances to more niche sources like FiveThirtyEight, or the US Census Bureau.
-
-## The Challenge
-
-We’re focused on pushing the boundaries of what’s possible in order to keep knowledge freely accessible. It will be a challenge to find the right team and execute the plan within the allotted time for the grant. The design must also contend with a scale of data that could potentially be very large, diverse and complicated. We need to make sure users will not get overwhelmed by the amount of data, and that we can return relevant results.
+It will be a challenge to find the right team and execute the plan within the allotted time for the grant. The design must also contend with a scale of data that could potentially be very large, diverse and complicated. We need to make sure users will not get overwhelmed by the amount of data, and that we can return relevant results. These challenges may not be insurmountable without the right team. Thankfully, we are already experts in the field and have built simple prototypes of the PublicBits registry and desktop application. Feel free to check out the [code on github](https://github.com/publicbits/publicbits.org). Contributions welcome! 
