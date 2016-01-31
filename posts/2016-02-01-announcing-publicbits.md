@@ -25,17 +25,17 @@ We've talked to hundreds of data scientists and data analysts who have this prob
 
 We plan to build a search engine for open data called PublicBits.org. PublicBits.org will crawl data sources, turn them into Dat repositories, and create a 'dataset of datasets' that can be searched on a centralized service. The closest analog to Dat is BitTorrent, but BitTorrent was designed with piracy in mind and lacks features such as file versioning, real time updating content, and web browser support.
 
-Each time PublicBits.org finds a data source and generates a Dat repository, it creates a cryptographic hash, like a fingerprint, that uniquely identifies the data. For example, the data fingerprint for the CFPB's open complaint database might be '6c53f0cf72a1c5d884b4c161dd066af33f1b2c65f1baaf58cc6d61d7faac4364' on January 28th. Lets say, perhaps on Feb 1st, there are 300 new complaints published by the CFPB. The crawler will go to the url and generate the fingerprint, finding something different -- say, 'b1f0e4e604246709bb9db06a50b5abade9bf3a556f5796e2a22365a200b33059'. The history for the dataset, then, might look like this:
+Each time PublicBits.org finds a data source and generates a Dat repository, it creates a cryptographic hash, like a fingerprint, that uniquely identifies the data. For example, the data fingerprint for the CFPB's open complaint database might be '6c53f0cf72a' on January 28th. Lets say, perhaps on Feb 1st, there are 300 new complaints published by the CFPB. The crawler will go to the url and generate the fingerprint, finding something different -- say, 'b1f0e4e604'. The history for the dataset, then, might look like this:
 
 CFPB complaint dataset
 
 | Date | Fingerprint
 | ---- | --- |
-| 1/28/16 | 6c53f0cf72a1c5d884b4c161dd066af33f1b2c65f1baaf58cc6d61d7faac4364 |
-| 1/29/16 | 6c53f0cf72a1c5d884b4c161dd066af33f1b2c65f1baaf58cc6d61d7faac4364 |
-| 1/30/16 | 6c53f0cf72a1c5d884b4c161dd066af33f1b2c65f1baaf58cc6d61d7faac4364 |
-| 1/31/16 | 6c53f0cf72a1c5d884b4c161dd066af33f1b2c65f1baaf58cc6d61d7faac4364 |
-| 2/01/16 | b1f0e4e604246709bb9db06a50b5abade9bf3a556f5796e2a22365a200b33059 |
+| 1/28/16 | 6c53f0cf72 |
+| 1/29/16 | 6c53f0cf72 |
+| 1/30/16 | 6c53f0cf72 |
+| 1/31/16 | 6c53f0cf72 |
+| 2/01/16 | b1f0e4e604 |
 
 If the fingerprint is different, then we download that data, store it, and add it to the list. This allows people to reference data back in time, by simply supplying the fingerprint id. It also means that we can reduce the amount of data we store by never storing duplicate data ([this works like rsync by using rabin fingerprinting](http://github.com/maxogden/rabin)).
 
