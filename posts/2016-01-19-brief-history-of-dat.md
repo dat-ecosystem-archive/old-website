@@ -111,7 +111,7 @@ After testing the alpha and beta extensively we realized we had to reduce the sc
 
 In our case we were torn between a tabular data workflow (importing CSVs row by row, re-importing CSVs when individual rows are edited, with key/value database semantics) and a file based workflow (like Dropbox or rsync where we are agnostic to the actual contents and format of the files).
 
-We decided a "files-first" approach is the way forward. Modelling more complex tabular data workflows on top of Dat is still possible, but we are treating it as an advanced use case. As a result, the new 1.0 command-line API looks like this:
+We decided a "files-first" approach is the way forward. Modeling more complex tabular data workflows on top of Dat is still possible, but we are treating it as an advanced use case. As a result, the new 1.0 command-line API looks like this:
 
 ```
 $ dat link
