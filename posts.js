@@ -1,6 +1,12 @@
 module.exports = [
   {
-    title: 'Announcing Publicbits.org'
+    title: 'Dat 1.0 is ready',
+    author: 'Karissa McKelvey',
+    teaser: 'After years of R&D, the release candidate is ready.',
+    name: '2016-02-01-dat-1'
+  },
+  {
+    title: 'Announcing Publicbits.org',
     author: 'Karissa McKelvey',
     teaser: 'Breaking down open data silos with a new Knight Foundation grant.',
     name: '2016-02-01-publicbits-announcement'
