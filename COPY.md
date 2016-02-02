@@ -1,10 +1,10 @@
 # Dat
 
-Share datasets on the Internet.
+Share, version, and sync data.
 
-An open source, peer-to-peer data sharing tool for replicating and tracking changes to data. Inspired from the best parts of Git and BitTorrent, Dat shares data through a free, decentralized, and redundant network that 'locks in' the integrity and openness of data.
+Dat is an open source, decentralized data-sharing tool for versioning and syncing data. Inspired by the best parts of Git and BitTorrent, Dat shares data through a free, redundant network that assures the integrity and openness of data.
 
-An open source, peer-to-peer data sharing tool for replicating and tracking changes to data. Dat is able to guarantee dataset integrity over time with the use of cryptographic fingerprinting. Inspired from the best parts of Git and BitTorrent, Dat shares data through a free, decentralized, and redundant network that 'locks in' the integrity and openness of data. Dat comes with a desktop application, commandline tool, and client libraries in various languages such as Python and R.
+Dat is an open source, decentralized data-sharing tool for versioning and syncing data. It can guarantee dataset integrity over time, using cryptographic fingerprinting. Inspired frombythe best parts of Git and BitTorrent, Dat shares data through a free, redundant network that assures the integrity and openness of data. Dat includes a desktop application, command line tool, and client libraries in various languages, including Python and R.
 
 # PublicBits
 
