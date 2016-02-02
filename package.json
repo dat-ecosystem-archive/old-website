@@ -4,7 +4,7 @@
   "description": "dat-data.com source",
   "main": "index.js",
   "scripts": {
-    "start": "npm run watch & npm run watch-css & npm run server",
+    "start": "node render.js && npm run server",
     "server": "cd rendered && nodemon --exec http-server -e js,css,html -i data/ -i static/",
     "test": "node test/run.js | tap-spec",
     "watch": "watchify -t brfs index.js -o bundle.js",

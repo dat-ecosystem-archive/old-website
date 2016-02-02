@@ -9,7 +9,7 @@ module.exports = [
     title: 'Announcing Publicbits.org',
     author: 'Karissa McKelvey',
     teaser: 'Breaking down open data silos with a new Knight Foundation grant.',
-    name: '2016-02-01-publicbits-announcement'
+    name: '2016-02-01-announcing-publicbits'
   },
   {
     title: 'The likely collapse of a major proprietary hosting service',

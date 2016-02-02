@@ -370,7 +370,6 @@ ul {
   background-color: #2a3749;
   overflow: auto;
   color: #959ba4;
-  margin-top: 80px;
 }
 .footer a {
   color: #fff;
@@ -454,6 +453,7 @@ a.load-document {
 }
 .post {
   max-width: 800px;
+  padding-bottom: 80px;
 }
 .post img {
   max-width: 100%;
