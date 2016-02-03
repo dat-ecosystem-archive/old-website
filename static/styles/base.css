@@ -732,6 +732,9 @@ input.edit-info {
   .hidden-mobile {
     display: none;
   }
+  .video {
+    width: 100% !important;
+  }
   .header-nav-list li {
     margin-right: 15px;
   }
