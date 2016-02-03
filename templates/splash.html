@@ -6,6 +6,10 @@
         <div class="jumbotron-horizontal-rule"></div>
         <div class="jumbotron-description">Dat is an open source, decentralized data-sharing tool for versioning and syncing data.
           <div class="header-continue">
+<!--            <a href="https://try-dat.com" target="_blank">
+              <div class="button">Try dat in the browser › </div>
+            </a>
+          -->
           </div>
         </div>
       </div>
@@ -14,6 +18,28 @@
 </div>
 <div class="background-mask">
   <div class="container">
+    <div class="row">
+      <div class="content-sub-container content-code-intro">
+        <div class="col-md-8 col-md-offset-2">
+          <pre><code class="bash">npm install -g dat</code></pre>
+
+<pre><code class="bash">$ dat link .
+Creating share link for 342 files, 4 folders, 3.8 GB total
+Fingerprinting file contents (7/13)
+dat://a53d819bdf5c3496a2855df83daaac885686cac4b0bccfc580741b04898e3b32
+Sharing data on port 3282, connected to 0 peers
+</code></pre>
+
+<pre><code class="bash">$ dat dat://a53d819bdf5c3496a2855df83daaac885686cac4b0bccfc580741b04898e3b32
+Downloaded 1/1 files (961.2 B/s, 4.81 kB total)
+Download complete, sharing data. Connected to 1/2 peers
+</code></pre>
+      </div>
+
+    </div>
+  </div>
+</div>
+  <div class="container">
     <div class="row centered">
       <div class="content-sub-container">
         <div class="col-md-4">
@@ -21,22 +47,24 @@
           <img src="/static/img/dat-hex-1.png" />
           <div class="content-sub-container">
             <div class="content-subtitle">
-              Inspired by the best parts of Git and BitTorrent, Dat shares data through a free, redundant network that assures the integrity and openness of data.
+              Inspired by the best parts of Git and BitTorrent, Dat shares versioned data through a decentralized network.
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="content-title"></div>
+          <div class="content-title">Intelligent Storage</div>
           <img src="/static/img/dat-hex-2.png" />
           <div class="content-sub-container">
-            <div class="content-subtitle"></div>
+            <div class="content-subtitle">
+              Dat deduplicates data downloads between versions, reducing bandwidth costs and improving speed.
+            </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="content-title">Plug it in</div>
+          <div class="content-title">Use it anywhere</div>
           <img src="/static/img/dat-hex-3.png" />
           <div class="content-sub-container">
-            <div class="content-subtitle">Dat comes with a desktop application, commandline tool, and client libraries in various languages such as Python and R.</div>
+            <div class="content-subtitle">There's a desktop application, commandline tool, browser compatibility, and Python client library.</div>
           </div>
         </div>
       </div>

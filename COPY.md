@@ -4,7 +4,7 @@ Share, version, and sync data.
 
 Dat is an open source, decentralized data-sharing tool for versioning and syncing data. Inspired by the best parts of Git and BitTorrent, Dat shares data through a free, redundant network that assures the integrity and openness of data.
 
-Dat is an open source, decentralized data-sharing tool for versioning and syncing data. Inspired by the best parts of Git and BitTorrent, Dat shares data through a free, redundant network that assures the integrity and openness of data. It uses cryptographic fingerprinting to generate a unique global link for the data. Dat includes a desktop application, command line tool, and client libraries in various languages, including Python and R.
+Dat is an open source, decentralized data-sharing tool for versioning and syncing data. Inspired by the best parts of Git and BitTorrent, Dat shares data through a free, redundant network that assures the integrity and openness of data. It uses cryptographic fingerprinting to generate a unique global link for the data. Dat includes a desktop application, command line tool, and client libraries in Python and R.
 
 # PublicBits
 
