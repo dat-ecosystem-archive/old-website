@@ -8,8 +8,6 @@ Dat is an open source, decentralized data-sharing tool for versioning and syncin
 
 # PublicBits
 
-Breaking down open data silos.
+Data distribution for individuals and communities.
 
-We want to collect all of the world’s open data and distribute it through a free, decentralized, redundant, and open network inspired by BitTorrent. PublicBits.org brings structure to the openness of data, making it easy to find, manage, and re-use the open data you use every day.
-
-PublicBits.org collects all of the world's open data and distributes it through a free, decentralized, redundant, and open network inspired by BitTorrent. Users will have the option to automatically register open datasets with PublicBits, which will publish that metadata, including a link to the original data, for public benefit. We will automatically register data from hundreds of available data portals. PublicBits users may offer their unused bandwidth to mirror their previously-downloaded datasets for others, as a public service. If the original source goes offline, the data will still be downloadable. PublicBits.org brings structure to the openness of data, making it easy to find, manage, and re-use the open data you use every day.
+Users register data (small or Big) with PublicBits, which will publish that metadata, including a link to the original data, for public benefit. We will automatically register data from hundreds of available data portals. PublicBits users may offer their unused bandwidth to mirror their previously-downloaded datasets for others, as a public service. If the original source goes offline, the data will still be downloadable. PublicBits.org brings structure to sharing data, making it easy to find, manage, and re-use the data you use every day.
