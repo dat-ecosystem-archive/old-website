@@ -3,7 +3,8 @@ module.exports = [
     title: 'Dat 1.0 is ready',
     author: 'Karissa McKelvey',
     teaser: 'After years of R&D, the release candidate is ready.',
-    name: '2016-02-01-dat-1'
+    name: '2016-02-01-dat-1',
+    date: '2016-02-05'
   },
   {
     title: 'Announcing Publicbits.org',
