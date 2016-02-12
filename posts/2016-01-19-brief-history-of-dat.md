@@ -122,6 +122,10 @@ $ dat <share-link>
 
 We were able to get rid of 90% of our previous API surface area by going lower level (files-first).
 
-This blog post would be too long if I took the time to list the reasoning behind the removal of all of the commands from the Beta version. [Thankfully, we did a talk about just this redesign late last year.](https://vimeo.com/147914258) The short answer is that we decided to try and focus on making something that was as easy to use as Dropbox (but open source and peer to peer), and that specific focus allowed us to streamline quite a bit. As I said above, the hard part was going through the process of trying different approaches until we could feel confident in committing to one of them.
+This blog post would be too long if I took the time to list the reasoning behind the removal of all of the commands from the Beta version. [Thankfully, we did a talk about just this redesign late last year](https://vimeo.com/147914258), which you can watch below. The short answer is that we decided to try and focus on making something that was as easy to use as Dropbox (but open source and peer to peer), and that specific focus allowed us to streamline quite a bit. As I said above, the hard part was going through the process of trying different approaches until we could feel confident in committing to one of them.
+
+<iframe src="https://player.vimeo.com/video/147914258" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/147914258">Designing Dat 1.0</a> from <a href="https://vimeo.com/ropensci">ropensci</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
 
 I hope this was insightful, and please try out the new Dat and let us know what you think!

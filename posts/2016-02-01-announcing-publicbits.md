@@ -1,5 +1,5 @@
 # Announcing PublicBits: Bridging open data silos
-by [Karissa McKelvey](http://karissa.github.io), [Max Ogden](http://maxogden.com)
+by [Karissa McKelvey](http://karissa.github.io)
 
 We’re happy to announce that we’ve received [a $420,000 grant](http://www.knightfoundation.org/grants/201551933/) from the [John S. and James L. Knight Foundation](http://www.knightfoundation.org/) for a new project that we’re calling “PublicBits.” Our goal is to collect the world’s open data sources, to make their historical data available through a dataset registry at [PublicBits.org](http://publicbits.org/). This “dataset of datasets” will become accessible through a free, decentralized, redundant, open network, inspired by BitTorrent. PublicBits.org will use [Dat](http://dat-data.com/), our flagship project, to craft a new, collaborative framework that breaks down the silos of data portals. Our project takes inspiration from GitHub, the popular platform that allows developers to collaboratively develop software. We plan to bring the collaborative, historical, and reusable nature of open source to the open data movement.
 
