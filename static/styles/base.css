@@ -136,7 +136,7 @@ ul {
   padding: 40px;
 }
 .background-mask {
-  background-color: #f4f5f6;
+  background-color: white;
   padding-bottom: 50px;
 }
 .secondary-info {
@@ -528,7 +528,7 @@ h6 {
   font-weight: 600;
   float: left;
   font-size: 38px;
-  background-image: url('/static/img/dat-hex-small.png');
+  background-image: url('/static/img/dat-data-blank.png');
   background-size: 35px;
   background-repeat: no-repeat;
   padding-left: 50px;
