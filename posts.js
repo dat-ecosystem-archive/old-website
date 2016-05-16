@@ -1,5 +1,12 @@
 module.exports = [
   {
+    // date: '2016-05-16',
+    title: 'Key Elements of Distributing Data',
+    author: 'Karissa McKelvey',
+    teaser: 'How the current tools fall short by missing key elements.',
+    name: '2016-05-16-key-elements'
+  },
+  {
     title: 'Dat 1.0 is ready',
     author: 'Karissa McKelvey',
     teaser: 'After years of R&D, the release candidate is ready.',
