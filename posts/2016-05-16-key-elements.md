@@ -10,7 +10,7 @@ All of these tools mentioned above have some of the key elements for open data d
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Socrata | x |   |   |   |   |   |   |
 | CKAN | x | x | x |   |   |   |   |
-| FTP | x | x |   |   |   | x |   |
+| FTP | x | x |   |   |   | x |  x |
 | HTTP | x | x |   |   |   | x | x |
 | DropBox/Drive | x |   | x |   |   | x | x |
 | BitTorrent Sync | x |   |   | x | x | x | x |
@@ -20,7 +20,7 @@ All of these tools mentioned above have some of the key elements for open data d
 
 
 
-**Open.** An open data tool should be open source. This isn’t simply out of principle -- it also enables developers to tweak the tool for use within a potentially complicated distribution system. This property is key for extensibility and stability of any distribution toolchain by not requiring dependence upon outside proprietary and corporate software. *Benefits: developer-friendliness, extensibilty, long-term stability.*
+**Open.** An open data tool should be open source. This isn’t simply out of principle -- it also enables developers to tweak the tool for use within a potentially complicated distribution system. This property is key for extensibility and stability of any distribution toolchain by not requiring dependence upon outside proprietary and corporate software. Most importantly, developers can peer review, or audit, the tool for reliability and safety. *Benefits: developer-friendliness, extensibilty, long-term stability.*
 
 **Historical.** Data should be versioned with cryptographically secure hashes. We can then prove the data is exactly what we need when we reference a particular version in scripts or analysis results. We can also audit the history of the data, which could be key for understanding errors in the data transformation or distribution pipeline. *Benefits: auditing, governance, provenance.*
 
