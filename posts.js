@@ -1,6 +1,6 @@
 module.exports = [
   {
-    // date: '2016-05-16',
+    date: '2016-05-16',
     title: 'Key Elements of Distributing Data',
     author: 'Karissa McKelvey',
     teaser: 'How the current tools fall short by missing key elements.',
