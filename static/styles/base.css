@@ -461,6 +461,11 @@ a.load-document {
 .post img {
   max-width: 100%;
 }
+td,
+th {
+  padding: 10px;
+  border: 1px solid black;
+}
 .hd-xl,
 h1 {
   font-size: 4rem;
