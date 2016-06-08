@@ -1,5 +1,12 @@
 module.exports = [
   {
+  //  date: '2016-07-07',
+    title: 'Announcing dat.land online demo',
+    author: 'Karissa McKelvey',
+    teaser: 'Live peer to peer sync in the browser with http://dat.land',
+    name: '2016-07-07-announcing-dat-land'
+  },
+  {
     date: '2016-05-16',
     title: 'Key Elements of Distributing Data',
     author: 'Karissa McKelvey',
