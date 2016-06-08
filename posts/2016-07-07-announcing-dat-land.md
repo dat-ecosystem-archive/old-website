@@ -5,7 +5,9 @@ Today we are happy to announce [dat.land](http://dat.land) -- a new browser-base
 
 <iframe width="420" height="315" src="https://www.youtube.com/embed/w9er-XcZLCU" frameborder="0" allowfullscreen></iframe>
 
-The new version of dat uses [hyperdrive](http://github.com/mafintosh/hyperdrive), a distributed filesystem that takes the best parts of data sync tools like DropBox or BitTorrent Sync -- but open source, peer to peer, and works in the browser. Two months ago, I outlined the key principles of a peer to peer data system To see the full list
+The new version of dat uses [hyperdrive](http://github.com/mafintosh/hyperdrive), a distributed filesystem that takes the best parts of data sync tools like DropBox or BitTorrent Sync -- but open source, peer to peer, and works in the browser.
+
+Two months ago, I outlined the [7 key principles of a peer to peer data system](http://dat-data.com/blog/2016-05-16-key-elements), which include signability, openness, history, content-addressability, decentralization, indexing, and streaming. This new version of dat in our browser based demo is the first iteration able to accomplish all of these key principles, and we are very proud of it.
 
 ## How it works
 
