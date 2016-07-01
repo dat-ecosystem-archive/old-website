@@ -33,3 +33,7 @@ All of these tools mentioned above have some of the key elements for open data d
 **Streaming.** A client should be able to retrieve data chunks immediately instead of being forced to download the entire contents of a dataset before reading. This also allows clients to listen to changes and update as soon as new data is published. *Benefits: live file syncing, live audio/video streaming, instantaneous upload/download.*
 
 **Indexable.** The tool will allow a client to download a particular byte range of a file. *Benefits: random access seeking, file indexing (e.g., rows in a csv).*
+
+Our newest version of [dat](http://github.com/maxogden/dat) is a working implementation of these key elements. Check out the [GitHub repository now](http://github.com/maxogden/dat) to get started or see the [online demo](http://dat.land). We are also always available in IRC, #dat on freenode, for questions, comments, or suggestions.
+
+**edit**: [See the discussion on hacker news](https://news.ycombinator.com/item?id=12020422)
