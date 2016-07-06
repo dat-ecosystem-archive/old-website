@@ -57,6 +57,9 @@ pre {
 pre.large {
   font-size: 24px;
 }
+pre.medium {
+  font-size: 18px;
+}
 .muted,
 .dark-text {
   color: #959ba4;
