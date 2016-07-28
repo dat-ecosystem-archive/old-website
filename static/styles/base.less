@@ -29,12 +29,21 @@ h1, h2, h3, h4, h5 {
   }
 }
 
+a,
+button,
+input,
+select,
+textarea {
+  transition-property: background-color, color;
+  transition-duration: 0.05s;
+  transition-timing-function: ease-out;
+}
+
 a {
-  transition: all 0.15s ease;
   color: @color-green;
   &:hover {
-    color: @color-green;
-    text-decoration: underline;
+    color: @color-green--hover;
+    text-decoration: none;
   }
 }
 

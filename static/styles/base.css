@@ -33,13 +33,21 @@ h5 {
   margin-top: 10px;
   padding-top: 0px;
 }
+a,
+button,
+input,
+select,
+textarea {
+  transition-property: background-color, color;
+  transition-duration: 0.05s;
+  transition-timing-function: ease-out;
+}
 a {
-  transition: all 0.15s ease;
   color: #35b44f;
 }
 a:hover {
-  color: #35b44f;
-  text-decoration: underline;
+  color: #24943a;
+  text-decoration: none;
 }
 ul,
 p {
