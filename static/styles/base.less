@@ -7,7 +7,7 @@ body {
   background-color: @white-background;
 }
 h1, h2, h3, h4, h5 {
-  color: #333;
+  color: @color-neutral;
 }
 
 .mono {
@@ -31,9 +31,9 @@ h1, h2, h3, h4, h5 {
 
 a {
   transition: all 0.15s ease;
-  color: @green;
+  color: @color-green;
   &:hover {
-    color: @green;
+    color: @color-green;
     text-decoration: underline;
   }
 }
@@ -49,8 +49,8 @@ p {
 pre {
   padding: .5em;
   font-size: 14px;
-  background-color: #232323;
-  color: #e6e1dc;
+  background-color: @color-neutral;
+  color: @color-neutral--10;
 }
 
 pre.large {
@@ -90,7 +90,7 @@ ul {
 
 /** SPLASH **/
 .rsaquo {
-  color: #35B44F;
+  color: @color-green;
   margin-right: 10px;
   font-family: "Times New Roman", Times, serif;
   font-size: 20px;
@@ -156,7 +156,7 @@ ul {
   width: 100%;
   max-width: 64px;
   height: 4px;
-  background: #bfc3c8;
+  background: @color-neutral--30;
   margin: 5px 0;
 }
 
@@ -169,17 +169,17 @@ ul {
   max-width: 525px;
   font-size: 20px;
   margin: 20px 0;
-  color: #6A7380;
+  color: @color-neutral--70;
 }
 .jumbotron-continue {
   font-size: 20px;
   font-weight: 700;
-  color: #35B44F;
+  color: @color-green;
   padding-right: 10px;
   padding-bottom: 50px;
 }
 .jumbotron-continue a {
-  color: #35B44F;
+  color: @color-green;
 }
 .jumbotron-spacer {
   height: @header-height;
@@ -202,7 +202,7 @@ ul {
 }
 .content a,
 .content-a :visited {
-  color: #35B44F;
+  color: @color-green;
   font-weight: 600;
   text-decoration: none;
 }
@@ -212,13 +212,13 @@ ul {
 .content-title {
   font-size: 32px;
   font-weight: 700;
-  color: #2A3749;
+  color: @color-neutral;
   padding-top: 50px;
   padding-bottom: 5px;
 }
 .content-subtitle {
   font-size: 20px;
-  color: #6A7380;
+  color: @color-neutral--70;
   text-align: center;
   padding-bottom: 15px;
 }
@@ -228,7 +228,7 @@ ul {
 .content-horizontal-rule {
   width: 64px;
   height: 4px;
-  background: #bfc3c8;
+  background: @color-neutral--30;
 }
 .content-sub-container {
   padding-top: 30px;
@@ -255,13 +255,13 @@ ul {
 .content-card-title {
   font-weight: 700;
   font-size: 24px;
-  color: #2A3749;
+  color: @color-neutral;
   text-align: center;
   margin-top: 15px;
 }
 .content-card-subtitle {
   font-size: 16px;
-  color: #6A7380;
+  color: @color-neutral--70;
   text-align: center;
   line-height: 28px;
 }
@@ -292,11 +292,11 @@ ul {
 .content-text-h1 {
   font-size: 36px;
   font-weight: 700;
-  color: #2A3749;
+  color: @color-neutral;
 }
 .content-text-intro {
   font-size: 20px;
-  color: #6A7380;
+  color: @color-neutral--70;
   margin-bottom: 25px;
 }
 .centered {
@@ -304,12 +304,12 @@ ul {
 }
 .content-text-paragraph {
   font-size: 16px;
-  color: #2A3749;
+  color: @color-neutral;
   margin-bottom: 10px;
 }
 .content-text-container a,
 .content-text-container a:visited {
-  color: #35B44F;
+  color: @color-green;
   text-decoration: none;
 }
 .content-text-container a:hover {
@@ -328,7 +328,7 @@ ul {
 }
 .content-card-small a,
 .content-card-small a:visited {
-  color: #35B44F;
+  color: @color-green;
   text-decoration: none;
 }
 .content-card-small a:hover {
@@ -339,17 +339,17 @@ ul {
 }
 .content-card-small-subtitle {
   font-size: 16px;
-  color: #6A7380;
+  color: @color-neutral--70;
   line-height: 24px;
   margin-top: 10px;
 }
 .content-card-small-stripe {
   height: 96px;
-  background-color: @dark-blue;
+  background-color: @color-neutral;
 }
 .content-card-small-avatar {
   @size: 100px;
-  background-color: #fff;
+  background-color: @color-white;
   width: @size;
   height: @size;
   margin: 0 auto;
@@ -378,7 +378,7 @@ ul {
 /** tabs **/
 .nav-tabs li {
   font-family: monospace;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid @color-white;
 }
 
 .spacer {
@@ -392,7 +392,7 @@ ul {
   color: @dark-text;
 }
 .footer a {
-  color: #fff;
+  color: @color-white;
   text-decoration: none;
 }
 .footer a:hover {
@@ -414,14 +414,14 @@ ul {
 .footer-horizontal-rule {
   width: 32px;
   height: 4px;
-  background: #6a7380;
+  background: @color-neutral--70;
   margin: 10px 0 30px 0;
 }
 .footer-nav-list {
   list-style-type: none;
   padding-left: 0;
   font-weight: 600;
-  color: #fff;
+  color: @color-white;
   font-size: 16px;
 }
 .footer-nav-list li {
@@ -443,25 +443,32 @@ a.load-document {
   padding: 0;
   margin: 0;
   display: inline-flex;
-  color: @dark-blue;
+  color: @color-neutral;
   transition: .25s;
 }
 
 .sidebar-list {
   max-width: 25%;
   background-color: @light-background;
-  color: @dark-blue;
+  color: @color-neutral;
 
   .document {
     padding: 20px;
     width: 100%;
     border-bottom: 1px solid @light-border;
-    .published { color: #aaa; }
-    h2 { margin: 0px; color: @green }
-    &:not(.active) { border-left: 1px solid @white-border;  }
+    .published {
+      color: @color-neutral--50;
+    }
+    h2 {
+      margin: 0px;
+      color: @color-green;
+    }
+    &:not(.active) {
+      border-left: 1px solid @white-border;
+    }
     &.active {
-      background-color: #fff;
-      color: @dark-blue;
+      background-color: @color-white;
+      color: @color-neutral;
     }
     &:hover:not(.active) {
       background-color: @light-background;
@@ -475,7 +482,7 @@ a.load-document {
   img { max-width: 100% }
 }
 
-td, th { 
+td, th {
   padding: 10px;
   border: 1px solid black;
 }

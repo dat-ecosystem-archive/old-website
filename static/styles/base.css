@@ -8,14 +8,14 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #fdfdfd;
+  background-color: #ffffff;
 }
 h1,
 h2,
 h3,
 h4,
 h5 {
-  color: #333;
+  color: #293648;
 }
 .mono {
   font-family: monospace;
@@ -51,18 +51,18 @@ p {
 pre {
   padding: .5em;
   font-size: 14px;
-  background-color: #232323;
-  color: #e6e1dc;
+  background-color: #293648;
+  color: #e9ebec;
 }
 pre.large {
   font-size: 24px;
 }
 .muted,
 .dark-text {
-  color: #959ba4;
+  color: #7c8792;
 }
 .caption {
-  color: #959ba4;
+  color: #7c8792;
   font-size: 14px;
 }
 .button {
@@ -78,7 +78,7 @@ pre.large {
   background-color: white;
 }
 .button:hover {
-  background-color: #a9ce7f;
+  background-color: #24943a;
 }
 ul {
   list-style: initial;
@@ -86,7 +86,7 @@ ul {
 }
 /** SPLASH **/
 .rsaquo {
-  color: #35B44F;
+  color: #35b44f;
   margin-right: 10px;
   font-family: "Times New Roman", Times, serif;
   font-size: 20px;
@@ -147,7 +147,7 @@ ul {
   width: 100%;
   max-width: 64px;
   height: 4px;
-  background: #bfc3c8;
+  background: #c3c9cd;
   margin: 5px 0;
 }
 .jumbotron-video {
@@ -158,17 +158,17 @@ ul {
   max-width: 525px;
   font-size: 20px;
   margin: 20px 0;
-  color: #6A7380;
+  color: #65737f;
 }
 .jumbotron-continue {
   font-size: 20px;
   font-weight: 700;
-  color: #35B44F;
+  color: #35b44f;
   padding-right: 10px;
   padding-bottom: 50px;
 }
 .jumbotron-continue a {
-  color: #35B44F;
+  color: #35b44f;
 }
 .jumbotron-spacer {
   height: 60px;
@@ -190,7 +190,7 @@ ul {
 }
 .content a,
 .content-a :visited {
-  color: #35B44F;
+  color: #35b44f;
   font-weight: 600;
   text-decoration: none;
 }
@@ -200,13 +200,13 @@ ul {
 .content-title {
   font-size: 32px;
   font-weight: 700;
-  color: #2A3749;
+  color: #293648;
   padding-top: 50px;
   padding-bottom: 5px;
 }
 .content-subtitle {
   font-size: 20px;
-  color: #6A7380;
+  color: #65737f;
   text-align: center;
   padding-bottom: 15px;
 }
@@ -216,7 +216,7 @@ ul {
 .content-horizontal-rule {
   width: 64px;
   height: 4px;
-  background: #bfc3c8;
+  background: #c3c9cd;
 }
 .content-sub-container {
   padding-top: 30px;
@@ -242,13 +242,13 @@ ul {
 .content-card-title {
   font-weight: 700;
   font-size: 24px;
-  color: #2A3749;
+  color: #293648;
   text-align: center;
   margin-top: 15px;
 }
 .content-card-subtitle {
   font-size: 16px;
-  color: #6A7380;
+  color: #65737f;
   text-align: center;
   line-height: 28px;
 }
@@ -279,11 +279,11 @@ ul {
 .content-text-h1 {
   font-size: 36px;
   font-weight: 700;
-  color: #2A3749;
+  color: #293648;
 }
 .content-text-intro {
   font-size: 20px;
-  color: #6A7380;
+  color: #65737f;
   margin-bottom: 25px;
 }
 .centered {
@@ -291,12 +291,12 @@ ul {
 }
 .content-text-paragraph {
   font-size: 16px;
-  color: #2A3749;
+  color: #293648;
   margin-bottom: 10px;
 }
 .content-text-container a,
 .content-text-container a:visited {
-  color: #35B44F;
+  color: #35b44f;
   text-decoration: none;
 }
 .content-text-container a:hover {
@@ -315,7 +315,7 @@ ul {
 }
 .content-card-small a,
 .content-card-small a:visited {
-  color: #35B44F;
+  color: #35b44f;
   text-decoration: none;
 }
 .content-card-small a:hover {
@@ -326,16 +326,16 @@ ul {
 }
 .content-card-small-subtitle {
   font-size: 16px;
-  color: #6A7380;
+  color: #65737f;
   line-height: 24px;
   margin-top: 10px;
 }
 .content-card-small-stripe {
   height: 96px;
-  background-color: #2a3749;
+  background-color: #293648;
 }
 .content-card-small-avatar {
-  background-color: #fff;
+  background-color: #ffffff;
   width: 100px;
   height: 100px;
   margin: 0 auto;
@@ -363,19 +363,19 @@ ul {
 /** tabs **/
 .nav-tabs li {
   font-family: monospace;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #ffffff;
 }
 .spacer {
   padding: 20px;
 }
 /** footer **/
 .footer {
-  background-color: #2a3749;
+  background-color: #293648;
   overflow: auto;
-  color: #959ba4;
+  color: #7c8792;
 }
 .footer a {
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
 }
 .footer a:hover {
@@ -397,14 +397,14 @@ ul {
 .footer-horizontal-rule {
   width: 32px;
   height: 4px;
-  background: #6a7380;
+  background: #65737f;
   margin: 10px 0 30px 0;
 }
 .footer-nav-list {
   list-style-type: none;
   padding-left: 0;
   font-weight: 600;
-  color: #fff;
+  color: #ffffff;
   font-size: 16px;
 }
 .footer-nav-list li {
@@ -424,35 +424,35 @@ a.load-document {
   padding: 0;
   margin: 0;
   display: inline-flex;
-  color: #2a3749;
+  color: #293648;
   transition: .25s;
 }
 .sidebar-list {
   max-width: 25%;
-  background-color: #f4f5f6;
-  color: #2a3749;
+  background-color: #f6f7f8;
+  color: #293648;
 }
 .sidebar-list .document {
   padding: 20px;
   width: 100%;
-  border-bottom: 1px solid #dfe2e4;
+  border-bottom: 1px solid #d3d7db;
 }
 .sidebar-list .document .published {
-  color: #aaa;
+  color: #919ba4;
 }
 .sidebar-list .document h2 {
   margin: 0px;
   color: #35b44f;
 }
 .sidebar-list .document:not(.active) {
-  border-left: 1px solid #f0f0f0;
+  border-left: 1px solid #f6f7f8;
 }
 .sidebar-list .document.active {
-  background-color: #fff;
-  color: #2a3749;
+  background-color: #ffffff;
+  color: #293648;
 }
 .sidebar-list .document:hover:not(.active) {
-  background-color: #f4f5f6;
+  background-color: #f6f7f8;
 }
 .post {
   max-width: 800px;
@@ -500,7 +500,7 @@ h6 {
 .jumbotron-info {
   background-image: url('/static/img/header-abstract.png');
   background-repeat: no-repeat;
-  background-color: #fff;
+  background-color: #ffffff;
   background-position: 120% -10px;
   padding-bottom: 10px;
 }
@@ -514,16 +514,16 @@ h6 {
   margin-right: auto;
 }
 .header {
-  background-color: #fdfdfd;
-  border-bottom: 1px solid #f0f0f0;
+  background-color: #ffffff;
+  border-bottom: 1px solid #f6f7f8;
 }
 .header a,
 .header a:visited {
-  color: #2a3749;
+  color: #293648;
   text-decoration: none;
 }
 .header a.active {
-  color: #30BD4D;
+  color: #35b44f;
 }
 .header a:hover {
   text-decoration: underline;
@@ -549,7 +549,7 @@ h6 {
   padding: 0px 20px;
   opacity: 0.9;
   font-weight: 700;
-  color: #2a3749;
+  color: #293648;
   font-size: 18px;
 }
 .header-nav-links {
@@ -568,12 +568,12 @@ h6 {
   margin-right: 30px;
 }
 .app-page {
-  background-color: #fff;
+  background-color: #ffffff;
   min-height: 700px;
 }
 .app-text-container {
   margin: auto;
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 25px;
   min-width: 545px;
   max-width: 1040px;
@@ -595,7 +595,7 @@ h6 {
 .app-bg-box-header {
   margin: 0px;
   padding: 10px;
-  background-color: #f4f5f6;
+  background-color: #f6f7f8;
   border-bottom: 1px solid #eee;
 }
 .app-bg-box-header button.btn-success {
@@ -620,7 +620,7 @@ h6 {
 }
 /** bootstrap navigation tabs **/
 .nav-tabs {
-  background-color: #f4f5f6;
+  background-color: #f6f7f8;
   border-bottom: none;
 }
 .nav-tabs li {
@@ -630,10 +630,10 @@ h6 {
 }
 .nav-tabs li.active a {
   border: none;
-  color: #333;
+  color: #293648;
 }
 .nav-tabs li a {
-  color: #555 !important;
+  color: #505f6d !important;
   border: none !important;
   border-radius: none;
 }
@@ -641,7 +641,7 @@ h6 {
   text-align: left;
 }
 .form-divider {
-  border-top: 2px solid #2a3749;
+  border-top: 2px solid #293648;
   width: 20%;
   max-width: 100px;
   min-width: 50px;
@@ -656,7 +656,7 @@ textarea.markdown-edit {
   height: 100%;
   min-height: 600px;
   max-height: 800px;
-  border: 1px solid #f4f5f6;
+  border: 1px solid #f6f7f8;
 }
 textarea.markdown-edit:focus {
   outline: 0px;
@@ -665,7 +665,7 @@ input.edit-info {
   width: 100%;
 }
 .banner {
-  color: #fdfdfd;
+  color: #f6f7f8;
   position: fixed;
   top: -30px;
   -webkit-transition: all .5s;
@@ -681,7 +681,7 @@ input.edit-info {
 }
 .banner.error {
   top: 0px;
-  background-color: #c0392b;
+  background-color: #d8524e;
 }
 .banner-text {
   text-align: center;
@@ -704,7 +704,7 @@ input.edit-info {
 }
 .breadcrumbs li a {
   font-weight: normal;
-  color: #959ba4;
+  color: #7c8792;
 }
 .breadcrumbs li a:hover {
   text-decoration: none;
@@ -719,15 +719,15 @@ input.edit-info {
 }
 .breadcrumbs li a.active {
   font-weight: normal;
-  color: #2a3749;
-  border-bottom: 2px solid #2a3749;
+  color: #293648;
+  border-bottom: 2px solid #293648;
 }
 .breadcrumbs li a.active:hover {
   font-weight: none;
 }
 .breadcrumbs li a.finished {
   font-weight: bold;
-  color: #2a3749;
+  color: #293648;
 }
 .breadcrumbs li a.finished .fui-check {
   display: inline-block;
