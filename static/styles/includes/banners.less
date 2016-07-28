@@ -3,7 +3,7 @@
 @banner-height: 30px;
 
 .banner {
-  color: @off-white;
+  color: @color-neutral--04;
   position: fixed;
   top: -@banner-height;
   -webkit-transition: all .5s; /* For Safari 3.1 to 6.0 */
@@ -13,12 +13,12 @@
   z-index: 999999;
 
   &.success {
-    top: 0px;
-    background-color: @green;
+    top: 0;
+    background-color: @color-green;
   }
   &.error {
-    top: 0px;
-    background-color: @error;
+    top: 0;
+    background-color: @color-danger;
   }
 }
 
