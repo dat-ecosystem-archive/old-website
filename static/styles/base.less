@@ -45,7 +45,7 @@ textarea {
 
 a {
   color: @color-green;
-  &:hover {
+  &:hover, &:focus {
     color: @color-green--hover;
     text-decoration: none;
   }
@@ -96,9 +96,10 @@ pre.large {
   &.button-light {
     background-color: white;
   }
-}
-.button:hover {
-  background-color: @buttong-bg-hover;
+  &:hover, &:focus {
+    background-color: @buttong-bg-hover;
+    color: white;
+  }
 }
 
 ul {
@@ -222,15 +223,15 @@ ul {
   min-height: 500px;
   background-color: white;
 }
-.content a,
-.content-a :visited {
+.content a {
   color: @color-green;
   font-weight: 600;
   text-decoration: none;
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
 }
-.content a:hover {
-  text-decoration: underline;
-}
+
 .content-title {
   font-size: 32px;
   font-weight: 700;
@@ -329,14 +330,14 @@ ul {
   color: @color-neutral;
   margin-bottom: 10px;
 }
-.content-text-container a,
-.content-text-container a:visited {
+.content-text-container a {
   color: @color-green;
   text-decoration: none;
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
 }
-.content-text-container a:hover {
-  text-decoration: underline;
-}
+
 .content-card-small {
   width: 255px;
   background-color: white;
@@ -348,14 +349,14 @@ ul {
   margin-right: 30px;
   margin-bottom: 50px;
 }
-.content-card-small a,
-.content-card-small a:visited {
+.content-card-small a {
   color: @color-green;
   text-decoration: none;
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
 }
-.content-card-small a:hover {
-  text-decoration: underline;
-}
+
 .content-card-small-contents {
   padding: 60px 30px 25px 30px;
 }

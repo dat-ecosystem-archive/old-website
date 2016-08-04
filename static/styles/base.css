@@ -49,7 +49,8 @@ textarea {
 a {
   color: #35b44f;
 }
-a:hover {
+a:hover,
+a:focus {
   color: #24943a;
   text-decoration: none;
 }
@@ -96,8 +97,10 @@ pre.large {
 .button.button-light {
   background-color: white;
 }
-.button:hover {
+.button:hover,
+.button:focus {
   background-color: #24943a;
+  color: white;
 }
 ul {
   list-style: initial;
@@ -213,13 +216,13 @@ ul {
   min-height: 500px;
   background-color: white;
 }
-.content a,
-.content-a :visited {
+.content a {
   color: #35b44f;
   font-weight: 600;
   text-decoration: none;
 }
-.content a:hover {
+.content a:hover,
+.content a:focus {
   text-decoration: underline;
 }
 .content-title {
@@ -319,12 +322,12 @@ ul {
   color: #293648;
   margin-bottom: 10px;
 }
-.content-text-container a,
-.content-text-container a:visited {
+.content-text-container a {
   color: #35b44f;
   text-decoration: none;
 }
-.content-text-container a:hover {
+.content-text-container a:hover,
+.content-text-container a:focus {
   text-decoration: underline;
 }
 .content-card-small {
@@ -338,12 +341,12 @@ ul {
   margin-right: 30px;
   margin-bottom: 50px;
 }
-.content-card-small a,
-.content-card-small a:visited {
+.content-card-small a {
   color: #35b44f;
   text-decoration: none;
 }
-.content-card-small a:hover {
+.content-card-small a:hover,
+.content-card-small a:focus {
   text-decoration: underline;
 }
 .content-card-small-contents {
@@ -754,7 +757,8 @@ input.edit-info {
   font-weight: normal;
   color: #7c8792;
 }
-.breadcrumbs li a:hover {
+.breadcrumbs li a:hover,
+.breadcrumbs li a:focus {
   text-decoration: none;
   border-bottom: none;
   cursor: default;
@@ -770,7 +774,8 @@ input.edit-info {
   color: #293648;
   border-bottom: 2px solid #293648;
 }
-.breadcrumbs li a.active:hover {
+.breadcrumbs li a.active:hover,
+.breadcrumbs li a.active:focus {
   font-weight: none;
 }
 .breadcrumbs li a.finished {
