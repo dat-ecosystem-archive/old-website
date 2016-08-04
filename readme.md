@@ -24,4 +24,3 @@ push `master` to github then run:
 ```
 npm run deploy
 ```
-

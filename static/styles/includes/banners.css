@@ -1,7 +1,7 @@
 /* Colors */
 /* Containers */
 .banner {
-  color: #fdfdfd;
+  color: #f6f7f8;
   position: fixed;
   top: -30px;
   -webkit-transition: all .5s;
@@ -12,12 +12,12 @@
   z-index: 999999;
 }
 .banner.success {
-  top: 0px;
+  top: 0;
   background-color: #35b44f;
 }
 .banner.error {
-  top: 0px;
-  background-color: #c0392b;
+  top: 0;
+  background-color: #d8524e;
 }
 .banner-text {
   text-align: center;

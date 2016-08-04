@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .header-continue {
-  margin: 10px 0;
+  margin: 20px 0;
 }
 
 .content-box {
@@ -26,6 +26,10 @@ h1, h2, h3, h4, h5 {
     line-height: 3.5rem;
     margin-top: 10px;
     padding-top: 0;
+  }
+  iframe {
+    max-width: 480px;
+    width: 100%;
   }
 }
 
@@ -65,7 +69,10 @@ pre {
 }
 
 pre.large {
-  font-size: 24px;
+  font-size: 20px;
+  @media screen and (min-width: 480px) {
+    font-size: 24px;
+  }
 }
 
 .muted,
@@ -150,11 +157,15 @@ ul {
 }
 
 .jumbotron-info {
-  padding: 40px;
+  padding: 40px 15px;
+  @media screen and (min-width: 400px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
 
 .background-mask {
-  background-color: white;
+  background-color: @color-neutral--04;
   padding-bottom: 50px;
 }
 
@@ -281,10 +292,10 @@ ul {
 }
 .content-feature-card .content-card-subtitle {
   margin-top: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 .content-feature-card {
-  width: 335px;
-  margin-right: 54px;
   display: inline-block;
 }
 .content-feature-card img {

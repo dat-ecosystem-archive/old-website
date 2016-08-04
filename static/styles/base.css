@@ -21,7 +21,7 @@ h5 {
   font-family: monospace;
 }
 .header-continue {
-  margin: 10px 0;
+  margin: 20px 0;
 }
 .content-box {
   padding: 40px 40px 20px 40px;
@@ -32,6 +32,9 @@ h5 {
   line-height: 3.5rem;
   margin-top: 10px;
   padding-top: 0;
+}
+.content-box iframe {
+  width: 100%;
 }
 a,
 button,
@@ -65,7 +68,12 @@ pre {
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 pre.large {
-  font-size: 24px;
+  font-size: 20px;
+}
+@media screen and (min-width: 480px) {
+  pre.large {
+    font-size: 24px;
+  }
 }
 .muted,
 .dark-text {
@@ -143,10 +151,16 @@ ul {
   padding-right: 8px;
 }
 .jumbotron-info {
-  padding: 40px;
+  padding: 40px 15px;
+}
+@media screen and (min-width: 400px) {
+  .jumbotron-info {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
 .background-mask {
-  background-color: white;
+  background-color: #f6f7f8;
   padding-bottom: 50px;
 }
 .secondary-info {
@@ -267,10 +281,10 @@ ul {
 }
 .content-feature-card .content-card-subtitle {
   margin-top: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 .content-feature-card {
-  width: 335px;
-  margin-right: 54px;
   display: inline-block;
 }
 .content-feature-card img {
@@ -554,11 +568,18 @@ h6 {
   background-position: 0 8px;
   margin-top: 2px;
   color: #293648;
+  overflow: hidden;
+  max-width: 48px;
 }
 .header-logo:hover,
 .header-logo:focus {
   color: #505f6d;
   text-decoration: none;
+}
+@media screen and (min-width: 400px) {
+  .header-logo {
+    max-width: 300px;
+  }
 }
 .profile {
   float: right;
@@ -566,7 +587,6 @@ h6 {
 }
 .header-nav {
   height: 60px;
-  padding: 0 20px;
   opacity: 0.9;
   font-weight: 700;
   color: #293648;
@@ -578,14 +598,21 @@ h6 {
 .header-nav-list {
   line-height: 60px;
   margin: 0;
+  padding-left: 0;
+  display: inline-block;
+  list-style: none;
 }
-.header-nav-list,
+.header-nav-list li:not(:last-child) {
+  margin-right: 15px;
+}
 .header-nav-list li {
   display: inline-block;
-  padding-left: 0 !important;
+  padding-left: 0;
 }
-.header-nav-list li {
-  margin-right: 30px;
+@media screen and (min-width: 650px) {
+  .header-nav-list {
+    margin-right: 30px;
+  }
 }
 .app-page {
   background-color: #ffffff;
@@ -763,9 +790,6 @@ input.edit-info {
   .video {
     width: 100% !important;
   }
-  .header-nav-list li {
-    margin-right: 15px;
-  }
   .mobile-only {
     display: block;
   }
@@ -789,9 +813,6 @@ input.edit-info {
     position: inherit;
     width: 100%;
   }
-  .header-logo {
-    margin-right: 20px;
-  }
   .header-description {
     width: auto;
   }
@@ -811,7 +832,7 @@ input.edit-info {
     margin: auto;
   }
   .content-feature-card {
-    margin: 0 auto 20px auto;
+    margin: 0 auto 20px;
   }
   .content-sub-container {
     padding-top: 15px;
