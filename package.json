@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run css && node render.js && npm run server",
-    "server": "nodemon --watch templates --watch static -e js,jade,html -i rendered --exec \"node render.js && http-server rendered\"",
+    "server": "nodemon --watch templates --watch static -e css,js,jade,html -i rendered --exec \"node render.js && http-server rendered\"",
     "test": "node test/run.js | tap-spec",
     "watch": "watchify -t brfs index.js -o bundle.js",
     "watch-css": "autoless static/styles",
