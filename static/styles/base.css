@@ -154,13 +154,20 @@ ul {
   height: 2.5rem;
   padding-right: 8px;
 }
-.jumbotron-info {
+.jumbotron-info.jumbotron-info-header {
   padding: 40px 15px;
 }
 @media screen and (min-width: 400px) {
-  .jumbotron-info {
+  .jumbotron-info.jumbotron-info-header {
     padding-left: 40px;
     padding-right: 40px;
+    padding-bottom: 30px;
+  }
+}
+@media screen and (min-width: 640px) {
+  .jumbotron-info.jumbotron-info-header {
+    padding-top: 50px;
+    padding-bottom: 70px;
   }
 }
 .background-mask {
@@ -732,14 +739,19 @@ h6 {
 .header-nav-list li:not(:last-child) {
   margin-right: 15px;
 }
+@media screen and (min-width: 650px) {
+  .header-nav-list li:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header-nav-list li:not(:last-child) {
+    margin-right: 45px;
+  }
+}
 .header-nav-list li {
   display: inline-block;
   padding-left: 0;
-}
-@media screen and (min-width: 650px) {
-  .header-nav-list {
-    margin-right: 30px;
-  }
 }
 .app-page {
   background-color: #ffffff;
