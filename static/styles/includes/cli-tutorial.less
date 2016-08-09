@@ -1,0 +1,46 @@
+.dat-cli-steps {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.step {
+  padding: 10px 0;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+@step-count-width: 40px;
+
+.step-count {
+  flex-shrink: 0;
+  width: @step-count-width;
+  height: @step-count-width;
+  line-height: @step-count-width;
+  margin-right: @step-count-width / 2;
+  background-color: #FFF;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 20px;
+  color: @color-neutral--60;
+}
+
+.step-details {
+  flex-grow: 1;
+  margin-bottom: 0;
+  font-size: 18px;
+  padding: .5em;
+  vertical-align: middle;
+  code {
+    font-size: 18px;
+  }
+  @media screen and (min-width: 480px) {
+    font-size: 20px;
+    code {
+      font-size: 20px;
+    }
+  }
+
+}

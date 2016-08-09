@@ -69,14 +69,6 @@ pre {
   border: none;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
 }
-pre.large {
-  font-size: 20px;
-}
-@media screen and (min-width: 480px) {
-  pre.large {
-    font-size: 24px;
-  }
-}
 .muted,
 .dark-text {
   color: #7c8792;
@@ -920,6 +912,48 @@ input.edit-info {
 .breadcrumbs li a.finished .fui-check {
   display: inline-block;
   float: right;
+}
+.dat-cli-steps {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+.step {
+  padding: 10px 0;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+.step-count {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin-right: 20px;
+  background-color: #FFF;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 20px;
+  color: #7c8792;
+}
+.step-details {
+  flex-grow: 1;
+  margin-bottom: 0;
+  font-size: 18px;
+  padding: .5em;
+  vertical-align: middle;
+}
+.step-details code {
+  font-size: 18px;
+}
+@media screen and (min-width: 480px) {
+  .step-details {
+    font-size: 20px;
+  }
+  .step-details code {
+    font-size: 20px;
+  }
 }
 .mobile-only {
   display: none;
