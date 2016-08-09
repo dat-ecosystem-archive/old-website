@@ -1,11 +1,11 @@
 .app-page {
-  background-color: @color-white;
+  background-color: $color-white;
   min-height: 700px;
 }
 
 .app-text-container{
   margin: auto;
-  background-color: @color-white;
+  background-color: $color-white;
   padding: 25px;
   min-width: 545px;
   max-width: 1040px;
@@ -27,7 +27,7 @@
 .app-bg-box-header {
   margin: 0;
   padding: 10px;
-  background-color: @light-background;
+  background-color: $light-background;
   border-bottom: 1px solid #eee;
 
   button.btn-success {
@@ -57,7 +57,7 @@
 
 /** bootstrap navigation tabs **/
 .nav-tabs {
-  background-color: @light-background;
+  background-color: $light-background;
   border-bottom: none;
 
   li {
@@ -67,11 +67,11 @@
 
     &.active a {
       border: none;
-      color: @color-neutral;
+      color: $color-neutral;
     }
 
     a {
-      color: @color-neutral--80 !important;
+      color: $color-neutral--80 !important;
       border: none !important;
       border-radius: none;
     }

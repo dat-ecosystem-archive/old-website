@@ -10,21 +10,21 @@
   align-items: center;
 }
 
-@step-count-width: 40px;
+$step-count-width: 40px;
 
 .step-count {
   flex-shrink: 0;
-  width: @step-count-width;
-  height: @step-count-width;
-  line-height: @step-count-width;
-  margin-right: @step-count-width / 2;
+  width: $step-count-width;
+  height: $step-count-width;
+  line-height: $step-count-width;
+  margin-right: $step-count-width / 2;
   background-color: #FFF;
   border-radius: 50%;
   text-align: center;
   vertical-align: middle;
   font-weight: bold;
   font-size: 20px;
-  color: @color-neutral--60;
+  color: $color-neutral--60;
 }
 
 .step-details {
