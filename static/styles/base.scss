@@ -1,4 +1,9 @@
+@import "~dat-design/scss/base.scss";
+
 @import "includes/variables";
+
+@import "vendor/bootstrap.min.css";
+@import "vendor/railscasts.css";
 
 @import "includes/helpers";
 @import "includes/headers";
@@ -8,11 +13,6 @@
 @import "includes/breadcrumbs";
 @import "includes/cli-tutorial";
 @import "includes/responsive";
-
-@import "vendor/reset.min.css";
-@import "vendor/normalize.min.css";
-@import "vendor/bootstrap.min.css";
-@import "vendor/railscasts.css";
 
 
 body {
@@ -46,16 +46,6 @@ h1, h2, h3, h4, h5 {
     max-width: 480px;
     width: 100%;
   }
-}
-
-a,
-button,
-input,
-select,
-textarea {
-  transition-property: background-color, color;
-  transition-duration: 0.05s;
-  transition-timing-function: ease-out;
 }
 
 a {
