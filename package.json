@@ -9,7 +9,7 @@
     "test": "node test/run.js | tap-spec",
     "watch": "watchify -t brfs index.js -o bundle.js",
     "watch-css": "no static/styles",
-    "build-css": "node-sass --importer node_modules/node-sass-magic-importer static/styles/base.scss static/styles/base.css",
+    "build-css": "node-sass --importer node_modules/node-sass-magic-importer scss/base.scss static/css/base.css",
     "deploy": "gh-pages-deploy",
     "render": "node render.js"
   },
