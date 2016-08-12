@@ -1,13 +1,28 @@
+@import "~dat-design/scss/base.scss";
+
 @import "includes/variables";
+
+@import "vendor/bootstrap.min.css";
+@import "vendor/railscasts.css";
+
+@import "includes/helpers";
+@import "includes/headers";
+@import "includes/app";
+@import "includes/forms";
+@import "includes/banners";
+@import "includes/breadcrumbs";
+@import "includes/cli-tutorial";
+@import "includes/responsive";
+
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: @white-background;
+  background-color: $white-background;
 }
 h1, h2, h3, h4, h5 {
-  color: @color-neutral;
+  color: $color-neutral;
 }
 
 .mono {
@@ -15,7 +30,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .header-continue {
-  margin: 10px 0;
+  margin: 30px 0 50px;
 }
 
 .content-box {
@@ -27,22 +42,16 @@ h1, h2, h3, h4, h5 {
     margin-top: 10px;
     padding-top: 0;
   }
-}
-
-a,
-button,
-input,
-select,
-textarea {
-  transition-property: background-color, color;
-  transition-duration: 0.05s;
-  transition-timing-function: ease-out;
+  iframe {
+    max-width: 480px;
+    width: 100%;
+  }
 }
 
 a {
-  color: @color-green;
-  &:hover {
-    color: @color-green--hover;
+  color: $color-green;
+  &:hover, &:focus {
+    color: $color-green--hover;
     text-decoration: none;
   }
 }
@@ -58,23 +67,19 @@ p {
 pre {
   padding: .5em;
   font-size: 14px;
-  background-color: @color-neutral;
-  color: @color-neutral--10;
+  background-color: $color-neutral;
+  color: $color-neutral--10;
   border: none;
   box-shadow: inset 0 1px 3px rgba(0,0,0,.5);
 }
 
-pre.large {
-  font-size: 24px;
-}
-
 .muted,
 .dark-text {
-  color: @dark-text;
+  color: $dark-text;
 }
 
 .caption {
-  color: @dark-text;
+  color: $dark-text;
   font-size: 14px;
 }
 
@@ -83,15 +88,16 @@ pre.large {
   font-size: 18px;
   font-weight: 600;
   color: white;
-  background-color: @button-bg;
+  background-color: $button-bg;
   padding: 9px 14px;
   border-radius: 5px;
   &.button-light {
     background-color: white;
   }
-}
-.button:hover {
-  background-color: @buttong-bg-hover;
+  &:hover, &:focus {
+    background-color: $buttong-bg-hover;
+    color: white;
+  }
 }
 
 ul {
@@ -101,7 +107,7 @@ ul {
 
 /** SPLASH **/
 .rsaquo {
-  color: @color-green;
+  color: $color-green;
   margin-right: 10px;
   font-family: "Times New Roman", Times, serif;
   font-size: 20px;
@@ -149,13 +155,25 @@ ul {
   padding-right: 8px;
 }
 
-.jumbotron-info {
-  padding: 40px;
+.jumbotron-info.jumbotron-info-header {
+  padding: 40px 15px;
+  @media screen and (min-width: 400px) {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 30px;
+  }
+  @media screen and (min-width: 640px) {
+    padding-top: 50px;
+    padding-bottom: 70px;
+  }
 }
 
 .background-mask {
-  background-color: white;
-  padding-bottom: 50px;
+  background-color: $color-white;
+}
+
+.background-mask--toned {
+  background-color: $color-neutral--04;
 }
 
 .secondary-info {
@@ -167,7 +185,7 @@ ul {
   width: 100%;
   max-width: 64px;
   height: 6px;
-  background-color: @color-neutral--30;
+  background-color: $color-neutral--30;
   margin: 5px 0;
 }
 
@@ -180,20 +198,20 @@ ul {
   max-width: 525px;
   font-size: 20px;
   margin: 20px 0;
-  color: @color-neutral--70;
+  color: $color-neutral--70;
 }
 .jumbotron-continue {
   font-size: 20px;
   font-weight: 700;
-  color: @color-green;
+  color: $color-green;
   padding-right: 10px;
   padding-bottom: 50px;
 }
 .jumbotron-continue a {
-  color: @color-green;
+  color: $color-green;
 }
 .jumbotron-spacer {
-  height: @header-height;
+  height: $header-height;
 }
 .package-display {
   display: relative;
@@ -211,25 +229,25 @@ ul {
   min-height: 500px;
   background-color: white;
 }
-.content a,
-.content-a :visited {
-  color: @color-green;
+.content a {
+  color: $color-green;
   font-weight: 600;
   text-decoration: none;
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
 }
-.content a:hover {
-  text-decoration: underline;
-}
+
 .content-title {
   font-size: 32px;
   font-weight: 700;
-  color: @color-neutral;
+  color: $color-neutral;
   padding-top: 50px;
   padding-bottom: 5px;
 }
 .content-subtitle {
   font-size: 20px;
-  color: @color-neutral--70;
+  color: $color-neutral--70;
   text-align: center;
   padding-bottom: 15px;
 }
@@ -239,7 +257,7 @@ ul {
 .content-horizontal-rule {
   width: 64px;
   height: 5px;
-  background-color: @color-neutral--30;
+  background-color: $color-neutral--30;
 }
 .content-sub-container {
   padding-top: 30px;
@@ -248,6 +266,7 @@ ul {
 }
 .content-code-intro {
   text-align: left;
+  margin-bottom: 60px;
 }
 .content-card {
   position: relative;
@@ -266,13 +285,13 @@ ul {
 .content-card-title {
   font-weight: 700;
   font-size: 24px;
-  color: @color-neutral;
+  color: $color-neutral;
   text-align: center;
   margin-top: 15px;
 }
 .content-card-subtitle {
   font-size: 16px;
-  color: @color-neutral--70;
+  color: $color-neutral--70;
   text-align: center;
   line-height: 28px;
 }
@@ -281,14 +300,14 @@ ul {
 }
 .content-feature-card .content-card-subtitle {
   margin-top: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 .content-feature-card {
-  width: 335px;
-  margin-right: 54px;
   display: inline-block;
 }
 .content-feature-card img {
-  margin: 0 auto;
+  margin: 25px auto 0;
   display: block;
 }
 .content-feature-cards > :last-child {
@@ -303,11 +322,11 @@ ul {
 .content-text-h1 {
   font-size: 36px;
   font-weight: 700;
-  color: @color-neutral;
+  color: $color-neutral;
 }
 .content-text-intro {
   font-size: 20px;
-  color: @color-neutral--70;
+  color: $color-neutral--70;
   margin-bottom: 25px;
 }
 .centered {
@@ -315,17 +334,17 @@ ul {
 }
 .content-text-paragraph {
   font-size: 16px;
-  color: @color-neutral;
+  color: $color-neutral;
   margin-bottom: 10px;
 }
-.content-text-container a,
-.content-text-container a:visited {
-  color: @color-green;
+.content-text-container a {
+  color: $color-green;
   text-decoration: none;
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
 }
-.content-text-container a:hover {
-  text-decoration: underline;
-}
+
 .content-card-small {
   width: 255px;
   background-color: white;
@@ -337,37 +356,37 @@ ul {
   margin-right: 30px;
   margin-bottom: 50px;
 }
-.content-card-small a,
-.content-card-small a:visited {
-  color: @color-green;
+.content-card-small a {
+  color: $color-green;
   text-decoration: none;
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
 }
-.content-card-small a:hover {
-  text-decoration: underline;
-}
+
 .content-card-small-contents {
   padding: 60px 30px 25px 30px;
 }
 .content-card-small-subtitle {
   font-size: 16px;
-  color: @color-neutral--70;
+  color: $color-neutral--70;
   line-height: 24px;
   margin-top: 10px;
 }
 .content-card-small-stripe {
   height: 96px;
-  background-color: @color-neutral;
+  background-color: $color-neutral;
 }
 .content-card-small-avatar {
-  @size: 100px;
-  background-color: @color-white;
-  width: @size;
-  height: @size;
+  $size: 100px;
+  background-color: $color-white;
+  width: $size;
+  height: $size;
   margin: 0 auto;
   left: 75px;
   position: absolute;
   top: 40px;
-  background-size: @size - 4;
+  background-size: $size - 4;
   border: 4px solid white;
   box-shadow: 1px 1px #eee;
 }
@@ -389,7 +408,7 @@ ul {
 /** tabs **/
 .nav-tabs li {
   font-family: monospace;
-  border-bottom: 1px solid @color-white;
+  border-bottom: 1px solid $color-white;
 }
 
 .spacer {
@@ -398,13 +417,13 @@ ul {
 
 /** footer **/
 .footer {
-  background-color: @dark-background;
+  background-color: $dark-background;
   overflow: auto;
-  color: @dark-text;
+  color: $dark-text;
   a {
-    color: @color-white;
+    color: $color-white;
     &:hover, &:focus {
-      color: @color-neutral--30;
+      color: $color-neutral--30;
     }
   }
 }
@@ -425,14 +444,14 @@ ul {
 .footer-horizontal-rule {
   width: 32px;
   height: 4px;
-  background-color: @color-neutral--70;
+  background-color: $color-neutral--70;
   margin: 10px 0 30px 0;
 }
 .footer-nav-list {
   list-style-type: none;
   padding-left: 0;
   font-weight: 600;
-  color: @color-white;
+  color: $color-white;
   font-size: 16px;
 }
 .footer-nav-list li {
@@ -459,35 +478,35 @@ a.load-document {
   padding: 0;
   margin: 0;
   display: inline-flex;
-  color: @color-neutral;
+  color: $color-neutral;
   transition: .25s;
 }
 
 .sidebar-list {
   max-width: 25%;
-  background-color: @light-background;
-  color: @color-neutral;
+  background-color: $light-background;
+  color: $color-neutral;
 
   .document {
     padding: 20px;
     width: 100%;
-    border-bottom: 1px solid @light-border;
+    border-bottom: 1px solid $light-border;
     .published {
-      color: @color-neutral--50;
+      color: $color-neutral--50;
     }
     h2 {
       margin: 0;
-      color: @color-green;
+      color: $color-green;
     }
     &:not(.active) {
-      border-left: 1px solid @white-border;
+      border-left: 1px solid $white-border;
     }
     &.active {
-      background-color: @color-white;
-      color: @color-neutral;
+      background-color: $color-white;
+      color: $color-neutral;
     }
     &:hover:not(.active) {
-      background-color: @light-background;
+      background-color: $light-background;
     }
   }
 }
@@ -502,15 +521,3 @@ td, th {
   padding: 10px;
   border: 1px solid black;
 }
-
-@import "includes/headers";
-@import "includes/app";
-@import "includes/forms";
-@import "includes/banners";
-@import "includes/breadcrumbs";
-@import "includes/responsive";
-
-@import "vendor/reset.min.css";
-@import "vendor/normalize.min.css";
-@import "vendor/bootstrap.min.css";
-@import "vendor/railscasts.css";

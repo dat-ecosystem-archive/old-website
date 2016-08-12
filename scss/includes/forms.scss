@@ -3,7 +3,7 @@
 }
 
 .form-divider {
-  border-top: 2px solid @color-neutral;
+  border-top: 2px solid $color-neutral;
   width: 20%;
   max-width: 100px;
   min-width: 50px;
@@ -20,7 +20,7 @@ textarea.markdown-edit {
   height: 100%;
   min-height: 600px;
   max-height: 800px;
-  border: 1px solid @light-background;
+  border: 1px solid $light-background;
   &:focus {
     outline: 0;
   }
