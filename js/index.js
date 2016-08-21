@@ -22,7 +22,12 @@ pump(hyperquest(window.location.href + filepath), ws, function end (err) {
         return stream
       }
     }
-    data.append(file, '#example', function (err) {
+    var opts = {
+      scrollWheelZoom: false,
+      center: [40.7128, -74.0059],
+      zoom: 10
+    }
+    data.append(file, '#example', opts, function (err) {
       if (err) throw err
     })
 
