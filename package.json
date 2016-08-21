@@ -53,6 +53,8 @@
     "node-sass-magic-importer": "^0.1.4",
     "nodemon": "^1.2.1",
     "page": "^1.4.1",
+    "pump": "^1.0.1",
+    "render-data": "^2.1.1",
     "rimraf": "^2.4.4",
     "rss": "^1.2.1",
     "xhr": "^2.0.3"
