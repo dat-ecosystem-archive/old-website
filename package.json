@@ -1,7 +1,7 @@
 {
   "name": "dat-website",
   "version": "1.0.0",
-  "description": "dat-data.com source",
+  "description": "datproject.org source",
   "main": "index.js",
   "scripts": {
     "start": "npm run build-css && node render.js && npm run server",
@@ -35,7 +35,7 @@
   "bugs": {
     "url": "https://github.com/datproject/website/issues"
   },
-  "homepage": "http://dat-data.com",
+  "homepage": "http://datproject.org",
   "dependencies": {
     "cheerio": "^0.19.0",
     "cptar": "^1.0.0",
