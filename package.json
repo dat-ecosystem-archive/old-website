@@ -23,7 +23,7 @@
   ],
   "gh-pages-deploy": {
     "staticpath": "rendered",
-    "cname": "dat-data.com",
+    "cname": "datproject.org",
     "prep": [
       "build-css",
       "render"
