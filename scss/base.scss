@@ -514,6 +514,13 @@ a.load-document {
 .post {
   max-width: 800px;
   padding-bottom: 80px;
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: $color-neutral;
+    padding-top: 50px;
+    padding-bottom: 5px;
+  }
   img { max-width: 100% }
 }
 
