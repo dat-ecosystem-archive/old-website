@@ -49,6 +49,8 @@ ARK URLs look like `http://bnf.fr/ark:/13030/tf5p30086k`, and are pretty similar
 
 This was my own idea, but you could in theory use a ED25519 public key as an identifier, removing the need for a central trusted namespace. If you add a resolution system where responses are signed by the key holder, and perhaps back the system by the PKI to solve the 'forgot my password' problem, you could build an identifier service that provides nice security guarantees without a [central point of failure](http://blog.crossref.org/2015/01/problems-with-dx-doi-org-on-january-20th-2015-what-we-know.html). In fact this is pretty similar to what we do in Dat (as Dat links are in fact ED25519 public keys and transmitted data is signed using this key).
 
+**Update** I found this recent work called Decentralized Identifiers when Googling after writing this post: https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-fall2016/blob/master/topics-and-advance-readings/did-spec-working-draft-03.md
+
 ## Link Rot
 
 The commonly cited reason for using DOIs is to prevent link rot and/or content-drift. However, it is unclear to me how to measure the 'rotten-ness' of the DOI corpus. Herbert Von de Somple [presented at PIDapalooza about research](https://twitter.com/hvdsomp/status/796716360395059201) that analyzed HTTP links in published literature between 2007-2012 and found that around 10% of published links to the web are broken.
