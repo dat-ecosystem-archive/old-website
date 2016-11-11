@@ -1,5 +1,12 @@
 module.exports = [
   {
+    date: '2016-11-11',
+    title: 'An Introduction To Persistent Identifiers',
+    author: 'Max Ogden',
+    teaser: 'What I learned at PIDapalooza 2016.',
+    name: '2016-11-11-pidapalooza'
+  },
+  {
   //  date: '2016-07-07',
     title: 'Announcing dat.land online demo',
     author: 'Karissa McKelvey',
