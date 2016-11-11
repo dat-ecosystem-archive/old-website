@@ -1,5 +1,12 @@
 module.exports = [
   {
+    date: '2016-10-12',
+    title: 'Notes from International Data Week',
+    author: 'Joe Hand',
+    teaser: 'Meeting notes and interesting bits from SciCon, International Data Forum, and RDA Plenary.',
+    name: '2016-09-20-IDA2016-notes'
+  },
+  {
   //  date: '2016-07-07',
     title: 'Announcing dat.land online demo',
     author: 'Karissa McKelvey',
