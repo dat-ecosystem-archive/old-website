@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>dat</title>
+  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <link rel="icon" href="/static/favicon.ico">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css">
+  <link rel="stylesheet" href="/static/css/base.css" media="screen">
+</head>
+<body>
+  <div class="header">
+    <div class="header-nav container">
+      <div class="header-nav-links">
+        <ul class="header-nav-list">
+          <li><a href="/about" class="header-nav-link">About</a></li>
+          <li><a href="/blog" class="header-nav-link active">Blog</a></li>
+          <li><a href="/team" class="header-nav-link">Team</a></li>
+          <li><a href="http://docs.datproject.org" class="header-nav-link">Docs</a></li>
+        </ul>
+      </div>
+      <a href="/" class="header-logo">dat</a>
+    </div>
+  </div>
+
+  <div id="content"><div class="blog-layout">
+  <div class="container post">
+    <div id="post"><h1 id="live-peer-to-peer-sync-in-the-browser">Live peer to peer sync in the Browser</h1>
+<p>by <a href="http://karissa.github.io">Karissa McKelvey</a></p>
+<p>Today we are happy to announce <a href="http://dat.land">dat.land</a> -- a new browser-based demonstration of dat.</p>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/w9er-XcZLCU" frameborder="0" allowfullscreen></iframe>
+
+<p>The new version of dat uses <a href="http://github.com/mafintosh/hyperdrive">hyperdrive</a>, a distributed filesystem that takes the best parts of data sync tools like DropBox or BitTorrent Sync -- but open source, peer to peer, and works in the browser.</p>
+<p>Two months ago, I outlined the <a href="http://dat-data.com/blog/2016-05-16-key-elements">7 key principles of a peer to peer data system</a>, which include signability, openness, history, content-addressability, decentralization, indexing, and streaming. This new version of dat in our browser based demo is the first iteration able to accomplish all of these key principles, and we are very proud of it.</p>
+<h2 id="how-it-works">How it works</h2>
+<p>When the browser is opened, <a href="http://dat.land">dat.land</a> generates what we call a &quot;live&quot; hyperdrive in the browser which is referenced by a public key, which looks like a bunch of random characters, like this:</p>
+<pre><code>be4d373dd847f3a138de926f939648f79d231de642b1fe88790d749c5693db14
+</code></pre><p>This is same concept used in Google Drive and DropBox share links. This unique string of characters will identify your dat archive forever -- at least, as long as someone is broadcasting the key over the decentralized network.</p>
+<p>If you share the new <a href="http://dat.land">dat.land</a> link with someone else, their browser will attempt to find the other sources on the network that are broadcasting this same public key. Once it finds another source, it will attempt to connect directly to that other peer, and start downloading the data.</p>
+<p>If you drag more data onto the screen, you&apos;ll notice that the data is automatically synced to the other browser. None of the source data is transferred through a central server. It is also encrypted end-to-end between browsers to prevent malicious third parties from reading the data without your permission. Only users you share the dat key with will be able to download your data.</p>
+<h2 id="implications">Implications</h2>
+<h2 id="next-steps">Next steps</h2>
+</div>
+  </div>
+  <div class="sidebar-list">
+      <a class="load-document" href="/blog/2016-11-11-idw-2016-summary">
+        <div class="document" id="2016-11-11-idw-2016-summary">
+          <div class="published">2016-11-11</div>
+          <div class="author">Joe Hand</div>
+          <h2 class="title">Reflections from International Data Week 2016</h2>
+          <p class="teaser">A summary of the Research Data Alliance event from September.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-11-11-pidapalooza">
+        <div class="document" id="2016-11-11-pidapalooza">
+          <div class="published">2016-11-11</div>
+          <div class="author">Max Ogden</div>
+          <h2 class="title">An Introduction To Persistent Identifiers</h2>
+          <p class="teaser">What I learned at PIDapalooza 2016.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-05-16-key-elements">
+        <div class="document" id="2016-05-16-key-elements">
+          <div class="published">2016-05-16</div>
+          <div class="author">Karissa McKelvey</div>
+          <h2 class="title">Key Elements of Distributing Data</h2>
+          <p class="teaser">How the current tools fall short by missing key elements.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-02-01-dat-1">
+        <div class="document" id="2016-02-01-dat-1">
+          <div class="published">2016-02-05</div>
+          <div class="author">Karissa McKelvey</div>
+          <h2 class="title">Dat 1.0 is ready</h2>
+          <p class="teaser">After years of R&amp;D, the release candidate is ready.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-02-01-announcing-publicbits">
+        <div class="document" id="2016-02-01-announcing-publicbits">
+          <div class="published">2016-02-01</div>
+          <div class="author">Karissa McKelvey</div>
+          <h2 class="title">Announcing Publicbits.org</h2>
+          <p class="teaser">Breaking down open data silos with a new Knight Foundation grant.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-01-19-brief-history-of-dat">
+        <div class="document" id="2016-01-19-brief-history-of-dat">
+          <div class="published">2016-01-19</div>
+          <div class="author">Max Ogden</div>
+          <h2 class="title">A Brief History of Dat</h2>
+          <p class="teaser">History of Dat and the design choices over the last 2 years</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2015-07-29-dat-beta">
+        <div class="document" id="2015-07-29-dat-beta">
+          <div class="published">2015-07-29</div>
+          <div class="author">Karissa McKelvey</div>
+          <h2 class="title">Dat goes beta!</h2>
+          <p class="teaser">After a long year of alpha testing, dat goes beta.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2015-04-03-sloan">
+        <div class="document" id="2015-04-03-sloan">
+          <div class="published">2015-04-03</div>
+          <div class="author">Waldo Jacquith</div>
+          <h2 class="title">Sloan Redoubles Dat Funding</h2>
+          <p class="teaser">Announcing a generous $640,000 grant from the Sloan foundation</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2014-08-19-dat-alpha">
+        <div class="document" id="2014-08-19-dat-alpha">
+          <div class="published">2014-08-19</div>
+          <div class="author">Max Ogden</div>
+          <h2 class="title">Announcing the Dat Alpha</h2>
+          <p class="teaser">The first major version of dat along with a new website.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2014-04-02-dat">
+        <div class="document" id="2014-04-02-dat">
+          <div class="published">2014-04-02</div>
+          <div class="author">Waldo Jacquith</div>
+          <h2 class="title">Sloan funding Dat development</h2>
+          <p class="teaser">Announcing Sloans support of the dat project</p>
+        </div>
+      </a>
+  </div>
+</div>
+</div>
+
+  <div class="footer">
+    <div class="footer-directory container">
+      <div class="col-md-3 col-xs-6">
+        <div class="footer-heading">Explore</div>
+        <div class="footer-horizontal-rule"></div>
+        <ul class="footer-nav-list">
+          <li><a href="/team"><span class="rsaquo">&#x203A;</span> Team</a></li>
+          <li><a href="https://www.stickermule.com/en/marketplace/9709-dat-data-v3"><span class="rsaquo">&#x203A;</span> Get Stickers</a></li>
+          <li><a href="/blog" class="active"><span class="rsaquo">&#x203A;</span> Blog</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-xs-6">
+        <div class="footer-heading">Learn</div>
+        <div class="footer-horizontal-rule"></div>
+        <ul class="footer-nav-list">
+          <li><a href="/about"><span class="rsaquo">&#x203A;</span> About</a></li>
+          <li><a href="http://docs.dat-data.com"><span class="rsaquo">&#x203A;</span> Docs</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-xs-6">
+        <div class="spacer mobile-only"></div>
+        <div class="footer-heading">Connect</div>
+        <div class="footer-horizontal-rule"></div>
+        <ul class="footer-nav-list">
+          <li><a href="https://twitter.com/dat_project"><span class="twitter-green"></span>Twitter</a></li>
+          <li><a href="https://github.com/maxogden/dat"><span class="octocat-green"></span>GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-credits">
+      <span class="footer-emphasized">dat</span> &#x2022; 2016 &#x2022; styleguide by <a href="https://github.com/flipside-org">flipside</a> &#x2022; page source on <a href="https://github.com/datproject/website">github</a>. Freezing Rain designed by <a href="http://www.thenounproject.com/OliM">OliM</a> from the <a href="http://www.thenounproject.com">Noun Project</a>
+    </div>
+  </div>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-49664853-1', 'dat-data.com');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>dat</title>
+  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <link rel="icon" href="/static/favicon.ico">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css">
+  <link rel="stylesheet" href="/static/css/base.css" media="screen">
+</head>
+<body>
+  <div class="header">
+    <div class="header-nav container">
+      <div class="header-nav-links">
+        <ul class="header-nav-list">
+          <li><a href="/about" class="header-nav-link">About</a></li>
+          <li><a href="/blog" class="header-nav-link active">Blog</a></li>
+          <li><a href="/team" class="header-nav-link">Team</a></li>
+          <li><a href="http://docs.datproject.org" class="header-nav-link">Docs</a></li>
+        </ul>
+      </div>
+      <a href="/" class="header-logo">dat</a>
+    </div>
+  </div>
+
+  <div id="content"><div class="blog-layout">
+  <div class="container post">
+    <div id="post"><h1 id="reflections-from-international-data-week-2016">Reflections from International Data Week 2016</h1>
+<p><em><a href="internationaldataweek.org">International Data Week</a> in September 2016 brought together three events, <a href="http://www.scidatacon.org/">SciDataCon</a>, the International Data Forum, and the <a href="https://rd-alliance.org/plenaries/rda-eighth-plenary-meeting-denver-co">Research Data Alliance 8th plenary</a>. Joe Hand from the Dat team attended the conference.</em></p>
+<p>International Data Week featured sessions on the wide topic of using data in science. I attended on sessions focused on scientific data publishing, an emerging and urgently needed field. Dat entered this field alongside established organizations such as publishers, research institutions, and non-profits. Data publishing enables citation of data and improves reproducibility. The conference showcased a huge range of approaches to this problem.</p>
+<p>Data citation models parallel current academic publishing and reputation models. In academia, grants, funding, and career advancement all depend on citations. Standardized metadata improves the ability to cite data. It also enables journal publishers to connect datasets to papers in their journals. </p>
+<p>Reproducibility overlaps with, but does not require data citation. Researchers can reproduce papers without data citations or even without public data. Current reproducibility efforts favor short term reproducibility by using existing web infrastructure. This sacrifices long term preservation by using infrastructure not built for archiving.</p>
+<p>In the long tail of research data, data types are more unique and fewer people use each dataset. Few centralized data publishing services appeal to this long tail of researchers. Citation and reproducibility become more difficult in the long tail without new infrastructure.</p>
+<p>Data publishing organizations use existing web infrastructure to create data citation and reproducibility services. This infrastructure does not support data publishing needs by default. Building data publishing services on top of the web may threaten long term sustainability. Data sharing, discovery, and preservation are the primary design ideas behind the Dat infrastructure. By embedding these needs into infrastructure, data publishers can provide services without endangering data.</p>
+<h2 id="metadata-standards-and-data-publishing">Metadata Standards and Data Publishing</h2>
+<p>The treatment of publishing of academic papers is informing the discussion around data publishing. Researchers livelihoods often rely on proper citation for their work. Citations allow them to get more grants and secure tenure. Some data publishing organizations are creating data publishing structures that mirror those of journals. To support this idea, there was a large focus on standard metadata and a common data citation process.</p>
+<p>Data publishing systems showcased throughout the week had similar goals:</p>
+<ul>
+<li>A researcher should be able to publish their data.</li>
+<li>Another research should be able to find, download, and use the data.</li>
+<li>Any published work should cite the data used, crediting the researcher that originally published the data.</li>
+</ul>
+<p>As data publishing exists today, there are no standard ways to cite data. Unlike papers, data may change before other researchers use it. Citing data requires the ability to cite versions of data, subsets of data, or forks of data. Organizations are trying to solve the citation problem in parallel. This is leading to the standards problem:</p>
+<p><img src="http://imgs.xkcd.com/comics/standards.png" alt="xkcd standards">
+<em>Source: <a href="https://xkcd.com/927/">xkcd 927</a></em></p>
+<h2 id="reproducibility-and-long-term-preservation">Reproducibility and Long Term Preservation</h2>
+<p>Reproducibility was another major theme of the week. When researchers publish papers, other researchers should be able to independently verify the results. Reproducing results is currently impossible for many papers involving data or software. Researchers do not always publish data or software to their papers. If they do publish data, they may not publish it in a manner that other researchers can re-run analysis.</p>
+<p>With the explosion in data repositories, science may be making headway as more researchers publish data. The <a href="http://re3data.org">re3data registry</a> has over 1,500 data repositories registered. Unfortunately, repositories have their own metadata formats, publishing processes, and varying underlying software.</p>
+<p>Dissimilarity in data publishing has major implications for long term reproducibility. In the fast-moving era of the web, we see online services start up and shut down daily. Websites that were there one day are gone the next. Data powering these sites can disappear as users lose countless hours they have contributed.</p>
+<p>We may lose of troves of data if organizations build repositories with a similar approach to web services. This could have with potentially disastrous results for reproducibility and science in general. Rising research costs and aging web infrastructure point to a stark future for published data.</p>
+<h3 id="the-cascading-costs-of-data-publishing">The Cascading Costs of Data Publishing</h3>
+<p>As academic institutions face rising costs, we could lose the progress in data publishing. Libraries are already pushing back against rising journal prices. During the week, librarians expressed concern over paying the costs of data repositories. Each data repository has their own funding and revenue model. Yet, many rely on libraries or researchers to pay at some point, either to get data or to publish data.</p>
+<p>Many research institutions already have servers to backup and archive data for researchers. Few repositories make it possible for institutions to leverage their existing infrastructure. Universities may have to pay twice to backup the same data. Data will exist on their institutional servers and on a common data repository platform. Because of reliance on web infrastructure, data published in many places will be invisible to each other. If a platform shuts down, external researchers may not be able to access the data even if it is archived on a university&apos;s server.</p>
+<h2 id="the-long-tail-of-data-and-the-reproducibility-crisis">The Long Tail of Data and the Reproducibility Crisis</h2>
+<p>The long tail of research data exacerbates the citation and reproducibility problems. Online distribution makes it much easier for users to share and discover long tails. For example, Amazon made the long tail of books available -- each book interests only a few people but there are many of them. Demand for items in long tail exceeds the demand for the most popular items. There is a parallel long tail in research data.</p>
+<p>Like rare books on Amazon, there is a long tail of research data. These datasets only have a few downloads but in total they have more demand than popular datasets. More importantly, there is a long tail of researchers needing to publish data. Their data does not fit within existing metadata, standards, or data repositories. To ensure reproducibility, we need to have a place for these researchers to publish their data without significant overhead.</p>
+<p>Unfortunately, publishing long tail data can be a challenge. Researchers have to decide on which, if any, general access repository fits their needs. Often these repositories have restrictions on sizes or types of data. Additionally, they encourage publishing completed data, making the process an afterthought instead of a central part of the workflow. Researchers will publish their data only if they have a strong incentive or requirement to.</p>
+<p>We have to understand how long tail data will fit if we want to succeed in ensuring reproducibility and common data citation. Otherwise, we will lose the majority of data that does not fit in existing platforms. The difficulty of using the tools must not outweigh the benefit researchers receive for publishing.</p>
+<h2 id="building-publishing-services-on-data-first-infrastructure">Building Publishing Services on Data-First Infrastructure</h2>
+<p>Creating a common data sharing infrastructure is essential, as the long-tail issues make clear. Existing general-purpose data publishing services exist. But they do not integrate into scientific workflow and have other constraints from using web technologies. Organizations need to focus on wide adoption and long term data archiving, regardless of the metadata. It will not matter what data citation standards exist if the data is lost.</p>
+<p>Dat integrates directly into the workflow of any researchers that use file-based data. Data remains on their local computers instead of creating unlinked or duplicate copies on cloud services. Dat enables efficient and long-term storage of data by using decentralized infrastructure. This means that data does not need to exist in one location. Instead, institutions collaborate on data preservation, reducing potential points of failure. Researchers can download data from anywhere without needing to know who archived the data.</p>
+<p>Accurate and future-proof citation requires identifiers for specific versions or subsets of data. If data changes over time, other researchers should be able to the history enabling full reproducibility. Infrastructure allowing scientists to collaborate on data while retaining citation and history is essential.</p>
+<p>Dat provides live and persistent identifiers. Researchers can update data without changing the know identifier. This allows continuous archiving of data while research is occurring, not only after publishing. Append-only logs, common in blockchain technologies, allow data citations that point to specific versions of data. Change history is automatically tracked allowing complete reproducibility throughout the data analysis process.</p>
+<p>Building data publishing services on existing infrastructure has a low upfront cost. But using these dated technologies may have a high cost to reproducibility. Improving the underlying technologies will allow us to make data a primary citizen. If we do not publish data on data-first infrastructure then data citation, reproducibility, and archiving of data will be issues that continue to plague science.</p>
+</div>
+  </div>
+  <div class="sidebar-list">
+      <a class="load-document" href="/blog/2016-11-11-idw-2016-summary">
+        <div class="document active" id="2016-11-11-idw-2016-summary">
+          <div class="published">2016-11-11</div>
+          <div class="author">Joe Hand</div>
+          <h2 class="title">Reflections from International Data Week 2016</h2>
+          <p class="teaser">A summary of the Research Data Alliance event from September.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-11-11-pidapalooza">
+        <div class="document" id="2016-11-11-pidapalooza">
+          <div class="published">2016-11-11</div>
+          <div class="author">Max Ogden</div>
+          <h2 class="title">An Introduction To Persistent Identifiers</h2>
+          <p class="teaser">What I learned at PIDapalooza 2016.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-05-16-key-elements">
+        <div class="document" id="2016-05-16-key-elements">
+          <div class="published">2016-05-16</div>
+          <div class="author">Karissa McKelvey</div>
+          <h2 class="title">Key Elements of Distributing Data</h2>
+          <p class="teaser">How the current tools fall short by missing key elements.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-02-01-dat-1">
+        <div class="document" id="2016-02-01-dat-1">
+          <div class="published">2016-02-05</div>
+          <div class="author">Karissa McKelvey</div>
+          <h2 class="title">Dat 1.0 is ready</h2>
+          <p class="teaser">After years of R&amp;D, the release candidate is ready.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-02-01-announcing-publicbits">
+        <div class="document" id="2016-02-01-announcing-publicbits">
+          <div class="published">2016-02-01</div>
+          <div class="author">Karissa McKelvey</div>
+          <h2 class="title">Announcing Publicbits.org</h2>
+          <p class="teaser">Breaking down open data silos with a new Knight Foundation grant.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-01-19-brief-history-of-dat">
+        <div class="document" id="2016-01-19-brief-history-of-dat">
+          <div class="published">2016-01-19</div>
+          <div class="author">Max Ogden</div>
+          <h2 class="title">A Brief History of Dat</h2>
+          <p class="teaser">History of Dat and the design choices over the last 2 years</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2015-07-29-dat-beta">
+        <div class="document" id="2015-07-29-dat-beta">
+          <div class="published">2015-07-29</div>
+          <div class="author">Karissa McKelvey</div>
+          <h2 class="title">Dat goes beta!</h2>
+          <p class="teaser">After a long year of alpha testing, dat goes beta.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2015-04-03-sloan">
+        <div class="document" id="2015-04-03-sloan">
+          <div class="published">2015-04-03</div>
+          <div class="author">Waldo Jacquith</div>
+          <h2 class="title">Sloan Redoubles Dat Funding</h2>
+          <p class="teaser">Announcing a generous $640,000 grant from the Sloan foundation</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2014-08-19-dat-alpha">
+        <div class="document" id="2014-08-19-dat-alpha">
+          <div class="published">2014-08-19</div>
+          <div class="author">Max Ogden</div>
+          <h2 class="title">Announcing the Dat Alpha</h2>
+          <p class="teaser">The first major version of dat along with a new website.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2014-04-02-dat">
+        <div class="document" id="2014-04-02-dat">
+          <div class="published">2014-04-02</div>
+          <div class="author">Waldo Jacquith</div>
+          <h2 class="title">Sloan funding Dat development</h2>
+          <p class="teaser">Announcing Sloans support of the dat project</p>
+        </div>
+      </a>
+  </div>
+</div>
+</div>
+
+  <div class="footer">
+    <div class="footer-directory container">
+      <div class="col-md-3 col-xs-6">
+        <div class="footer-heading">Explore</div>
+        <div class="footer-horizontal-rule"></div>
+        <ul class="footer-nav-list">
+          <li><a href="/team"><span class="rsaquo">&#x203A;</span> Team</a></li>
+          <li><a href="https://www.stickermule.com/en/marketplace/9709-dat-data-v3"><span class="rsaquo">&#x203A;</span> Get Stickers</a></li>
+          <li><a href="/blog" class="active"><span class="rsaquo">&#x203A;</span> Blog</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-xs-6">
+        <div class="footer-heading">Learn</div>
+        <div class="footer-horizontal-rule"></div>
+        <ul class="footer-nav-list">
+          <li><a href="/about"><span class="rsaquo">&#x203A;</span> About</a></li>
+          <li><a href="http://docs.dat-data.com"><span class="rsaquo">&#x203A;</span> Docs</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-xs-6">
+        <div class="spacer mobile-only"></div>
+        <div class="footer-heading">Connect</div>
+        <div class="footer-horizontal-rule"></div>
+        <ul class="footer-nav-list">
+          <li><a href="https://twitter.com/dat_project"><span class="twitter-green"></span>Twitter</a></li>
+          <li><a href="https://github.com/maxogden/dat"><span class="octocat-green"></span>GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-credits">
+      <span class="footer-emphasized">dat</span> &#x2022; 2016 &#x2022; styleguide by <a href="https://github.com/flipside-org">flipside</a> &#x2022; page source on <a href="https://github.com/datproject/website">github</a>. Freezing Rain designed by <a href="http://www.thenounproject.com/OliM">OliM</a> from the <a href="http://www.thenounproject.com">Noun Project</a>
+    </div>
+  </div>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-49664853-1', 'dat-data.com');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>

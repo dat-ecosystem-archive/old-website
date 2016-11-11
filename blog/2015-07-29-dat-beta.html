@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>dat</title>
+  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <link rel="icon" href="/static/favicon.ico">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css">
+  <link rel="stylesheet" href="/static/css/base.css" media="screen">
+</head>
+<body>
+  <div class="header">
+    <div class="header-nav container">
+      <div class="header-nav-links">
+        <ul class="header-nav-list">
+          <li><a href="/about" class="header-nav-link">About</a></li>
+          <li><a href="/blog" class="header-nav-link active">Blog</a></li>
+          <li><a href="/team" class="header-nav-link">Team</a></li>
+          <li><a href="http://docs.datproject.org" class="header-nav-link">Docs</a></li>
+        </ul>
+      </div>
+      <a href="/" class="header-logo">dat</a>
+    </div>
+  </div>
+
+  <div id="content"><div class="blog-layout">
+  <div class="container post">
+    <div id="post"><h1 id="dat-goes-beta">Dat Goes Beta</h1>
+<p>by <a href="http://karissa.github.io">Karissa McKelvey</a></p>
+<p>After a long year of alpha testing, which started on <a href="https://usopendata.org/2014/08/19/dat-alpha/">August 19th</a>, we are excited to announce our launch of a new phase of dat. <a href="https://github.com/maxogden/dat">Beta starts <em>now</em></a>.</p>
+<p>Let us know what you&#x2019;re working on and how dat might work for you. We&#x2019;ll even come to your lab to help you get up and running, implement features, and fix bugs in real time.</p>
+<p>Get started and and break things (but don&apos;t forget to <a href="#chat-with-us">let us know</a> if things break):</p>
+<pre><code>npm install -g dat
+</code></pre><h3 id="from-data-sharing-to-a-data-ecosystem">From Data Sharing to a Data Ecosystem</h3>
+<p>Dat is a data collaboration tool. We think most people will use it to simplify the process of downloading and updating datasets, but we are also very excited about how people will use it to fork, collaborate on, and publish new datasets for others to consume.</p>
+<p>We&apos;ve been testing dat with the generous help of physicists, data hackers, machine learning experts, biostatisticians, government developers, sociologists, and informaticians. We brought our work to <a href="https://www.youtube.com/watch?v=AKpJgNoT1b8">Mozilla Science Lab to integrate with Federated Wiki</a>, <a href="https://www.youtube.com/watch?v=AKpJgNoT1b8">the Sanger Institute to show off dat and Bionode</a>, <a href="https://www.youtube.com/watch?v=psmtJUyZHE0">Berkeley Institute for Data Science where one of us co-works</a>, <a href="http://unconf.ropensci.org/">ROpenSci to talk about visual diffing</a>, <a href="https://www.youtube.com/watch?v=iM3Pr7tfHF0">JSConf to get our nerd on</a>, and <a href="http://srccon.org/docs/transcripts/datflatsheet/">to SRCCON to demo with Flatsheet</a>, just to name a few.</p>
+<p>Finally, we&apos;ve landed on an internal and external design that we believe covers the key use cases in the collaboration of data science and open data. With dat beta, you now can:</p>
+<p>1) <strong><a href="https://github.com/maxogden/dat/blob/master/docs/whitepaper.md#31-importing-datasets">Put multiple data tables in a single repository</a></strong>. With dat alpha, the entire dat was one tabular entity&#x2014;now, dat supports complex, heterogeneous datasets composed of different schemas or types of files. Datasets are kind of like SQL tables, except these datasets don&#x2019;t support robust querying or joins.</p>
+<p>2) <strong><a href="https://github.com/maxogden/dat/blob/master/docs/whitepaper.md#32-versioning">Trust versions with cryptographic accuracy</a></strong>. Versions are now represented as uniquely identifiable SHA-256 hashes, and you can attach a message and timestamp for a coarse-grained view of the data&#x2019;s history. You can also easily (O(1)) revert to a historical version to view and edit the data.</p>
+<p>3) <strong><a href="https://github.com/maxogden/dat/blob/master/docs/whitepaper.md#34-one-thousand-forks-when-all-you-need-is-a-knife-isnt-irony">Fork, diff and merge</a></strong>. Although forks could be represented as conflicts to be merged immediately (as one might expect in a version control system such as Git), dat&#x2019;s philosophy is the opposite. We think that data tools should embrace forks as key support for experimentation during the scientific process. Now dat is a decentralized, versioned, <a href="https://github.com/mafintosh/hyperlog">directed acyclic graph</a>, so fork away!</p>
+<p>4) Deploy over HTTP or SSH. Dat is transport-agnostic and easy to deploy. This means your IT team is happy because your existing authentication schemes will work the same as ever. Feel free to give read-only access through HTTP, too.</p>
+<p>5) Integrate with other backend engines. Now you can use dat on top of any database that implements the <a href="https://github.com/Level/abstract-leveldown">AbstractLevelDOWN api</a>&#x2014;that means PostgreSQL, Redis, Mongo, Google Drive, etc. This feature is one of the many that still need extensive testing, but we are excited about the prospect.</p>
+<p>6) <strong>Focus on internals</strong>. We&#x2019;ve decided to scale back our initial offerings of the dat editor and server in favor of relying on a community of modules across languages that are built on top of dat, using dat as a data storage and collaboration tool instead of a jack-of-all-trades-master-of-none. Check out <a href="http://github.com/flatsheet">flatsheet</a> for a dat editor replacement and <a href="http://github.com/karissa/dat-rest-server">karissa/dat-rest-server</a> for a REST server replacement.</p>
+<p>7) <strong>It&apos;s faster</strong>. Yeah, it&#x2019;s faster. And it&#x2019;ll only get faster as time goes by.</p>
+<h3 id="the-future">The Future</h3>
+<p>After being granted the security to continue working on dat for the next two years, <a href="https://usopendata.org/2015/04/03/sloan/">courtesy of the Alfred P. Sloan Foundation</a>, we are doubling down on reliability on our approach to a full-featured 1.0 release in the coming months. We want to make it easier to:</p>
+<ul>
+<li>track forks (with names, for starters);</li>
+<li>verify tabular schemas through test suites, with inspiration from <a href="https://github.com/USGS-R/sensorQC">sensorQC</a> and <a href="https://github.com/ropensci/testdat">testdat</a>;</li>
+<li>add a robust set of complex and heterogenous data security, privacy, and access settings;</li>
+<li>make BitTorrent support easy for fast data transfer (for cases like <a href="http://trillianverse.org/">all of the stars in the sky</a>); and,</li>
+<li>integrate into user-friendly editors like <a href="http://flatsheet.io">flatsheet</a> and <a href="https://jupyter.org/">the Jupyter Project</a>.</li>
+</ul>
+<p>But we can&#x2019;t do it without your help (really). Every little piece of feedback counts. We&#x2019;re particularly looking for bug testing, feature requests, and integration with existing data sharing systems. We can&#x2019;t wait to see your feedback, comments, questions, and pull requests.</p>
+<p><a href="https://github.com/maxogden/dat/blob/master/docs/whitepaper.md">Read more about the motivation and design of dat&#x2019;s new beta</a> in the whitepaper.</p>
+<h3 id="chat-with-us">Chat with Us</h3>
+<p>We&apos;re mostly always available in #dat on <a href="https://webchat.freenode.net">freenode</a>, or <a href="https://gitter.im/datproject/discussions">datproject/discussions on gitter.im</a>, so join us!</p>
+</div>
+  </div>
+  <div class="sidebar-list">
+      <a class="load-document" href="/blog/2016-11-11-idw-2016-summary">
+        <div class="document" id="2016-11-11-idw-2016-summary">
+          <div class="published">2016-11-11</div>
+          <div class="author">Joe Hand</div>
+          <h2 class="title">Reflections from International Data Week 2016</h2>
+          <p class="teaser">A summary of the Research Data Alliance event from September.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-11-11-pidapalooza">
+        <div class="document" id="2016-11-11-pidapalooza">
+          <div class="published">2016-11-11</div>
+          <div class="author">Max Ogden</div>
+          <h2 class="title">An Introduction To Persistent Identifiers</h2>
+          <p class="teaser">What I learned at PIDapalooza 2016.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-05-16-key-elements">
+        <div class="document" id="2016-05-16-key-elements">
+          <div class="published">2016-05-16</div>
+          <div class="author">Karissa McKelvey</div>
+          <h2 class="title">Key Elements of Distributing Data</h2>
+          <p class="teaser">How the current tools fall short by missing key elements.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-02-01-dat-1">
+        <div class="document" id="2016-02-01-dat-1">
+          <div class="published">2016-02-05</div>
+          <div class="author">Karissa McKelvey</div>
+          <h2 class="title">Dat 1.0 is ready</h2>
+          <p class="teaser">After years of R&amp;D, the release candidate is ready.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-02-01-announcing-publicbits">
+        <div class="document" id="2016-02-01-announcing-publicbits">
+          <div class="published">2016-02-01</div>
+          <div class="author">Karissa McKelvey</div>
+          <h2 class="title">Announcing Publicbits.org</h2>
+          <p class="teaser">Breaking down open data silos with a new Knight Foundation grant.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-01-19-brief-history-of-dat">
+        <div class="document" id="2016-01-19-brief-history-of-dat">
+          <div class="published">2016-01-19</div>
+          <div class="author">Max Ogden</div>
+          <h2 class="title">A Brief History of Dat</h2>
+          <p class="teaser">History of Dat and the design choices over the last 2 years</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2015-07-29-dat-beta">
+        <div class="document active" id="2015-07-29-dat-beta">
+          <div class="published">2015-07-29</div>
+          <div class="author">Karissa McKelvey</div>
+          <h2 class="title">Dat goes beta!</h2>
+          <p class="teaser">After a long year of alpha testing, dat goes beta.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2015-04-03-sloan">
+        <div class="document" id="2015-04-03-sloan">
+          <div class="published">2015-04-03</div>
+          <div class="author">Waldo Jacquith</div>
+          <h2 class="title">Sloan Redoubles Dat Funding</h2>
+          <p class="teaser">Announcing a generous $640,000 grant from the Sloan foundation</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2014-08-19-dat-alpha">
+        <div class="document" id="2014-08-19-dat-alpha">
+          <div class="published">2014-08-19</div>
+          <div class="author">Max Ogden</div>
+          <h2 class="title">Announcing the Dat Alpha</h2>
+          <p class="teaser">The first major version of dat along with a new website.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2014-04-02-dat">
+        <div class="document" id="2014-04-02-dat">
+          <div class="published">2014-04-02</div>
+          <div class="author">Waldo Jacquith</div>
+          <h2 class="title">Sloan funding Dat development</h2>
+          <p class="teaser">Announcing Sloans support of the dat project</p>
+        </div>
+      </a>
+  </div>
+</div>
+</div>
+
+  <div class="footer">
+    <div class="footer-directory container">
+      <div class="col-md-3 col-xs-6">
+        <div class="footer-heading">Explore</div>
+        <div class="footer-horizontal-rule"></div>
+        <ul class="footer-nav-list">
+          <li><a href="/team"><span class="rsaquo">&#x203A;</span> Team</a></li>
+          <li><a href="https://www.stickermule.com/en/marketplace/9709-dat-data-v3"><span class="rsaquo">&#x203A;</span> Get Stickers</a></li>
+          <li><a href="/blog" class="active"><span class="rsaquo">&#x203A;</span> Blog</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-xs-6">
+        <div class="footer-heading">Learn</div>
+        <div class="footer-horizontal-rule"></div>
+        <ul class="footer-nav-list">
+          <li><a href="/about"><span class="rsaquo">&#x203A;</span> About</a></li>
+          <li><a href="http://docs.dat-data.com"><span class="rsaquo">&#x203A;</span> Docs</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-xs-6">
+        <div class="spacer mobile-only"></div>
+        <div class="footer-heading">Connect</div>
+        <div class="footer-horizontal-rule"></div>
+        <ul class="footer-nav-list">
+          <li><a href="https://twitter.com/dat_project"><span class="twitter-green"></span>Twitter</a></li>
+          <li><a href="https://github.com/maxogden/dat"><span class="octocat-green"></span>GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-credits">
+      <span class="footer-emphasized">dat</span> &#x2022; 2016 &#x2022; styleguide by <a href="https://github.com/flipside-org">flipside</a> &#x2022; page source on <a href="https://github.com/datproject/website">github</a>. Freezing Rain designed by <a href="http://www.thenounproject.com/OliM">OliM</a> from the <a href="http://www.thenounproject.com">Noun Project</a>
+    </div>
+  </div>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-49664853-1', 'dat-data.com');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>
