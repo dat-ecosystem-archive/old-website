@@ -7,7 +7,7 @@ I also had the chance to give a presentation on possible uses of [public key cry
 
 ## What is a persistent identifier?
 
-A [PID](https://en.wikipedia.org/wiki/Persistent_identifier) is just an ID that is persisted somewhere. For example, say I decided that the ID '1337' should point to my domain name maxogden.com. If I store this reference in an online PID database (usually a library) that promises to never delete it, and promises to never give out ID '1337' to anyone else, then I can cite ID `1337` in an academic paper and trust that the librarians of the world will forever be able to resolve ID `1337` to my website.
+A [PID](https://en.wikipedia.org/wiki/Persistent_identifier) is just an ID that is persisted somewhere. For example, say I decided that the ID `1337` should point to my domain name maxogden.com. If I store this reference in an online PID archive that promises to never delete it, and promises to never give out ID `1337` to anyone else, then I can cite ID `1337` in an academic paper and trust that the librarians of the world will forever be able to resolve ID `1337` to my website.
 
 If my website goes offline (say I forget to renew my domain), a librarian could in theory replace the reference to 'maxogden.com' with a new URL that points at an archived version of my site, so that when someone clicks the `1337` reference in my paper the link will still work. Please note that this is a purely theoretical scenario, I don't know how many PIDs actually address the 'link rot' problem by fixing broken links in this way.
 
@@ -17,7 +17,7 @@ At PIDapalooza I learned about a few different PID implementations. Note this is
 
 ### Digital Object Identifier (DOI)
 
-DOIs are the most popular PIDs used in scholarly communications. For most researchers, DOI is the only PID they will use to cite things. A DOI looks like `10.1000/182` but is usually displayed in URL form like https://doi.org/10.1000/182. The `10.1000` is the organizational ID. Organizations wishing to issue DOIs pay an annual fee to issue DOIs to the DOI foundation and get assigned an organizational ID namespace number. When DOIs get resolved (see next section), they are the authority for resolving that namespace number. The `182` is the resource ID issued by the issuing organization. The idea is that issuing organizations should never issue the same resource ID twice. Numbers are preferred over words, as words tend to have cultural meaning that drifts over time whereas numbers are more librarian friendly.
+[DOIs](https://en.wikipedia.org/wiki/Digital_object_identifier) are the most popular PIDs used in scholarly communications. For most researchers, DOI is the only PID they will use to cite things. A DOI looks like `10.1000/182` but is usually displayed in URL form like `https://doi.org/10.1000/182`. The `10.1000` is the organizational ID. Organizations wishing to issue DOIs pay an annual fee to issue DOIs to the DOI foundation and get assigned an organizational ID namespace number. When DOIs get resolved (see next section), they are the authority for resolving that namespace number. The `182` is the resource ID issued by the issuing organization. The idea is that issuing organizations should never issue the same resource ID twice. Numbers are preferred over words, as words tend to have cultural meaning that drifts over time whereas numbers are more librarian friendly.
 
 To be allowed to create a DOI you have to be an issuing organization, pay an annual membership fee, and also pay around $1 per DOI you create, similar to a domain name except they are a one time fee.
 
@@ -27,7 +27,7 @@ Today the ~80 million DOIs and the resolution metadata that is stored in the Han
 
 ### Handle System
 
-The Handle System is a set of protocols designed in 1995 by [Bob Kahn of TCP/IP fame](https://gcn.com/Articles/2009/05/18/GCN-Interview-with-Robert-Kahn.aspx?Page=2) that are designed to manage a distributed set of persistent identifiers (handles) over IP. The DOI system is built on top of the Handle System. All DOIs are resolved through the Handle protocols, and DOI issuing organizations run Handle servers. The [Handle specification](https://tools.ietf.org/html/draft-sun-handle-system-04) defines the identifier format that DOI is based on (Handle Naming Authority "/" Handle Local Name).
+The [Handle System](https://en.wikipedia.org/wiki/Handle_System) is a set of protocols designed in 1995 by [Bob Kahn of TCP/IP fame](https://gcn.com/Articles/2009/05/18/GCN-Interview-with-Robert-Kahn.aspx?Page=2) that are designed to manage a distributed set of persistent identifiers (handles) over IP. The DOI system is built on top of the Handle System. All DOIs are resolved through the Handle protocols, and DOI issuing organizations run Handle servers. The [Handle specification](https://tools.ietf.org/html/draft-sun-handle-system-04) defines the identifier format that DOI is based on: `Handle Naming Authority "/" Handle Local Name`.
 
 Handle defines a custom binary protocol, used over TCP/UDP port 2641, making it incompatible with the World Wide Web as it doesn't use HTTP or DNS for both legacy and security reasons. However, the DOI system almost exclusively uses the Handle System through an HTTP proxy server https://hdl.handle.net that exposes the Handle protocol over a REST API. There is one implementation of Handle written in Java that everyone uses, but it is not on GitHub.
 
@@ -35,7 +35,7 @@ Handle allows a distributed group of providers, each one in charge of a separate
 
 ### ORCID
 
-[ORCID](http://orcid.org/), funded by the same EU grant as DataCite and a spin-off of CrossRef, is a ~20 person non-profit that assigns DOIs to individuals and provides a searchable directory where you can access the profile for a researcher. They don't use DOIs but have their own identifier scheme [based on ISNI](https://en.wikipedia.org/wiki/ORCID) that look like http://orcid.org/0000-0002-1825-0097.
+[ORCID](http://orcid.org/), funded by the same EU grant as DataCite and a spin-off of CrossRef, is a ~20 person non-profit that assigns DOIs to individuals and provides a searchable directory where you can access the profile for a researcher. They don't use DOIs but have their own identifier scheme [based on ISNI](https://en.wikipedia.org/wiki/ORCID) that look like `http://orcid.org/0000-0002-1825-0097`.
 
 ### Archival Resource Key (ARK)
 
@@ -43,7 +43,11 @@ John Kunze from California Digital Library designed [ARK](https://en.wikipedia.o
 
 The ARK system is free to use, as compared to DOIs which cost money to issue. ARK has a central prefix registry, run by the California Digital Library, which issues namespace prefix numbers similar to DOI. Other than this registry of prefixes institutions can issue and persist ARK identifiers and metadata for free to their own liking. This [means](https://groups.google.com/forum/#!topic/digital-curation/JtzVwVVCPvA) "You don't have to pay anyone, you just have to read the spec, get the institutional buy in, and start doing it.".
 
-ARK URLs look like http://bnf.fr/ark:/13030/tf5p30086k, and are pretty similar to DOIs but not exactly the same.
+ARK URLs look like `http://bnf.fr/ark:/13030/tf5p30086k`, and are pretty similar to DOIs but not exactly the same.
+
+### Decentralized Identifiers
+
+This was my own idea, but you could in theory use a ED25519 public key as an identifier, removing the need for a central trusted namespace. If you add a resolution system where responses are signed by the key holder, and perhaps back the system by the PKI to solve the 'forgot my password' problem, you could build an identifier service that provides nice security guarantees without a [central point of failure](http://blog.crossref.org/2015/01/problems-with-dx-doi-org-on-january-20th-2015-what-we-know.html). In fact this is pretty similar to what we do in Dat (as Dat links are in fact ED25519 public keys and transmitted data is signed using this key).
 
 ## Link Rot
 
