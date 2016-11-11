@@ -1,6 +1,13 @@
 module.exports = [
   {
     date: '2016-11-11',
+    title: 'Reflections from International Data Week 2016',
+    author: 'Joe Hand',
+    teaser: 'A summary of the Research Data Alliance event from September.',
+    name: '2016-11-11-idw-2016-summary'
+  },
+  {
+    date: '2016-11-11',
     title: 'An Introduction To Persistent Identifiers',
     author: 'Max Ogden',
     teaser: 'What I learned at PIDapalooza 2016.',

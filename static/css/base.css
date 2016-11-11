@@ -2470,6 +2470,12 @@ a.load-document {
 .post {
   max-width: 800px;
   padding-bottom: 80px; }
+  .post h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #293648;
+    padding-top: 50px;
+    padding-bottom: 5px; }
   .post img {
     max-width: 100%; }
 
