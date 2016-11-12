@@ -19,8 +19,4 @@ When you're ready to publish it, add a `date`. Posts without a `date` are not pu
 
 ### deploy
 
-push `master` to github then run:
-
-```
-npm run deploy
-```
+deploys are built from master using `npm run build` on netlify.com automatically via git push hook
