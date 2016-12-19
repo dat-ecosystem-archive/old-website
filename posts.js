@@ -1,5 +1,12 @@
 module.exports = [
   {
+    date: '2016-12-18',
+    title: 'Reader Privacy On The P2P Web',
+    author: 'Max Ogden',
+    teaser: 'Can we keep user metadata private when decentralizing data?',
+    name: '2016-12-18-p2p-reader-privacy'
+  },
+  {
     date: '2016-11-11',
     title: 'Reflections from International Data Week 2016',
     author: 'Joe Hand',
