@@ -3,7 +3,7 @@ by [Max Ogden](http://maxogden.com)
 
 ### Vendor Lock-In
 
-The Peer-to-peer Web is a way of thinking about distributing web content over the internet that doesn't rely on a central point of failure. Failure sometimes means the service disappears (like the Dropbox Public folder this week). Another type of failure is failure to scale due to a bottleneck. A good example of this is data infrastructure like Amazon S3 and Google Drive. By storing all your data in one place they create a bandwidth bottleneck that they then make you pay for. For a primer on the P2P web principles I recommend the post [What is the P2P Web?](http://pfrazee.github.io/blog/what-is-the-p2p-web). To quote that article, "Once integrated into a browser, these principles enable users to publish independently of services, and move between applications freely.".
+The Peer-to-peer Web is a way of thinking about distributing web content over the internet that doesn't rely on a central point of failure. Failure sometimes means the service disappears (like the Dropbox Public folder this week). Another type of failure is failure to scale due to a bottleneck. A good example of this is data infrastructure like Amazon S3 and Google Drive. By storing all your data in one place they create a bandwidth bottleneck that they then make you pay for. For a primer on the P2P web principles I recommend the post [What is the P2P Web?](http://pfrazee.github.io/blog/what-is-the-p2p-web) To quote that article, "Once integrated into a browser, these principles enable users to publish independently of services, and move between applications freely".
 
 To me the P2P web distinguishes itself from the web today by putting the user in control of their data. The web has long been about open standards for building cross platform applications like HTML, CSS and JavaScript, but falls short of providing a standard way for a user to control their online presence and data, e.g. being able to export their account from one application to another or use services like GMail without letting Google read their emails. Instead the web we have today becomes more and more siloed as large advertising based companies like Facebook and Google are incentivized to get us to give them more and more of our data. They have no incentive to let users easily export their data to or cohabitate their account with other competing services, so such mechanisms for putting the user in control of where their data lives never get built.
 
@@ -13,8 +13,8 @@ Users should be able choose where their data lives and who has access to it. Ult
 
 Today's advertising based services have these incentives:
 
-1. Acquire more user data (for advertising)
-2. Keep users data and privacy protected, as long as it doesn't hinder #1
+- 1: Acquire more user data (for advertising)
+- 2: Keep users data and privacy protected, as long as it doesn't hinder #1
 
 Having all our data stored in one physical location is obviously bad if the service disappears or is hacked into and leaked online or secretly subpoenaed by the government. For this post let's set the issue of long term storage privacy aside and instead focus on on reader privacy. 
 
