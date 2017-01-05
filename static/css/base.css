@@ -582,12 +582,6 @@ a[disabled],
   font-size: 1.25rem;
   padding: .75rem 1.5rem; }
 
-.loader-text img {
-  vertical-align: sub;
-  width: 1.25em;
-  height: 1.25em;
-  margin-right: .25em; }
-
 .progress {
   overflow: hidden;
   padding-top: .5rem;
@@ -650,11 +644,11 @@ a[disabled],
   position: absolute;
   top: calc(1.5rem - (1.5rem / 2));
   left: 1rem;
-  pointer-events: none;
-  display: block;
-  width: 1.5rem;
-  height: 1.5rem;
-  fill: #A7AFB6; }
+  pointer-events: none; }
+  .dat-import--icon img {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem; }
 
 .dat-import--input {
   height: 3rem;
@@ -1712,7 +1706,6 @@ textarea {
 
 .header-info,
 .jumbotron-info {
-  background-image: url("/static/img/header-abstract.png");
   background-repeat: no-repeat;
   background-color: #FFFFFF;
   background-position: 120% -10px;
