@@ -23,24 +23,23 @@ $step-count-width: 40px;
   text-align: center;
   vertical-align: middle;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1.25rem;
   color: $color-neutral--60;
 }
 
 .step-details {
   flex-grow: 1;
   margin-bottom: 0;
-  font-size: 18px;
+  font-size: 1.125rem;
   padding: .5em;
   vertical-align: middle;
   code {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
   @media screen and (min-width: 480px) {
-    font-size: 20px;
+    font-size: 1.25rem;
     code {
-      font-size: 20px;
+      font-size: 1.25rem;
     }
   }
-
 }
