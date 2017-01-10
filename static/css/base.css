@@ -674,7 +674,69 @@ textarea {
   transition-duration: 0.05s;
   transition-timing-function: ease-out; }
 
-/* Containers */
+/* 480px */
+/* 640px */
+/* 1024px */
+/* 1400px */
+/* 1600px */
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto; }
+  @media screen and (min-width: 40rem) {
+    .container {
+      max-width: 750px; } }
+  @media screen and (min-width: 64rem) {
+    .container {
+      max-width: 960px; } }
+  @media screen and (min-width: 87.5rem) {
+    .container {
+      max-width: 1170px; } }
+
+.container--narrow {
+  max-width: 960px; }
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between; }
+
+.gallery-item {
+  flex: 0 1 100%;
+  text-align: left;
+  background-color: white;
+  position: relative;
+  min-height: 400px;
+  margin-bottom: 3rem;
+  border-top: 96px solid #293648; }
+  @media screen and (min-width: 30rem) {
+    .gallery-item {
+      flex-basis: 48%; } }
+  @media screen and (min-width: 40rem) {
+    .gallery-item {
+      flex-basis: 30%; } }
+
+.gallery-item-contents {
+  padding: 3.75rem 2rem 1.5rem 2rem; }
+
+.gallery-item-subtitle {
+  color: #65737F;
+  line-height: 24px;
+  margin-top: 10px; }
+
+.gallery-item-avatar {
+  background-color: #FFFFFF;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  left: calc(50% - 100px / 2);
+  position: absolute;
+  top: -60px;
+  background-size: 96px;
+  border: 4px solid white; }
+
 .header {
   background-color: #FFFFFF;
   border-bottom: 1px solid #F6F7F8; }
@@ -8143,40 +8205,6 @@ section {
   color: #65737F;
   margin-bottom: 1.5rem; }
 
-.card-team {
-  width: 300px;
-  text-align: left;
-  background-color: white;
-  position: relative;
-  min-height: 400px;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 30px;
-  margin-bottom: 50px; }
-
-.card-team-contents {
-  padding: 60px 30px 25px 30px; }
-
-.card-team-subtitle {
-  color: #65737F;
-  line-height: 24px;
-  margin-top: 10px; }
-
-.card-team-stripe {
-  height: 96px;
-  background-color: #293648; }
-
-.card-team-avatar {
-  background-color: #FFFFFF;
-  width: 100px;
-  height: 100px;
-  margin: 0 auto;
-  left: 100px;
-  position: absolute;
-  top: 40px;
-  background-size: 96px;
-  border: 4px solid white; }
-
 .spacer {
   padding: 20px; }
 
@@ -8237,9 +8265,10 @@ section {
 .blog-layout {
   display: flex;
   flex-direction: column; }
-  @media screen and (min-width: 650px) {
+  @media screen and (min-width: 64rem) {
     .blog-layout {
-      flex-direction: row; } }
+      flex-direction: row;
+      justify-content: space-between; } }
 
 a.load-document {
   text-decoration: none;
@@ -8251,38 +8280,25 @@ a.load-document {
   transition: .25s; }
 
 .sidebar-list {
-  max-width: 100%;
-  background-color: #F6F7F8;
-  color: #293648; }
-  @media screen and (min-width: 650px) {
+  max-width: 100%; }
+  @media screen and (min-width: 40rem) {
     .sidebar-list {
       max-width: 25%; } }
   .sidebar-list .document {
-    padding: 20px;
+    padding: 2rem 0;
     width: 100%;
-    border-bottom: 1px solid #D3D7DB; }
-    .sidebar-list .document .published {
-      color: #919BA4; }
-    .sidebar-list .document h2 {
-      margin: 0;
-      color: #35B44F; }
-    .sidebar-list .document:not(.active) {
-      border-left: 1px solid #F6F7F8; }
-    .sidebar-list .document.active {
-      background-color: #FFFFFF;
-      color: #293648; }
-    .sidebar-list .document:hover:not(.active) {
-      background-color: #F6F7F8; }
+    border-bottom: 1px solid #E9EBEC; }
+    .sidebar-list .document.active h2 {
+      font-weight: bold; }
+    .sidebar-list .document:hover, .sidebar-list .document:focus {
+      color: #2980B9; }
 
 .post {
-  max-width: 800px;
-  padding-bottom: 80px; }
-  .post h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #293648;
-    padding-top: 50px;
-    padding-bottom: 5px; }
+  padding-bottom: 5rem; }
+  @media screen and (min-width: 40rem) {
+    .post {
+      max-width: 40rem;
+      padding-right: 2rem; } }
   .post img {
     max-width: 100%; }
 

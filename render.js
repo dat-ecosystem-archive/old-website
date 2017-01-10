@@ -7,7 +7,7 @@ var cheerio = require('cheerio')
 var marked = require('marked')
 var Handlebars = require('handlebars')
 
-var outDir = path.join(__dirname, 'rendered') 
+var outDir = path.join(__dirname, 'rendered')
 
 // clear previously rendered stuff
 rimraf.sync(outDir)
