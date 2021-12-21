@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>dat</title>
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <link rel="icon" href="../static/favicon.ico">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css">
+  <link rel="stylesheet" href="../static/css/base.css" media="screen">
+</head>
+<body>
+  <div class="header">
+    <div class="header-nav container">
+      <div class="header-nav-links">
+        <ul class="header-nav-list">
+          <li><a href="../about.html" class="header-nav-link">About</a></li>
+          <li><a href="./" class="header-nav-link">Blog</a></li>
+          <li><a href="../team.html" class="header-nav-link">Team</a></li>
+          <li><a href="https://github.com/dat-ecosystem/book/blob/master/src/SUMMARY.md" class="header-nav-link">Docs</a></li>
+        </ul>
+      </div>
+      <a href="../" class="header-logo">dat</a>
+    </div>
+  </div>
+
+  <div id="content"><div class="blog-layout">
+  <div class="container post">
+    <div id="post"><h1 id="dat-next-preview-release">Dat Next Preview Release</h1>
+<p>Over the last few months we have been optimizing and improving the Dat command line tool as well as underlying dependencies, such as Hyperdrive, to prepare for publishing datasets on our Dat registry. We&apos;ve released a preview of this new command line tool you can install it now!</p>
+<p>Dat Next provides a more familiar command line interface, a lot of under the hood improvements, and an early preview of the Dat dataset registry commands. We are seeking feedback on Dat Next as we prepare to release it as our main command line tool for long term support.</p>
+<p>During this process, we&apos;ve improved our Node.js library. It is called <a href="https://github.com/datproject/dat-node">dat-node</a> on npm, and makes it easy to build applications that work with the command line tool and desktop app. If you are interested in building Dat applications on the file system, check it out!</p>
+<h2 id="installing-dat-next">Installing Dat Next</h2>
+<p>You can install Dat next with <code>npm</code>:</p>
+<pre><code>npm install -g dat-next
+</code></pre><p>Once you get it installed run <code>dat</code> to see the usage guide or view more docs <a href="https://github.com/joehand/dat-next">on Github</a>.</p>
+<h2 id="new-commands-">New Commands:</h2>
+<h3 id="clone">Clone</h3>
+<p><code>dat clone</code> provides a git-like command to download remote Dat archives:</p>
+<p><img src="https://cloud.githubusercontent.com/assets/684965/21776708/98299422-d650-11e6-8d07-a7a87c471506.png" alt="dat clone screenshot"></p>
+<h3 id="create">Create</h3>
+<p><code>dat create</code> creates a new Dat archive and imports all the files for you, getting it ready to share:</p>
+<p><img src="https://cloud.githubusercontent.com/assets/684965/21729169/ab9051e4-d3fe-11e6-9ba7-ae674880caff.png" alt="dat create screenshot"></p>
+<h3 id="sync-all-the-things-">Sync all the things!</h3>
+<p>Once you have a Dat archive created (via <code>clone</code> or <code>create</code>) you can run <code>dat sync</code> in the archive folder to connect to the network and keep updated:</p>
+<p><img src="https://cloud.githubusercontent.com/assets/684965/21776707/981fc852-d650-11e6-8e38-2382c00ac558.png" alt="dat sync screenshot"></p>
+<h2 id="under-the-hood">Under the Hood</h2>
+<p>We&apos;ve been working on a lot of improvements to make your experience using Dat happier.</p>
+<ul>
+<li>Transfer data faster! In <a href="https://github.com/mafintosh/hyperdrive">hyperdrive</a> we have improved our replication algorithm for faster transfers with more improvements coming soon.</li>
+<li>A new Dat node module! We rewrote <a href="https://github.com/datproject/dat-node">dat-node</a> to use in Dat Next. Dat node makes it easier to start creating applications to use the Dat ecosystem.</li>
+<li>A new doctor is in town! We&apos;ve added another test to <a href="https://github.com/joehand/dat-doctor">dat-doctor</a> to help with network debugging and fixing connection issues. The new doctor makes a house call to make sure you can transfer data to our public server before letting you test direct connections between you and another computer.</li>
+</ul>
+<h2 id="dat-archive-registry">Dat Archive Registry</h2>
+<p>Dat Next provides a glimpse of our registry work started as part of our <a href="https://datproject.org/blog/2016-02-01-announcing-publicbits">Knight Foundation</a> grant. Once our registry is running you&apos;ll be able to publish and clone datasets, allowing you to use pretty names instead of a long <code>dat://</code> link. To try it out you can run <code>dat clone karissa/more-tweets-more-votes</code>.</p>
+<p>New registrations for the Dat registry are currently limited. If you are very interested, please <a href="https://twitter.com/datproject">send us a message</a> and tell us about your use case.</p>
+<hr>
+<ul>
+<li><a href="https://npmjs.com/dat-next">download</a></li>
+<li><a href="https://github.com/joehand/dat-next">source</a></li>
+<li><a href="https://github.com/datproject">github</a></li>
+<li><a href="https://twitter.com/datproject">twitter</a></li>
+</ul>
+</div>
+  </div>
+  <div class="sidebar-list">
+      <a class="load-document" href="/blog/2017-01-05-dat-next">
+        <div class="document active" id="2017-01-05-dat-next">
+          <div class="published">2017-01-09</div>
+          <div class="author">Joe Hand</div>
+          <h2 class="title">Preview the New Dat CLI</h2>
+          <p class="teaser">Install the new release of the Dat command line tool today!</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-12-18-p2p-reader-privacy">
+        <div class="document" id="2016-12-18-p2p-reader-privacy">
+          <div class="published">2016-12-18</div>
+          <div class="author">Max Ogden</div>
+          <h2 class="title">Reader Privacy On The P2P Web</h2>
+          <p class="teaser">Can we keep user metadata private when decentralizing data?</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-11-11-idw-2016-summary">
+        <div class="document" id="2016-11-11-idw-2016-summary">
+          <div class="published">2016-11-11</div>
+          <div class="author">Joe Hand</div>
+          <h2 class="title">Reflections from International Data Week 2016</h2>
+          <p class="teaser">A summary of the Research Data Alliance event from September.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-11-11-pidapalooza">
+        <div class="document" id="2016-11-11-pidapalooza">
+          <div class="published">2016-11-11</div>
+          <div class="author">Max Ogden</div>
+          <h2 class="title">An Introduction To Persistent Identifiers</h2>
+          <p class="teaser">What I learned at PIDapalooza 2016.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-05-16-key-elements">
+        <div class="document" id="2016-05-16-key-elements">
+          <div class="published">2016-05-16</div>
+          <div class="author">Karissa McKelvey</div>
+          <h2 class="title">Key Elements of Distributing Data</h2>
+          <p class="teaser">How the current tools fall short by missing key elements.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-02-01-dat-1">
+        <div class="document" id="2016-02-01-dat-1">
+          <div class="published">2016-02-05</div>
+          <div class="author">Karissa McKelvey</div>
+          <h2 class="title">Dat 1.0 is ready</h2>
+          <p class="teaser">After years of R&amp;D, the release candidate is ready.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-02-01-announcing-publicbits">
+        <div class="document" id="2016-02-01-announcing-publicbits">
+          <div class="published">2016-02-01</div>
+          <div class="author">Karissa McKelvey</div>
+          <h2 class="title">Announcing Publicbits.org</h2>
+          <p class="teaser">Breaking down open data silos with a new Knight Foundation grant.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-01-19-brief-history-of-dat">
+        <div class="document" id="2016-01-19-brief-history-of-dat">
+          <div class="published">2016-01-19</div>
+          <div class="author">Max Ogden</div>
+          <h2 class="title">A Brief History of Dat</h2>
+          <p class="teaser">History of Dat and the design choices over the last 2 years</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2015-07-29-dat-beta">
+        <div class="document" id="2015-07-29-dat-beta">
+          <div class="published">2015-07-29</div>
+          <div class="author">Karissa McKelvey</div>
+          <h2 class="title">Dat goes beta!</h2>
+          <p class="teaser">After a long year of alpha testing, dat goes beta.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2015-04-03-sloan">
+        <div class="document" id="2015-04-03-sloan">
+          <div class="published">2015-04-03</div>
+          <div class="author">Waldo Jacquith</div>
+          <h2 class="title">Sloan Redoubles Dat Funding</h2>
+          <p class="teaser">Announcing a generous $640,000 grant from the Sloan foundation</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2014-08-19-dat-alpha">
+        <div class="document" id="2014-08-19-dat-alpha">
+          <div class="published">2014-08-19</div>
+          <div class="author">Max Ogden</div>
+          <h2 class="title">Announcing the Dat Alpha</h2>
+          <p class="teaser">The first major version of dat along with a new website.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2014-04-02-dat">
+        <div class="document" id="2014-04-02-dat">
+          <div class="published">2014-04-02</div>
+          <div class="author">Waldo Jacquith</div>
+          <h2 class="title">Sloan funding Dat development</h2>
+          <p class="teaser">Announcing Sloans support of the dat project</p>
+        </div>
+      </a>
+  </div>
+</div>
+</div>
+
+  <div class="footer">
+    <div class="footer-directory container">
+      <div class="col-md-3 col-xs-6">
+        <div class="footer-heading">Explore</div>
+        <div class="footer-horizontal-rule"></div>
+        <ul class="footer-nav-list">
+          <li><a href="./team.html"><span class="rsaquo">&#x203A;</span> Team</a></li>
+          <li><a href="https://www.stickermule.com/en/marketplace/9709-dat-data-v3"><span class="rsaquo">&#x203A;</span> Get Stickers</a></li>
+          <li><a href="./blog.html"><span class="rsaquo">&#x203A;</span> Blog</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-xs-6">
+        <div class="footer-heading">Learn</div>
+        <div class="footer-horizontal-rule"></div>
+        <ul class="footer-nav-list">
+          <li><a href="./about.html"><span class="rsaquo">&#x203A;</span> About</a></li>
+          <li><a href="https://github.com/dat-ecosystem/book/blob/master/src/SUMMARY.md"><span class="rsaquo">&#x203A;</span> Docs</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-xs-6">
+        <div class="spacer mobile-only"></div>
+        <div class="footer-heading">Connect</div>
+        <div class="footer-horizontal-rule"></div>
+        <ul class="footer-nav-list">
+          <li><a href="https://twitter.com/dat_project"><span class="twitter-green"></span>Twitter</a></li>
+          <li><a href="https://github.com/dat-ecosystem/"><span class="octocat-green"></span>GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-credits">
+      <span class="footer-emphasized">dat</span> &#x2022; 2016 &#x2022; styleguide by <a href="https://github.com/flipside-org">flipside</a> &#x2022; page source on <a href="https://github.com/datproject/website">github</a>. Freezing Rain designed by <a href="http://www.thenounproject.com/OliM">OliM</a> from the <a href="http://www.thenounproject.com">Noun Project</a>
+    </div>
+  </div>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+</body>
+</html>

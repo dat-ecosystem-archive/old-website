@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>dat</title>
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <link rel="icon" href="../static/favicon.ico">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css">
+  <link rel="stylesheet" href="../static/css/base.css" media="screen">
+</head>
+<body>
+  <div class="header">
+    <div class="header-nav container">
+      <div class="header-nav-links">
+        <ul class="header-nav-list">
+          <li><a href="../about.html" class="header-nav-link">About</a></li>
+          <li><a href="../blog" class="header-nav-link">Blog</a></li>
+          <li><a href="../team.html" class="header-nav-link">Team</a></li>
+          <li><a href="https://github.com/dat-ecosystem/book/blob/master/src/SUMMARY.md" class="header-nav-link">Docs</a></li>
+        </ul>
+      </div>
+      <a href="../" class="header-logo">dat</a>
+    </div>
+  </div>
+
+  <div id="content"><div class="blog-layout">
+  <div class="container post">
+    <div id="post"><h1 id="an-introduction-to-persisent-identifiers">An Introduction To Persisent Identifiers</h1>
+<p>by <a href="http://maxogden.com">Max Ogden</a></p>
+<p>This week in Reykjavik, Iceland I attended PIDapalooza, the first community conference dedicated to the topic of persisent identifiers (PIDs) for the scholarly web. As a relative newcomer to this community I wanted to share my experience diving in head first into this subject.</p>
+<p>I also had the chance to give a presentation on possible uses of <a href="https://github.com/maxogden/pidapalooza2016">public key cryptography in PID systems</a>, an area that is very relevant to our work on the <a href="https://github.com/datproject/docs/blob/master/papers/dat-paper.pdf">Dat protocol</a>.</p>
+<h2 id="what-is-a-persistent-identifier-">What is a persistent identifier?</h2>
+<p>A <a href="https://en.wikipedia.org/wiki/Persistent_identifier">PID</a> is just an ID that is persisted somewhere. For example, say I decided that the ID <code>1337</code> should point to my domain name maxogden.com. If I store this reference in an online PID archive that promises to never delete it, and promises to never give out ID <code>1337</code> to anyone else, then I can cite ID <code>1337</code> in an academic paper and trust that the librarians of the world will forever be able to resolve ID <code>1337</code> to my website.</p>
+<p>If my website goes offline (say I forget to renew my domain), a librarian could in theory replace the reference to &apos;maxogden.com&apos; with a new URL that points at an archived version of my site, so that when someone clicks the <code>1337</code> reference in my paper the link will still work. Please note that this is a purely theoretical scenario, I don&apos;t know how many PIDs actually address the &apos;link rot&apos; problem by fixing broken links in this way.</p>
+<h2 id="what-are-the-different-types-of-pids-">What are the different types of PIDs?</h2>
+<p>At PIDapalooza I learned about a few different PID implementations. Note this is not an exhaustive list!</p>
+<h3 id="digital-object-identifier-doi-">Digital Object Identifier (DOI)</h3>
+<p><a href="https://en.wikipedia.org/wiki/Digital_object_identifier">DOIs</a> are the most popular PIDs used in scholarly communications. For most researchers, DOI is the only PID they will use to cite things. A DOI looks like <code>10.1000/182</code> but is usually displayed in URL form like <code>https://doi.org/10.1000/182</code>. The <code>10.1000</code> is the organizational ID. Organizations wishing to issue DOIs pay an annual fee to issue DOIs to the DOI foundation and get assigned an organizational ID namespace number. When DOIs get resolved (see next section), they are the authority for resolving that namespace number. The <code>182</code> is the resource ID issued by the issuing organization. The idea is that issuing organizations should never issue the same resource ID twice. Numbers are preferred over words, as words tend to have cultural meaning that drifts over time whereas numbers are more librarian friendly.</p>
+<p>To be allowed to create a DOI you have to be an issuing organization, pay an annual membership fee, and also pay around $1 per DOI you create, similar to a domain name except they are a one time fee.</p>
+<p>The most popular registrar for DOIs for scholarly publication use cases is called <a href="http://www.crossref.org/">CrossRef</a>. CrossRef sells a DOI registration API as well as other value-add services for publishers. <a href="https://www.datacite.org/">DataCite</a> is a ~5 person non-profit in the EU that promotes the use of DOIs to cite research data, and maintains and promotes a dataset schema that organizations can use when citing datasets.</p>
+<p>Today the ~80 million DOIs and the resolution metadata that is stored in the Handle system for each one is stored in CrossRef and takes up about 40GB of space. In this way CrossRef centralizes the decentralized Handle DOI infrastructure to make it usable and exposes this data over various APIs but does not make the full DOI corpus easily downloadable.</p>
+<h3 id="handle-system">Handle System</h3>
+<p>The <a href="https://en.wikipedia.org/wiki/Handle_System">Handle System</a> is a set of protocols designed in 1995 by <a href="https://gcn.com/Articles/2009/05/18/GCN-Interview-with-Robert-Kahn.aspx?Page=2">Bob Kahn of TCP/IP fame</a> that are designed to manage a distributed set of persistent identifiers (handles) over IP. The DOI system is built on top of the Handle System. All DOIs are resolved through the Handle protocols, and DOI issuing organizations run Handle servers. The <a href="https://tools.ietf.org/html/draft-sun-handle-system-04">Handle specification</a> defines the identifier format that DOI is based on: <code>Handle Naming Authority &quot;/&quot; Handle Local Name</code>.</p>
+<p>Handle defines a custom binary protocol, used over TCP/UDP port 2641, making it incompatible with the World Wide Web as it doesn&apos;t use HTTP or DNS for both legacy and security reasons. However, the DOI system almost exclusively uses the Handle System through an HTTP proxy server <a href="https://hdl.handle.net">https://hdl.handle.net</a> that exposes the Handle protocol over a REST API. There is one implementation of Handle written in Java that everyone uses, but it is not on GitHub.</p>
+<p>Handle allows a distributed group of providers, each one in charge of a separate prefix (e.g. the first part of a DOI), to register a public key with the Global Handle Registry (GHR) which is an authoritative service that manages, assigns and resolves requests to all prefixes. It&apos;s pretty much DNS, except designed in a time that the Web was not as dominant or flexible. It&apos;s unclear to me why it is still necessary to use Handle today other than for legacy reasons.</p>
+<h3 id="orcid">ORCID</h3>
+<p><a href="http://orcid.org/">ORCID</a>, funded by the same EU grant as DataCite and a spin-off of CrossRef, is a ~20 person non-profit that assigns DOIs to individuals and provides a searchable directory where you can access the profile for a researcher. They don&apos;t use DOIs but have their own identifier scheme <a href="https://en.wikipedia.org/wiki/ORCID">based on ISNI</a> that look like <code>http://orcid.org/0000-0002-1825-0097</code>.</p>
+<h3 id="archival-resource-key-ark-">Archival Resource Key (ARK)</h3>
+<p>John Kunze from California Digital Library designed <a href="https://en.wikipedia.org/wiki/Archival_Resource_Key">ARK</a> as an alternative to DOIs that may be better suited for the needs of long term preservation and libraries, as opposed to DOI/Handle which arose out of the publishing/e-commerce industries.</p>
+<p>The ARK system is free to use, as compared to DOIs which cost money to issue. ARK has a central prefix registry, run by the California Digital Library, which issues namespace prefix numbers similar to DOI. Other than this registry of prefixes institutions can issue and persist ARK identifiers and metadata for free to their own liking. This <a href="https://groups.google.com/forum/#!topic/digital-curation/JtzVwVVCPvA">means</a> &quot;You don&apos;t have to pay anyone, you just have to read the spec, get the institutional buy in, and start doing it.&quot;.</p>
+<p>ARK URLs look like <code>http://bnf.fr/ark:/13030/tf5p30086k</code>, and are pretty similar to DOIs but not exactly the same.</p>
+<h3 id="decentralized-identifiers">Decentralized Identifiers</h3>
+<p>This was my own idea, but you could in theory use a ED25519 public key as an identifier, removing the need for a central trusted namespace. If you add a resolution system where responses are signed by the key holder, and perhaps back the system by the PKI to solve the &apos;forgot my password&apos; problem, you could build an identifier service that provides nice security guarantees without a <a href="http://blog.crossref.org/2015/01/problems-with-dx-doi-org-on-january-20th-2015-what-we-know.html">central point of failure</a>. In fact this is pretty similar to what we do in Dat (as Dat links are in fact ED25519 public keys and transmitted data is signed using this key).</p>
+<p><strong>Update</strong> I found this recent work called Decentralized Identifiers when Googling after writing this post: <a href="https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-fall2016/blob/master/topics-and-advance-readings/did-spec-working-draft-03.md">https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-fall2016/blob/master/topics-and-advance-readings/did-spec-working-draft-03.md</a></p>
+<h2 id="link-rot">Link Rot</h2>
+<p>The commonly cited reason for using DOIs is to prevent link rot and/or content-drift. However, it is unclear to me how to measure the &apos;rotten-ness&apos; of the DOI corpus. Herbert Von de Somple <a href="https://twitter.com/hvdsomp/status/796716360395059201">presented at PIDapalooza about research</a> that analyzed HTTP links in published literature between 2007-2012 and found that around 10% of published links to the web are broken.</p>
+<p>Based on my limited understanding of Handle metadata, a DOI is a one-to-many relationship that maps an identifier to some number of possible typed resources. In the case that the resource is a URL, there can be many matches. However I do not believe that the metadata includes any content fingerprint, e.g. a SHA2 hash of an Internet Archive .warc. So it is unclear to me how exactly the DOI system fixes link rot.</p>
+<p>Some of my unanswered questions:</p>
+<ul>
+<li>How do DOI resolvers decide when it is acceptable to modify the metadata associated with the DOI in order to &apos;fix&apos; link rot?</li>
+<li>Do all resolvers follow the same policy?</li>
+<li>If a resolver were to act maliciously, could they start returning false results without detection?</li>
+<li>Is there any version control for metadata over time, to see how different resolvers behaved at a certain point?</li>
+<li>How many resolvers use the cryptographic signing functionality offered by the Handle system?</li>
+<li>Do any resolvers integrate web capturing and content fingerprints to prove the link they fixed is the same content that the original DOI pointed at?</li>
+</ul>
+</div>
+  </div>
+  <div class="sidebar-list">
+      <a class="load-document" href="/blog/2017-01-05-dat-next">
+        <div class="document" id="2017-01-05-dat-next">
+          <div class="published">2017-01-09</div>
+          <div class="author">Joe Hand</div>
+          <h2 class="title">Preview the New Dat CLI</h2>
+          <p class="teaser">Install the new release of the Dat command line tool today!</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-12-18-p2p-reader-privacy">
+        <div class="document" id="2016-12-18-p2p-reader-privacy">
+          <div class="published">2016-12-18</div>
+          <div class="author">Max Ogden</div>
+          <h2 class="title">Reader Privacy On The P2P Web</h2>
+          <p class="teaser">Can we keep user metadata private when decentralizing data?</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-11-11-idw-2016-summary">
+        <div class="document" id="2016-11-11-idw-2016-summary">
+          <div class="published">2016-11-11</div>
+          <div class="author">Joe Hand</div>
+          <h2 class="title">Reflections from International Data Week 2016</h2>
+          <p class="teaser">A summary of the Research Data Alliance event from September.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-11-11-pidapalooza">
+        <div class="document active" id="2016-11-11-pidapalooza">
+          <div class="published">2016-11-11</div>
+          <div class="author">Max Ogden</div>
+          <h2 class="title">An Introduction To Persistent Identifiers</h2>
+          <p class="teaser">What I learned at PIDapalooza 2016.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-05-16-key-elements">
+        <div class="document" id="2016-05-16-key-elements">
+          <div class="published">2016-05-16</div>
+          <div class="author">Karissa McKelvey</div>
+          <h2 class="title">Key Elements of Distributing Data</h2>
+          <p class="teaser">How the current tools fall short by missing key elements.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-02-01-dat-1">
+        <div class="document" id="2016-02-01-dat-1">
+          <div class="published">2016-02-05</div>
+          <div class="author">Karissa McKelvey</div>
+          <h2 class="title">Dat 1.0 is ready</h2>
+          <p class="teaser">After years of R&amp;D, the release candidate is ready.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-02-01-announcing-publicbits">
+        <div class="document" id="2016-02-01-announcing-publicbits">
+          <div class="published">2016-02-01</div>
+          <div class="author">Karissa McKelvey</div>
+          <h2 class="title">Announcing Publicbits.org</h2>
+          <p class="teaser">Breaking down open data silos with a new Knight Foundation grant.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-01-19-brief-history-of-dat">
+        <div class="document" id="2016-01-19-brief-history-of-dat">
+          <div class="published">2016-01-19</div>
+          <div class="author">Max Ogden</div>
+          <h2 class="title">A Brief History of Dat</h2>
+          <p class="teaser">History of Dat and the design choices over the last 2 years</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2015-07-29-dat-beta">
+        <div class="document" id="2015-07-29-dat-beta">
+          <div class="published">2015-07-29</div>
+          <div class="author">Karissa McKelvey</div>
+          <h2 class="title">Dat goes beta!</h2>
+          <p class="teaser">After a long year of alpha testing, dat goes beta.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2015-04-03-sloan">
+        <div class="document" id="2015-04-03-sloan">
+          <div class="published">2015-04-03</div>
+          <div class="author">Waldo Jacquith</div>
+          <h2 class="title">Sloan Redoubles Dat Funding</h2>
+          <p class="teaser">Announcing a generous $640,000 grant from the Sloan foundation</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2014-08-19-dat-alpha">
+        <div class="document" id="2014-08-19-dat-alpha">
+          <div class="published">2014-08-19</div>
+          <div class="author">Max Ogden</div>
+          <h2 class="title">Announcing the Dat Alpha</h2>
+          <p class="teaser">The first major version of dat along with a new website.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2014-04-02-dat">
+        <div class="document" id="2014-04-02-dat">
+          <div class="published">2014-04-02</div>
+          <div class="author">Waldo Jacquith</div>
+          <h2 class="title">Sloan funding Dat development</h2>
+          <p class="teaser">Announcing Sloans support of the dat project</p>
+        </div>
+      </a>
+  </div>
+</div>
+</div>
+
+  <div class="footer">
+    <div class="footer-directory container">
+      <div class="col-md-3 col-xs-6">
+        <div class="footer-heading">Explore</div>
+        <div class="footer-horizontal-rule"></div>
+        <ul class="footer-nav-list">
+          <li><a href="./team.html"><span class="rsaquo">&#x203A;</span> Team</a></li>
+          <li><a href="https://www.stickermule.com/en/marketplace/9709-dat-data-v3"><span class="rsaquo">&#x203A;</span> Get Stickers</a></li>
+          <li><a href="./blog.html"><span class="rsaquo">&#x203A;</span> Blog</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-xs-6">
+        <div class="footer-heading">Learn</div>
+        <div class="footer-horizontal-rule"></div>
+        <ul class="footer-nav-list">
+          <li><a href="./about.html"><span class="rsaquo">&#x203A;</span> About</a></li>
+          <li><a href="https://github.com/dat-ecosystem/book/blob/master/src/SUMMARY.md"><span class="rsaquo">&#x203A;</span> Docs</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-xs-6">
+        <div class="spacer mobile-only"></div>
+        <div class="footer-heading">Connect</div>
+        <div class="footer-horizontal-rule"></div>
+        <ul class="footer-nav-list">
+          <li><a href="https://twitter.com/dat_project"><span class="twitter-green"></span>Twitter</a></li>
+          <li><a href="https://github.com/dat-ecosystem/"><span class="octocat-green"></span>GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-credits">
+      <span class="footer-emphasized">dat</span> &#x2022; 2016 &#x2022; styleguide by <a href="https://github.com/flipside-org">flipside</a> &#x2022; page source on <a href="https://github.com/datproject/website">github</a>. Freezing Rain designed by <a href="http://www.thenounproject.com/OliM">OliM</a> from the <a href="http://www.thenounproject.com">Noun Project</a>
+    </div>
+  </div>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+</body>
+</html>

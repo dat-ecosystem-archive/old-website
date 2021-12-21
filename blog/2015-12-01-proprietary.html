@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>dat</title>
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <link rel="icon" href="../static/favicon.ico">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css">
+  <link rel="stylesheet" href="../static/css/base.css" media="screen">
+</head>
+<body>
+  <div class="header">
+    <div class="header-nav container">
+      <div class="header-nav-links">
+        <ul class="header-nav-list">
+          <li><a href="../about.html" class="header-nav-link">About</a></li>
+          <li><a href="../blog" class="header-nav-link">Blog</a></li>
+          <li><a href="../team.html" class="header-nav-link">Team</a></li>
+          <li><a href="https://github.com/dat-ecosystem/book/blob/master/src/SUMMARY.md" class="header-nav-link">Docs</a></li>
+        </ul>
+      </div>
+      <a href="../" class="header-logo">dat</a>
+    </div>
+  </div>
+
+  <div id="content"><div class="blog-layout">
+  <div class="container post">
+    <div id="post"><h1 id="where-is-the-iron-mountain-for-open-data-">Where is the Iron Mountain for open data?</h1>
+<p>by <a href="http://karissa.github.io">Karissa McKelvey</a></p>
+<p><strong>Proprietary services such as Google, GitHub, Dropbox, PLOS, Figshare, and AWS provide data hosting and sharing at a low cost. They&apos;ve become the most popular platforms for data sharing in science. However, using them can be dangerous, because when the money runs out, so does your data.</strong></p>
+<p>Imagine a scenario 30 years in the future, when most of the world&apos;s scientific data has been hosted on Dropbox...and the company closes its doors. They might give users a chance to download that data before it is deleted permanently, or they might not anticipate their demise to make that possible. Even if they do, and even if many people download their data, scientists do not have the same incentive to download and store their data for the simple purpose of archiving and reproducibility. Most scientists will not do this. The data will disappear.</p>
+<p>This is already a serious problem <em>without</em> a Dropbox closure, discovered when the question &quot;Where are the original scripts and data you used?&quot; is answered with &quot;I don&apos;t know,&quot; or a referral to another person. Much of the content produced on these closed, proprietary systems will be deleted, with those valuable scientific artifacts lost forever.</p>
+<p>Most of the companies around today won&apos;t exist in 50 years. The average lifespan of a company has decreased from 67 years in the 1920s to just <a href="http://www.bbc.com/news/business-16611040">15 years today</a>. If Galileo stored photos from his telescope on Dropbox in 1610, somebody would have had to re-host that data somewhere between 11 and 33 times for it to be available today. 
+For decades, we&apos;ve been copying paper records and storing them in literal <a href="http://www.ironmountain.com/">mountains of iron</a> on microfilm, a hardy material that has <a href="https://en.wikipedia.org/wiki/Microform">a life expectancy of a few hundred years</a>. When information can be copied to other formats, it has higher redundancy, increasing the chance that it will be around forever. To this end, it should be made trivial to duplicate scientific data from a digital hosting service. When we want data to be around forever, it must be free to be retrieved and copied at any point in time.</p>
+<h2 id="so-how-did-we-get-here-in-the-first-place-">So how did we get here in the first place?</h2>
+<p>Unfortunately, many proprietary hosting services do not like it when their users can copy and re-host data. Many hosting companies will offer private installations on an organization&apos;s own hardware and databases. Even so, these clients may not copy, distribute, study, change, or improve the hosting software without permission from the company. This is how service hosting companies make money in the long run -- once the users buy into the software, it is difficult (or impossible) to move that data to another service. Proprietary services use code that is closed source for this purpose, so that users are incapable, legally, of running their own copy of the software and their data.</p>
+<p>To make matters worse, even if the hosting service prides itself on its ease of data transfer, it can still take tremendous effort to move data off of a proprietary service. Amazon encourages users by making it free to <em>upload</em> data to cloud storage, but it charges the organization every time the data needs to be <em>downloaded.</em> Bandwidth can become expensive for very large datasets. Who will pay for this data transfer cost? The individual researcher is unlikely to have a budget for that.</p>
+<p>Although unfortunate, this market landscape is not necessarily the fault of companies, and a data service should not be considered harmful just because it is a business. I don&apos;t object to businesses running hosting services. But we need to start supporting and using services that are open source and free (as in speech, not beer) and allowing users to copy and re-host data. This should be considered not only a necessity, but an <em>inevitability</em> in the use of the software. Even though this copying and re-hosting data may not good for all business models, it is a sure way to create redundancy and ensure that scientific materials will be around forever. The tension between profit and science must be resolved in favor of science.</p>
+<h2 id="start-here-open-data-as-common-knowledge">Start here: open data as common knowledge</h2>
+<p>As open data publication becomes normalized, we need to concern ourselves heavily with the method -- and that&apos;s where tools like Dat can come in. Dat is a distributed data sharing tool that is has been open source since day one. We have designed the tool explicitly for <em>editing, copying, re-hosting, and redistributing data.</em> The data hosting model will work like SETI@Home, where any user or organization can run a node that will offer bandwidth to the network to re-host and share data. This distribution model for data will enable libraries, non profits, scientific societies, universities, news organizations, and open data scientists to all participate in the open data network, drastically increasing redundancy and ensuring longevity compared to the current centralized model.</p>
+<p>We&apos;re convinced that this distributed data model is the most durable for ensuring that public knowledge stays accessible. Brewster Kahle of the Internet Archive has called for <a href="http://brewster.kahle.org/2015/08/11/locking-the-web-open-a-call-for-a-distributed-web-2/">an internet that &quot;locks&quot; openness into how it works and operates</a>, by distributing data over a peer to peer network. We support this notion -- with a distributed, peer to peer data sharing tool, the power over the data is distributed. This method of distribution is harder to monetize by single corporate entity than a centralized, corporate model. The market simply does not have an incentive to build this kind of distributed database for public knowledge.</p>
+<p>Libraries, on the other hand, are in a great position to be shepherds of public knowledge. In practice, copying scientific materials, such as books, results, drawings, sketches -- copying and making data retrievable -- is what libraries ought to be well-equipped to do. However, as scientific publishing has become more digital, many of us are challenged with the question of where to host open data. We are hoping that open data publishers choose open, redundant software. We can get far by simply helping librarians achieve their goals. Academic journals, universities, and software foundations should start listening to trained digital librarians who have advocated for these open systems by supporting their creation and using them instead. Let&apos;s stop using proprietary services for data publishing, and instead advocate for open, redundant systems.</p>
+<p>Karissa McKelvey<br>
+Multiple hat wearer and Developer, Dat Project<br>
+<a href="http://karissa.github.io">http://karissa.github.io</a><br><a href="http://twitter.com/captainkmac">@captainkmac on Twitter</a></p>
+<ul>
+<li>[1] <em>If you want to read more about this topic, I highly recommend reading the work of the late Eleanor Ostrom and Charlotte Hess on commons management, <a href="https://mitpress.mit.edu/books/understanding-knowledge-commons">Understanding the Knowledge Commons</a>.</em></li>
+</ul>
+</div>
+  </div>
+  <div class="sidebar-list">
+      <a class="load-document" href="/blog/2017-01-05-dat-next">
+        <div class="document" id="2017-01-05-dat-next">
+          <div class="published">2017-01-09</div>
+          <div class="author">Joe Hand</div>
+          <h2 class="title">Preview the New Dat CLI</h2>
+          <p class="teaser">Install the new release of the Dat command line tool today!</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-12-18-p2p-reader-privacy">
+        <div class="document" id="2016-12-18-p2p-reader-privacy">
+          <div class="published">2016-12-18</div>
+          <div class="author">Max Ogden</div>
+          <h2 class="title">Reader Privacy On The P2P Web</h2>
+          <p class="teaser">Can we keep user metadata private when decentralizing data?</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-11-11-idw-2016-summary">
+        <div class="document" id="2016-11-11-idw-2016-summary">
+          <div class="published">2016-11-11</div>
+          <div class="author">Joe Hand</div>
+          <h2 class="title">Reflections from International Data Week 2016</h2>
+          <p class="teaser">A summary of the Research Data Alliance event from September.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-11-11-pidapalooza">
+        <div class="document" id="2016-11-11-pidapalooza">
+          <div class="published">2016-11-11</div>
+          <div class="author">Max Ogden</div>
+          <h2 class="title">An Introduction To Persistent Identifiers</h2>
+          <p class="teaser">What I learned at PIDapalooza 2016.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-05-16-key-elements">
+        <div class="document" id="2016-05-16-key-elements">
+          <div class="published">2016-05-16</div>
+          <div class="author">Karissa McKelvey</div>
+          <h2 class="title">Key Elements of Distributing Data</h2>
+          <p class="teaser">How the current tools fall short by missing key elements.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-02-01-dat-1">
+        <div class="document" id="2016-02-01-dat-1">
+          <div class="published">2016-02-05</div>
+          <div class="author">Karissa McKelvey</div>
+          <h2 class="title">Dat 1.0 is ready</h2>
+          <p class="teaser">After years of R&amp;D, the release candidate is ready.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-02-01-announcing-publicbits">
+        <div class="document" id="2016-02-01-announcing-publicbits">
+          <div class="published">2016-02-01</div>
+          <div class="author">Karissa McKelvey</div>
+          <h2 class="title">Announcing Publicbits.org</h2>
+          <p class="teaser">Breaking down open data silos with a new Knight Foundation grant.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2016-01-19-brief-history-of-dat">
+        <div class="document" id="2016-01-19-brief-history-of-dat">
+          <div class="published">2016-01-19</div>
+          <div class="author">Max Ogden</div>
+          <h2 class="title">A Brief History of Dat</h2>
+          <p class="teaser">History of Dat and the design choices over the last 2 years</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2015-07-29-dat-beta">
+        <div class="document" id="2015-07-29-dat-beta">
+          <div class="published">2015-07-29</div>
+          <div class="author">Karissa McKelvey</div>
+          <h2 class="title">Dat goes beta!</h2>
+          <p class="teaser">After a long year of alpha testing, dat goes beta.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2015-04-03-sloan">
+        <div class="document" id="2015-04-03-sloan">
+          <div class="published">2015-04-03</div>
+          <div class="author">Waldo Jacquith</div>
+          <h2 class="title">Sloan Redoubles Dat Funding</h2>
+          <p class="teaser">Announcing a generous $640,000 grant from the Sloan foundation</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2014-08-19-dat-alpha">
+        <div class="document" id="2014-08-19-dat-alpha">
+          <div class="published">2014-08-19</div>
+          <div class="author">Max Ogden</div>
+          <h2 class="title">Announcing the Dat Alpha</h2>
+          <p class="teaser">The first major version of dat along with a new website.</p>
+        </div>
+      </a>
+      <a class="load-document" href="/blog/2014-04-02-dat">
+        <div class="document" id="2014-04-02-dat">
+          <div class="published">2014-04-02</div>
+          <div class="author">Waldo Jacquith</div>
+          <h2 class="title">Sloan funding Dat development</h2>
+          <p class="teaser">Announcing Sloans support of the dat project</p>
+        </div>
+      </a>
+  </div>
+</div>
+</div>
+
+  <div class="footer">
+    <div class="footer-directory container">
+      <div class="col-md-3 col-xs-6">
+        <div class="footer-heading">Explore</div>
+        <div class="footer-horizontal-rule"></div>
+        <ul class="footer-nav-list">
+          <li><a href="./team.html"><span class="rsaquo">&#x203A;</span> Team</a></li>
+          <li><a href="https://www.stickermule.com/en/marketplace/9709-dat-data-v3"><span class="rsaquo">&#x203A;</span> Get Stickers</a></li>
+          <li><a href="./blog.html"><span class="rsaquo">&#x203A;</span> Blog</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-xs-6">
+        <div class="footer-heading">Learn</div>
+        <div class="footer-horizontal-rule"></div>
+        <ul class="footer-nav-list">
+          <li><a href="./about.html"><span class="rsaquo">&#x203A;</span> About</a></li>
+          <li><a href="https://github.com/dat-ecosystem/book/blob/master/src/SUMMARY.md"><span class="rsaquo">&#x203A;</span> Docs</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-xs-6">
+        <div class="spacer mobile-only"></div>
+        <div class="footer-heading">Connect</div>
+        <div class="footer-horizontal-rule"></div>
+        <ul class="footer-nav-list">
+          <li><a href="https://twitter.com/dat_project"><span class="twitter-green"></span>Twitter</a></li>
+          <li><a href="https://github.com/dat-ecosystem/"><span class="octocat-green"></span>GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-credits">
+      <span class="footer-emphasized">dat</span> &#x2022; 2016 &#x2022; styleguide by <a href="https://github.com/flipside-org">flipside</a> &#x2022; page source on <a href="https://github.com/datproject/website">github</a>. Freezing Rain designed by <a href="http://www.thenounproject.com/OliM">OliM</a> from the <a href="http://www.thenounproject.com">Noun Project</a>
+    </div>
+  </div>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+</body>
+</html>

@@ -1,3 +1,3 @@
 # old dat website
 
-Check out the new one at [datproject/datproject.org](http://github.com/datproject/datproject.org)
+Check out the new one at [dat-ecosystem.github.io/](https://dat-ecosystem.github.io/)

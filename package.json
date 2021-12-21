@@ -4,13 +4,8 @@
   "description": "datproject.org source",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build-css && node render.js && npm run server",
-    "server": "nodemon --watch templates --watch scss -e scss,js,jade,html -i rendered --exec \"npm run build-css && node render.js && http-server rendered\"",
-    "test": "node test/run.js | tap-spec",
-    "watch": "watchify -t brfs index.js -o bundle.js",
-    "build-css": "node-sass --importer node_modules/node-sass-magic-importer scss/base.scss static/css/base.css",
-    "build": "npm run build-css && npm run render",
-    "render": "node render.js"
+    "start": "http-server .",
+    "test": "node test/run.js | tap-spec"
   },
   "keywords": [
     "data",
